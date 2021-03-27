@@ -63,10 +63,7 @@ namespace JoreNoeVideo.DomainServices.Tools
                     Server.AddRange(InsertData);
                     Message += "数据添加成功";
                 }
-                using (StreamWriter sr = new StreamWriter("d:\\log.log",true,Encoding.UTF8))
-                {
-                    sr.WriteLine(Message + "时间：" + DateTime.Now);
-                }
+                LogStream.WriteLine(Message);
             });
         }
     }
