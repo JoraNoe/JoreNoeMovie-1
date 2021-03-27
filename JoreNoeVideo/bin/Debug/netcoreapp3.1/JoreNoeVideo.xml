@@ -49,5 +49,16 @@
             swagger
             </summary>
         </member>
+        <member name="M:JoreNoeVideo.Startup.EnableQueztr">
+            <summary>
+            定时任务
+            </summary>
+        </member>
+        <member name="M:JoreNoeVideo.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            配置 autofac 
+            </summary>
+            <param name="builder"></param>
+        </member>
     </members>
 </doc>

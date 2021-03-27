@@ -29,7 +29,7 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<IList<Movie>> AllMovie()
         {
-            return await this.Server.All().ConfigureAwait(false);
+            return await this.Server.AllAsync().ConfigureAwait(false);
         }
         /// <summary>
         /// 修改

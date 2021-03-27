@@ -17,6 +17,10 @@ namespace JoreNoeVideo.Domain.Models
         /// 顺序
         /// </summary>
         public int Sort { get; set; }
+        /// <summary>
+        /// 链接
+        /// </summary>
+        public string Link { get; set; }
 
     }
 }

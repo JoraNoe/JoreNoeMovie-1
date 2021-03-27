@@ -29,7 +29,7 @@ namespace JoreNoeVideo.DomianServices
         /// <returns></returns>
         public async Task<IList<User>> AllUser()
         {
-           var Result = await this.Server.All().ConfigureAwait(false);
+           var Result = await this.Server.AllAsync().ConfigureAwait(false);
             return Result;
         }
 

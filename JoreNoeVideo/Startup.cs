@@ -13,6 +13,9 @@ using System.Reflection;
 using JoreNoeVideo.DomianServices;
 using Autofac.Extensions.DependencyInjection;
 using JoreNoeVideo.DomainServices;
+using Quartz;
+using Quartz.Impl;
+using JoreNoeVideo.DomainServices.Tools;
 
 namespace JoreNoeVideo
 {
@@ -26,7 +29,7 @@ namespace JoreNoeVideo
         public IConfiguration Configuration { get; }
 
 
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services, ICarouselMapDomainService server)
         {
             services.AddControllers();
             //允许跨域
@@ -34,13 +37,26 @@ namespace JoreNoeVideo
             services.AddCors(options => options.AddPolicy("AllowCors", builder => builder.AllowAnyOrigin().AllowAnyMethod()));
             //添加Swagger
             this.AddSwagger(services);
-
-            //services.AddTransient<IUserDomainService, UserDomainService>();
-            //services.AddTransient<IDbContextFace<>, DbContextFace<>>();
-            //services.AddControllers().AddControllersAsServices();
-
+            this.EnableQueztr();
         }
-      
+        /// <summary>
+        /// 定时任务
+        /// </summary>
+        public void EnableQueztr()
+        {
+            IScheduler scheduler;
+            ISchedulerFactory factory = new StdSchedulerFactory();
+            scheduler = factory.GetScheduler().Result;
+            IJobDetail testJobDetail = JobBuilder.Create<TimerAddCarouse>().WithIdentity("DemoJob").Build();
+            ITrigger testJobTrigger = TriggerBuilder.Create().WithCronSchedule("0/5 * * * * ? *").Build();
+            scheduler.ScheduleJob(testJobDetail, testJobTrigger);
+            scheduler.Start();
+        }
+
+        /// <summary>
+        /// 配置 autofac 
+        /// </summary>
+        /// <param name="builder"></param>
         public void ConfigureContainer(ContainerBuilder builder)
         {
             //业务逻辑层所在程序集命名空间
@@ -52,17 +68,8 @@ namespace JoreNoeVideo
             builder.RegisterGeneric(typeof(DbContextFace<>))//InstancePerDependency：默认模式，每次调用，都会重新实例化对象；每次请求都创建一个新的对象；
                 .As(typeof(IDbContextFace<>)).InstancePerDependency();
 
-            //var config = new ConfigurationBuilder();
-            //config.AddJsonFile("Configs/Autofac.json");
-            //builder.RegisterModule(new ConfigurationModule(config.Build()));
-            // 直接用Autofac注册我们自定义的 
-            //builder.RegisterModule(new DomainServiceModule(builder));
-
         }
 
-        //autofac 新增
-        public ILifetimeScope AutofacContainer { get; private set; }
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -82,10 +89,6 @@ namespace JoreNoeVideo
             app.UseCors();
 
             this.UseSwagger(app);
-
-            //autofac 新增 
-            //this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
-
 
         }
     }

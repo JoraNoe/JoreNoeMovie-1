@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.DomainServices;
+using JoreNoeVideo.DomainServices.Tools;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Quartz;
+using Quartz.Impl;
 
 namespace JoreNoeVideo.API.Controllers
 {
@@ -29,5 +32,6 @@ namespace JoreNoeVideo.API.Controllers
         {
             return APIReturnInFo<Movie>.Success(await this.MovieDomainservice.AddMovie(Model));
         }
+       
     }
 }

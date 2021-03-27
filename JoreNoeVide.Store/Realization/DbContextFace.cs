@@ -19,6 +19,18 @@ namespace JoreNoeVideo.Store
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
+        public T Add(T t)
+        {
+            this.Db.Set<T>().Add(t);
+            this.Db.SaveChanges();
+            return t;
+        }
+
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
         public async Task<T> AddAsync(T t)
         {
             await this.Db.Set<T>().AddAsync(t);
@@ -26,14 +38,48 @@ namespace JoreNoeVideo.Store
             return t;
         }
         /// <summary>
+        /// 添加同步
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public List<T> AddRange(IList<T> t)
+        {
+            this.Db.Set<T>().AddRange(t);
+            return t.ToList();
+        }
+
+        /// <summary>
+        /// 批量添加
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public async Task<IList<T>> AddRangeAsync(IList<T> t)
+        {
+            await this.Db.Set<T>().AddRangeAsync(t);
+            return t;
+        }
+
+        /// <summary>
         /// 查询全部
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<T>> All()
+        public async Task<IList<T>> AllAsync()
         {
             var Result = await this.Db.Set<T>().AsNoTracking().Where(d => true && !d.IsDelete).ToListAsync();
             return Result;
         }
+        /// <summary>
+        /// 删除同步
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public T Delete(Guid Id)
+        {
+            var Result = this.Db.Set<T>().Remove(new T { Id = Id });
+            this.Db.SaveChanges();
+            return Result.Entity;
+        }
+
         /// <summary>
         /// 删除
         /// </summary>
@@ -45,6 +91,16 @@ namespace JoreNoeVideo.Store
             this.Db.SaveChanges();
             return Task.Run(() => { return Result.Entity; });
         }
+        /// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public Task<T> DeleteRangeAsync(Guid Id)
+        {
+            throw new Exception();
+        }
+
         /// <summary>
         /// 修改
         /// </summary>
@@ -73,9 +129,17 @@ namespace JoreNoeVideo.Store
         /// <returns></returns>
         public async Task<IList<T>> Page(int PageNum = 0, int PageSize = 10)
         {
-            var Result = await All();
+            var Result = await AllAsync();
             var Page = Result.Skip(PageNum - 1 * PageSize).Take(PageNum * PageSize);
             return Page.ToList();
+        }
+        /// <summary>
+        /// 同步获取数据
+        /// </summary>
+        /// <returns></returns>
+        List<T> IDbContextFace<T>.All()
+        {
+            return this.Db.Set<T>().AsNoTracking().Where(d => true && !d.IsDelete).ToList();
         }
     }
 }
