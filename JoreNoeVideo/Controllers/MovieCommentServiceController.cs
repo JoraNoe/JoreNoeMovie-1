@@ -61,7 +61,7 @@ namespace JoreNoeVideo.API.Controllers
         [HttpPost("{Id}/AddMovieComment")]
         public async Task<ActionResult<APIReturnInFo<MovieComment>>> SingleMovieComment(Guid Id)
         {
-            return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.AddMovieComment(Id));
+            return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.SingleMovieComment(Id));
         }
 
         /// <summary>
