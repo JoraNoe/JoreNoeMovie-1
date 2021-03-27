@@ -49,7 +49,7 @@ namespace JoreNoeVide.Store
             //IConfiguration congifuration = new ConfigurationBuilder();
 
             //optionsBuilder.UseSqlServer(this.Configuration.GetConnectionString("NotificationDBContext"));
-            optionsBuilder.UseSqlServer("Server=.;Database=JoreNoeDbContext;Uid=sa;Password=sa");
+            optionsBuilder.UseSqlServer("Server=192.168.2.100;Database=JoreNoeDbContext;Uid=sa;Password=sa");
             base.OnConfiguring(optionsBuilder);
         }
     }
