@@ -44,13 +44,22 @@ namespace JoreNoeVideo
         /// </summary>
         public void EnableQueztr()
         {
-            IScheduler scheduler;
-            ISchedulerFactory factory = new StdSchedulerFactory();
-            scheduler = factory.GetScheduler().Result;
-            IJobDetail testJobDetail = JobBuilder.Create<TimerAddCarouse>().WithIdentity("DemoJob").Build();
-            ITrigger testJobTrigger = TriggerBuilder.Create().WithCronSchedule("0/5 * * * * ? *").Build();
-            scheduler.ScheduleJob(testJobDetail, testJobTrigger);
-            scheduler.Start();
+            var trigger3 = TriggerBuilder.Create()
+                       .WithSimpleSchedule(x => x.WithIntervalInSeconds(2).WithRepeatCount(1).RepeatForever())//间隔2秒 一直执行
+                       .UsingJobData("Url", "https://www.ekmov.com/")  //通过在Trigger中添加参数值
+                       .WithIdentity("TimerAddCarouse", "group1")
+                       .Build();
+            
+
+            //IScheduler scheduler;
+            //ISchedulerFactory factory = new StdSchedulerFactory();
+            //scheduler = factory.GetScheduler().Result;
+            //IJobDetail testJobDetail = JobBuilder.Create<TimerAddCarouse>().WithIdentity("TimerAddCarouse").Build();
+            //ITrigger testJobTrigger = TriggerBuilder.Create().WithCronSchedule("0/5 * * * * ? *")
+            //    .UsingJobData("Url", "https://www.ekmov.com/")
+            //    .Build();
+            //scheduler.ScheduleJob(testJobDetail, testJobTrigger);
+            //scheduler.Start();
         }
 
         /// <summary>
