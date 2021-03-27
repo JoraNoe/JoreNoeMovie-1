@@ -145,7 +145,7 @@ namespace JoreNoeVideo.Store
         /// 同步获取数据
         /// </summary>
         /// <returns></returns>
-        List<T> IDbContextFace<T>.All()
+        public List<T> All()
         {
             return this.Db.Set<T>().AsNoTracking().Where(d => true && !d.IsDelete).ToList();
         }

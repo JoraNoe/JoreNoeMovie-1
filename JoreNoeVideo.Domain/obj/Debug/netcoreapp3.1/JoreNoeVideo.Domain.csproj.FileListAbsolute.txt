@@ -25,3 +25,12 @@ C:\Users\admin\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netco
 C:\Users\admin\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.csproj.CoreCompileInputs.cache
 C:\Users\admin\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.dll
 C:\Users\admin\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.pdb
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.Domain\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.deps.json
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.Domain\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.dll
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.Domain\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.pdb
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.csprojAssemblyReference.cache
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.AssemblyInfoInputs.cache
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.AssemblyInfo.cs
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.dll
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.pdb

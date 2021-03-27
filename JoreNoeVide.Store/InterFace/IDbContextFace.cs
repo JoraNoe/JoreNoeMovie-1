@@ -9,6 +9,7 @@ namespace JoreNoeVideo.Store
 {
     public interface IDbContextFace<T> where T : class
     {
+        #region 异步数据
         /// <summary>
         /// 添加
         /// </summary>
@@ -57,7 +58,8 @@ namespace JoreNoeVideo.Store
         /// <param name="PageSize"></param>
         /// <returns></returns>
         Task<IList<T>> Page(int PageNum = 0, int PageSize = 10);
-
+        #endregion
+        #region 同步 数据
 
         /// <summary>
         /// 添加同步
@@ -84,6 +86,7 @@ namespace JoreNoeVideo.Store
         /// <param name="t"></param>
         /// <returns></returns>
         List<T> All();
+        #endregion
 
 
     }

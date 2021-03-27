@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using JoreNoeVideo.Domain.Models;
+using JoreNoeVideo.DomainServices.Tools;
 using JoreNoeVideo.Store;
 using Quartz;
 using System;
@@ -8,16 +9,17 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JoreNoeVideo.DomainServices.Tools
+namespace JoreNoeVideo.DomainServices.TimerServices
 {
-    public class TimerAddCarouse: IJob
+    /// <summary>
+    /// 轮播图定时任务
+    /// </summary>
+    public class TimerAddCarouse : IJob
     {
         public Task Execute(IJobExecutionContext context)
         {
-            Console.WriteLine(context.JobDetail.ToString());
             return Task.Run(() =>
             {
-                var Server = RelitClass.Server;
                 var HttpRequestDomain = RelitClass.HttpRequestDomain;
                 var jobData = context.JobDetail.JobDataMap;//获取Job中的参数
                 string Url = jobData.GetString("Url");
@@ -44,12 +46,12 @@ namespace JoreNoeVideo.DomainServices.Tools
                     FlgCount++;
                 }
                 //验证是否一致数据
-                Server = new DbContextFace<CarouselMap>();
+                DbContextFace<CarouselMap> Server = new DbContextFace<CarouselMap>();
                 var mapList = Server.All();
                 if (mapList == null || mapList.Count == 0)
                 {
                     Server.AddRange(InsertData);
-                    Message = "数据库数据为空 -- 插入成功 /n";
+                    Message = "最新影视--数据库数据为空 -- 插入成功";
                 }
                 else
                 {
@@ -57,16 +59,14 @@ namespace JoreNoeVideo.DomainServices.Tools
                     {
                         //清空数据
                         Server.Delete(item.Id);
-                        Message += "数据清楚成功！/n";
+                        Message += "最新影视--数据清楚成功";
                     }
                     //插入数据
                     Server.AddRange(InsertData);
-                    Message += "数据添加成功";
+                    Message += "最新影视--数据添加成功";
                 }
-                using (StreamWriter sr = new StreamWriter("d:\\log.log",true,Encoding.UTF8))
-                {
-                    sr.WriteLine(Message + "时间：" + DateTime.Now);
-                }
+                //写入日志
+                LogStreamWrite.WriteLineLog(Message);
             });
         }
     }

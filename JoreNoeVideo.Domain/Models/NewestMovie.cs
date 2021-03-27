@@ -26,6 +26,11 @@ namespace JoreNoeVideo.Domain.Models
         /// </summary>
         public string MovieDesc { get; set; }
 
+        /// <summary>
+        /// 底部标题
+        /// </summary>
+        public string MovieTitle { get; set; }
+
 
     }
 }

@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace JoreNoeVideo.CommonInterFaces
 {
+    /// <summary>
+    /// Api返回信息
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class APIReturnInFo<T>
     {
         public static APIReturnInFo<T> Success(T Data)

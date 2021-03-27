@@ -37,34 +37,9 @@ namespace JoreNoeVideo
             services.AddCors(options => options.AddPolicy("AllowCors", builder => builder.AllowAnyOrigin().AllowAnyMethod()));
             //添加Swagger
             this.AddSwagger(services);
+
             //定时
-            //this.AddQuartz(services,typeof(TimerAddCarouse));
-
-            this.EnableQueztr();
-        }
-        /// <summary>
-        /// 定时任务
-        /// </summary>
-        public void EnableQueztr()
-        {
-            IScheduler scheduler;
-            ISchedulerFactory factory = new StdSchedulerFactory();
-            scheduler = factory.GetScheduler().Result;
-            scheduler.Start();
-
-            //创建触发器(也叫时间策略)
-            var trigger = TriggerBuilder.Create()
-                            .WithSchedule(CronScheduleBuilder.DailyAtHourAndMinute(3,30))
-                            //.WithSimpleSchedule(x => x.DailyAtHourAndMinute(10).RepeatForever())//每10秒执行一次
-                            .Build();
-            //创建作业实例
-            //Jobs即我们需要执行的作业
-            var jobDetail = JobBuilder.Create<TimerAddCarouse>()
-                            .UsingJobData("Url", "https://www.ekmov.com/")
-                            .WithIdentity("Myjob", "group")//我们给这个作业取了个“Myjob”的名字，并取了个组名为“group”
-                            .Build();
-            //将触发器和作业任务绑定到调度器中
-            scheduler.ScheduleJob(jobDetail, trigger);
+            this.EnableQuartz();
         }
 
         /// <summary>
@@ -101,7 +76,7 @@ namespace JoreNoeVideo
             });
 
             app.UseCors();
-            // QuartzService.StartJob<TimerAddCarouse>();
+
             this.UseSwagger(app);
 
         }

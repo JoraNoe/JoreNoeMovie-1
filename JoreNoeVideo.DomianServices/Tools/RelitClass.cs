@@ -6,9 +6,11 @@ using System.Text;
 
 namespace JoreNoeVideo.DomainServices.Tools
 {
+    /// <summary>
+    /// 临时文件
+    /// </summary>
     public static class RelitClass
     {
         public static IHttpRequestDomainService HttpRequestDomain { get; set; } = new HttpRequestDomianService();
-        public static IDbContextFace<CarouselMap> Server { get; set; } = new DbContextFace<CarouselMap>();
     }
 }
