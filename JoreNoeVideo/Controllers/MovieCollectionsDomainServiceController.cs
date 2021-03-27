@@ -42,10 +42,48 @@ namespace JoreNoeVideo.API.Controllers
             return APIReturnInFo<MovieCollections>.Success(await this.MovieCollectionsDomainService.RemovedMovieCollections(Id));
         }
 
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPut("EditMovieCollectionsDomain")]
         public async Task<ActionResult<APIReturnInFo<MovieCollections>>> EditMovieCollectionsDomain(MovieCollections model)
         {
             return APIReturnInFo<MovieCollections>.Success(await this.MovieCollectionsDomainService.EditMovieCollections(model));
+        }
+
+        /// <summary>
+        /// 查询全部
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("AllMovieCollectionsDomain")]
+        public async Task<ActionResult<APIReturnInFo<IList<MovieCollections>>>> AllMovieCollectionsDomain()
+        {
+            return APIReturnInFo<IList<MovieCollections>>.Success(await this.MovieCollectionsDomainService.AllMovieCollections());
+        }
+
+        /// <summary>
+        /// 查询单个
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        [HttpGet("SingleMovieCollectionsDomain")]
+        public async Task<ActionResult<APIReturnInFo<MovieCollections>>> SingleMovieCollectionsDomain(Guid Id)
+        {
+            return APIReturnInFo<MovieCollections>.Success(await this.MovieCollectionsDomainService.SingleMovieCollections(Id));
+        }
+
+        /// <summary>
+        /// 分页
+        /// </summary>
+        /// <param name="PageNum"></param>
+        /// <param name="PageSize"></param>
+        /// <returns></returns>
+        [HttpGet("Pagin")]
+        public async Task<ActionResult<APIReturnInFo<IList<MovieCollections>>>> Pagin(int PageNum,int PageSize)
+        {
+            return APIReturnInFo<IList<MovieCollections>>.Success(await this.MovieCollectionsDomainService.Pagin(PageNum,PageSize));
         }
     }
 }

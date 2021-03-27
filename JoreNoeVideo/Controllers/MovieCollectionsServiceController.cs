@@ -67,20 +67,20 @@ namespace JoreNoeVideo.API.Controllers
         /// <summary>
         /// 查询全部
         /// </summary>
-        /// <param name="Id"></param>
         /// <returns></returns>
-        [HttpGet("{Id}/SingleMovieCollectionsDomain")]
+        [HttpGet("AllMovieCollections")]
         public async Task<ActionResult<APIReturnInFo<IList<MovieCollections>>>> AllMovieCollections()
         {
             return APIReturnInFo<IList<MovieCollections>>.Success(await this.MovieCollectionsDomainService.AllMovieCollections());
         }
 
         /// <summary>
-        /// 查询全部
+        /// 分页
         /// </summary>
-        /// <param name="Id"></param>
+        /// <param name="PageNum"></param>
+        /// <param name="PageSize"></param>
         /// <returns></returns>
-        [HttpGet("{Id}/SingleMovieCollectionsDomain")]
+        [HttpGet("Pagin")]
         public async Task<ActionResult<APIReturnInFo<IList<MovieCollections>>>> Pagin(int PageNum, int PageSize)
         {
             return APIReturnInFo<IList<MovieCollections>>.Success(await this.MovieCollectionsDomainService.Pagin(PageNum,PageSize));

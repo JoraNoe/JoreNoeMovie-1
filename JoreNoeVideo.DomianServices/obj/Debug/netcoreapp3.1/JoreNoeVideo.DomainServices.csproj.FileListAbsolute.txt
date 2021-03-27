@@ -54,3 +54,17 @@ D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.DomianServices\obj
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.csproj.CopyComplete
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.dll
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.pdb
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.deps.json
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.dll
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.pdb
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.dll
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Store.dll
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Store.pdb
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.pdb
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.csprojAssemblyReference.cache
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.AssemblyInfoInputs.cache
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.AssemblyInfo.cs
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.csproj.CoreCompileInputs.cache
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.csproj.CopyComplete
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.dll
+D:\Jore\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.pdb
