@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ujWlatdIwYRHGxAh4Z44+PVOaHPiSOlvVrBfHZjcGl/SeEmO/dKq6rVnyjo1gDdcvscceh93r+vkWmPhSH+OrQ==",
+  "dgSpecHash": "5BPU0tH4dkZZhuACeLkzD50bvxN6DpG9TeXPRs39+aIqfJZwIARy74DmZbn3GwWyeeFFRX6VAW5HbaG7oMcVfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj",
+  "projectFilePath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

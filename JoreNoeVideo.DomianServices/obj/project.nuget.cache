@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ueRwKahTZ9M4Md9NC0j7LqPBYljV5VLHsbHnTqT2uYHpKKg2npPujqZZPjHT5Ln6ZB21zgsqwSSfkhyZjC8Bsw==",
+  "dgSpecHash": "BWYTVWHUM7o66rIwe3/8aEl9SaZAPmS+c6Q4kfANufcmFX2tX8mt2JTeeEyeZjHZMnswQN1Da4aK1r3nMs2vsw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
+  "projectFilePath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

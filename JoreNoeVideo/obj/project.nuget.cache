@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QNmCNkrIQjh19XkiHHjqyZ8GqOSzb2Uk7Pwt6cTs647eTYaSdBoGEpDRc6SgYj1Wk8IXJm1TQt7saIKHaK/6NA==",
+  "dgSpecHash": "a7P1n0wC5VBOw8hTSUlBWmGXx/54IOh7pRZcubRsjp4Q9e3tq/m1iB7Tcl48Wq88yo1ktHt3zdWG87lFEwCyow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo\\JoreNoeVideo.API.csproj",
+  "projectFilePath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo\\JoreNoeVideo.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\autofac.configuration\\6.0.0\\autofac.configuration.6.0.0.nupkg.sha512",

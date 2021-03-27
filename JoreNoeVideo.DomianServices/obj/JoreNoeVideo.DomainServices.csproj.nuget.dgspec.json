@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {}
+    "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj": {
+    "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj",
+        "projectUniqueName": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj",
         "projectName": "JoreNoeVideo.Store",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj",
+        "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVide.Store\\obj\\",
+        "outputPath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVide.Store\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
+              "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+                "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
               }
             }
           }
@@ -93,14 +93,14 @@
         }
       }
     },
-    "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+    "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
+        "projectUniqueName": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
         "projectName": "JoreNoeVideo.Domain",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
+        "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.Domain\\obj\\",
+        "outputPath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -148,14 +148,14 @@
         }
       }
     },
-    "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
+    "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
+        "projectUniqueName": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
         "projectName": "JoreNoeVideo.DomainServices",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
+        "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.DomianServices\\obj\\",
+        "outputPath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -174,11 +174,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj"
+              "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj": {
+                "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj"
               },
-              "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\ProjectsVideo\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
+              "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+                "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
               }
             }
           }
