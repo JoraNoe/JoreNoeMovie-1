@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Jore\JoreNoeMovie-1\JoreNoeVideo\JoreNoeVideo.API.xml</DocumentationFile>
+    <DocumentationFile>D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\JoreNoeVideo.API.xml</DocumentationFile>
     <WarningLevel>2</WarningLevel>
   </PropertyGroup>
 
@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JoreNoeVideo.Domain\JoreNoeVideo.Domain.csproj" />
     <ProjectReference Include="..\JoreNoeVideo.DomianServices\JoreNoeVideo.DomainServices.csproj" />
   </ItemGroup>
 

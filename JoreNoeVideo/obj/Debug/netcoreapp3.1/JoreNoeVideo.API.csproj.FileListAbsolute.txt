@@ -211,7 +211,6 @@ D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\bin\Debug\netcorea
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\bin\Debug\netcoreapp3.1\JoreNoeVideo.API.runtimeconfig.dev.json
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\bin\Debug\netcoreapp3.1\JoreNoeVideo.API.dll
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\bin\Debug\netcoreapp3.1\JoreNoeVideo.API.pdb
-D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\bin\Debug\netcoreapp3.1\JoreNoeVideo.xml
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\bin\Debug\netcoreapp3.1\Autofac.dll
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\bin\Debug\netcoreapp3.1\Autofac.Configuration.dll
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
@@ -396,3 +395,4 @@ D:\Jore\JoreNoeMovie-1\JoreNoeVideo\obj\Debug\netcoreapp3.1\JoreNoeVideo.API.csp
 D:\Jore\JoreNoeMovie-1\JoreNoeVideo\obj\Debug\netcoreapp3.1\JoreNoeVideo.API.dll
 D:\Jore\JoreNoeMovie-1\JoreNoeVideo\obj\Debug\netcoreapp3.1\JoreNoeVideo.API.pdb
 D:\Jore\JoreNoeMovie-1\JoreNoeVideo\obj\Debug\netcoreapp3.1\JoreNoeVideo.API.genruntimeconfig.cache
+D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\bin\Debug\netcoreapp3.1\JoreNoeVideo.API.xml

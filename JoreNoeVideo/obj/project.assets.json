@@ -8983,6 +8983,7 @@
       "Autofac.Configuration >= 6.0.0",
       "Autofac.Extensions.DependencyInjection >= 7.1.0",
       "HtmlAgilityPack >= 1.11.24",
+      "JoreNoeVideo.Domain >= 1.0.0",
       "JoreNoeVideo.DomainServices >= 1.0.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9",
@@ -8994,23 +8995,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo\\JoreNoeVideo.API.csproj",
+      "projectUniqueName": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo\\JoreNoeVideo.API.csproj",
       "projectName": "JoreNoeVideo.API",
-      "projectPath": "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo\\JoreNoeVideo.API.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo\\obj\\",
+      "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo\\JoreNoeVideo.API.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9018,15 +9019,16 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
-              "projectPath": "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj"
+            "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+              "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
+            },
+            "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
+              "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj"
             }
           }
         }
@@ -9039,7 +9041,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Autofac": {
             "target": "Package",
@@ -9105,7 +9106,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

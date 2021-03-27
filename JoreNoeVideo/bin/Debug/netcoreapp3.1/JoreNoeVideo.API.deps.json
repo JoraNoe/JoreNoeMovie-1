@@ -28,6 +28,7 @@
           "Autofac.Configuration": "6.0.0",
           "Autofac.Extensions.DependencyInjection": "7.1.0",
           "HtmlAgilityPack": "1.11.24",
+          "JoreNoeVideo.Domain": "1.0.0",
           "JoreNoeVideo.DomainServices": "1.0.0",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
