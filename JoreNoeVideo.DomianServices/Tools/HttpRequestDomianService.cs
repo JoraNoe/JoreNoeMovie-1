@@ -6,25 +6,55 @@ using System.Text;
 
 namespace JoreNoeVideo.DomainServices.Tools
 {
-    public class HttpRequestDomianService:IHttpRequestDomainService
+    public class HttpRequestDomianService : IHttpRequestDomainService
     {
         public string HttpRequest(string Url)
         {
+            WebRequest Request = null;
+            HttpWebResponse Response = null;
+            Stream _Stream = null;
+            StreamReader Reader = null;
             string HTML = "";
-            WebRequest Request = WebRequest.Create(Url);
-            Request.Method = "get";
-            Request.Proxy = null;
-            Request.ContentType = "application/json";
-            Request.Timeout = 50000;
-            HttpWebResponse Response = (HttpWebResponse)Request.GetResponse();
-            Stream _Stream = Response.GetResponseStream();
-            StreamReader Reader = new StreamReader(_Stream, Encoding.UTF8);
-            HTML = Reader.ReadToEnd();
-            Request.Abort();
-            Response.Close();
-            _Stream.Close();
-            Reader.Close();
-            return HTML;
+            try
+            {
+                Request = WebRequest.Create(Url);
+                Request.Method = "get";
+                Request.Proxy = null;
+                Request.ContentType = "application/json";
+                Request.Timeout = 80000;
+                Response = (HttpWebResponse)Request.GetResponse();
+                _Stream = Response.GetResponseStream();
+                Reader = new StreamReader(_Stream, Encoding.UTF8);
+                HTML = Reader.ReadToEnd();
+                //Request.Abort();
+                Response.Close();
+                _Stream.Close();
+                Reader.Close();
+                return HTML;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (Request != null)
+                {
+                    Request.Abort();
+                }
+                if (Response != null)
+                {
+                    Response.Close();
+                }
+                if (_Stream != null)
+                {
+                    _Stream.Close();
+                }
+                if (Reader != null)
+                {
+                    Reader.Close();
+                }
+            }
         }
     }
 }

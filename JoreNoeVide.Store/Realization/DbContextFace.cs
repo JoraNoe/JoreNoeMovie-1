@@ -45,6 +45,7 @@ namespace JoreNoeVideo.Store
         public List<T> AddRange(IList<T> t)
         {
             this.Db.Set<T>().AddRange(t);
+            this.Db.SaveChanges();
             return t.ToList();
         }
 
@@ -56,6 +57,7 @@ namespace JoreNoeVideo.Store
         public async Task<IList<T>> AddRangeAsync(IList<T> t)
         {
             await this.Db.Set<T>().AddRangeAsync(t);
+            this.Db.SaveChanges();
             return t;
         }
 
@@ -75,7 +77,13 @@ namespace JoreNoeVideo.Store
         /// <returns></returns>
         public T Delete(Guid Id)
         {
-            var Result = this.Db.Set<T>().Remove(new T { Id = Id });
+            var Re = this.GetSingle(Id).Result;
+            if (Re == null)
+            {
+                return null;
+            }
+            Re.IsDelete = true;
+            var Result = this.Db.Set<T>().Update(Re);
             this.Db.SaveChanges();
             return Result.Entity;
         }
@@ -119,7 +127,7 @@ namespace JoreNoeVideo.Store
         /// <returns></returns>
         public async Task<T> GetSingle(Guid Id)
         {
-            return await this.Db.Set<T>().SingleAsync(d => d.Id == Id && !d.IsDelete);
+            return await this.Db.Set<T>().AsTracking().SingleAsync(d => d.Id == Id && !d.IsDelete);
         }
         /// <summary>
         /// 分页查询
