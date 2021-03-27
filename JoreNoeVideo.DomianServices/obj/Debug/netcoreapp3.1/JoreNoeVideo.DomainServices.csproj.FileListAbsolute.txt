@@ -1,0 +1,14 @@
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.deps.json
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.dll
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.pdb
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.dll
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Store.dll
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Store.pdb
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.pdb
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.csproj.CopyComplete
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.dll
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.pdb
+C:\Users\Administrator\source\repos\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.csproj.CoreCompileInputs.cache

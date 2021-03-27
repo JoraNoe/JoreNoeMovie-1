@@ -1,0 +1,7 @@
+{
+  "modules": [
+    { "type": "JoreNoeVideo.Store.StoreModule,JoreNoeVideo.Store" },
+    { "type": "JoreNoeVideo.APIModule,JoreNoeVideo" },
+    { "type": "JoreNoeVideo.DomainServices.DomainServiceModule,JoreNoeVideo.DomainServices" }
+  ]
+}

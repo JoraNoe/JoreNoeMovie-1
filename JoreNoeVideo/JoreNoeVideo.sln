@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoreNoeVideo.API", "JoreNoeVideo.API.csproj", "{2E9E14A1-27E4-4EDB-9ED3-BB0A3FA7D0DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoreNoeVideo.Store", "..\JoreNoeVide.Store\JoreNoeVideo.Store.csproj", "{CA8E59B5-3E94-4D5D-80CC-9593DCFB4008}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoreNoeVideo.DomainServices", "..\JoreNoeVideo.DomianServices\JoreNoeVideo.DomainServices.csproj", "{A9622119-07BB-4066-8E42-53BBB6CC3D37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoreNoeVideo.Domain", "..\JoreNoeVideo.Domain\JoreNoeVideo.Domain.csproj", "{D750343C-2157-4732-922E-C84B6249F103}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E9E14A1-27E4-4EDB-9ED3-BB0A3FA7D0DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E9E14A1-27E4-4EDB-9ED3-BB0A3FA7D0DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E9E14A1-27E4-4EDB-9ED3-BB0A3FA7D0DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E9E14A1-27E4-4EDB-9ED3-BB0A3FA7D0DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA8E59B5-3E94-4D5D-80CC-9593DCFB4008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA8E59B5-3E94-4D5D-80CC-9593DCFB4008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA8E59B5-3E94-4D5D-80CC-9593DCFB4008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA8E59B5-3E94-4D5D-80CC-9593DCFB4008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9622119-07BB-4066-8E42-53BBB6CC3D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9622119-07BB-4066-8E42-53BBB6CC3D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9622119-07BB-4066-8E42-53BBB6CC3D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9622119-07BB-4066-8E42-53BBB6CC3D37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D750343C-2157-4732-922E-C84B6249F103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D750343C-2157-4732-922E-C84B6249F103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D750343C-2157-4732-922E-C84B6249F103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D750343C-2157-4732-922E-C84B6249F103}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4E1E4B9-7C88-4DEA-B028-4DD3B4B17ADF}
+	EndGlobalSection
+EndGlobal

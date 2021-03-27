@@ -1,0 +1,15 @@
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\bin\Debug\netcoreapp3.1\JoreNoeVideo.Store.deps.json
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\bin\Debug\netcoreapp3.1\JoreNoeVideo.Store.dll
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\bin\Debug\netcoreapp3.1\JoreNoeVideo.Store.pdb
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.dll
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.pdb
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.csproj.CopyComplete
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.dll
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.pdb
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\bin\Debug\netcoreapp3.1\JoreNoeVideo.Store.runtimeconfig.json
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\bin\Debug\netcoreapp3.1\JoreNoeVideo.Store.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\JoreNoeVide.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.csproj.CoreCompileInputs.cache
