@@ -36,7 +36,7 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [HttpPost("AddMovieComment")]
+        [HttpPut("EditMovieComment")]
         public async Task<ActionResult<APIReturnInFo<MovieComment>>> EditMovieComment(MovieComment model)
         {
             return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.EditMovieComment(model));
@@ -45,9 +45,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <summary>
         /// 删除
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="Id"></param>
         /// <returns></returns>
-        [HttpPost("{Id}/AddMovieComment")]
+        [HttpDelete("{Id}/RemovedMovieComment")]
         public async Task<ActionResult<APIReturnInFo<MovieComment>>> RemovedMovieComment(Guid Id)
         {
             return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.RemovedMovieComment(Id));
@@ -56,20 +56,19 @@ namespace JoreNoeVideo.API.Controllers
         /// <summary>
         /// 查询单个
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="Id"></param>
         /// <returns></returns>
-        [HttpPost("{Id}/AddMovieComment")]
+        [HttpGet("{Id}/SingleMovieComment")]
         public async Task<ActionResult<APIReturnInFo<MovieComment>>> SingleMovieComment(Guid Id)
         {
-            return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.AddMovieComment(Id));
+            return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.SingleMovieComment(Id));
         }
 
         /// <summary>
         /// 查询全部
         /// </summary>
-        /// <param name="model"></param>
         /// <returns></returns>
-        [HttpPost("AddMovieComment")]
+        [HttpGet("AllMovieComment")]
         public async Task<ActionResult<APIReturnInFo<IList<MovieComment>>>> AllMovieComment()
         {
             return APIReturnInFo<IList<MovieComment>>.Success(await this.MovieCommentDomainService.AllMovieComment());
@@ -78,9 +77,10 @@ namespace JoreNoeVideo.API.Controllers
         /// <summary>
         /// 分页
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="PageNum"></param>
+        /// <param name="PageSize"></param>
         /// <returns></returns>
-        [HttpPost("AddMovieComment")]
+        [HttpGet("Pagin")]
         public async Task<ActionResult<APIReturnInFo<IList<MovieComment>>>> Pagin(int PageNum, int PageSize)
         {
             return APIReturnInFo<IList<MovieComment>>.Success(await this.MovieCommentDomainService.Pagin(PageNum,PageSize));

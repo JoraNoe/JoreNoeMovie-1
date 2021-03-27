@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JoreNoeVideo.API</name>
+    </assembly>
+    <members>
+        <member name="T:JoreNoeVideo.CommonInterFaces.APIReturnInFo`1">
+            <summary>
+            Api返回信息
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:JoreNoeVideo.API.CommonInterFaces.ConstantsKey">
+            <summary>
+            常量定义 影片 清晰度
+            </summary>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCategoryController.AddMovieCategory(JoreNoeVideo.Domain.Models.MovieCategory)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCategoryController.EditMovieCategory(JoreNoeVideo.Domain.Models.MovieCategory)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCategoryController.RemovedMovieCategory(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCategoryController.SingleMovieCategory(System.Guid)">
+            <summary>
+            单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCategoryController.AllMovieCategory">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCategoryController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsDomainServiceController.AddMovieCollectionsDomain(JoreNoeVideo.Domain.Models.MovieCollections)">
+            <summary>
+            添加
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsDomainServiceController.RemovedMovieCollectionsDomain(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsDomainServiceController.EditMovieCollectionsDomain(JoreNoeVideo.Domain.Models.MovieCollections)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsDomainServiceController.AllMovieCollectionsDomain">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsDomainServiceController.SingleMovieCollectionsDomain(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsDomainServiceController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsServiceController.AddMovieCollections(JoreNoeVideo.Domain.Models.MovieCollections)">
+            <summary>
+            添加
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsServiceController.RemovedMovieCollections(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsServiceController.EditMovieCollections(JoreNoeVideo.Domain.Models.MovieCollections)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsServiceController.SingleMovieCollections(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsServiceController.AllMovieCollections">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCollectionsServiceController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCommentServiceController.AddMovieComment(JoreNoeVideo.Domain.MovieComment)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCommentServiceController.EditMovieComment(JoreNoeVideo.Domain.MovieComment)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCommentServiceController.RemovedMovieComment(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCommentServiceController.SingleMovieComment(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCommentServiceController.AllMovieComment">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieCommentServiceController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieController.AddUser(JoreNoeVideo.Domain.Models.Movie)">
+            <summary>
+            添加数据
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieDescServiceController.AddMovieDesc(JoreNoeVideo.Domain.Models.MovieDesc)">
+            <summary>
+            新建
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieDescServiceController.RemovedMovieDesc(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieDescServiceController.EditMovieDesc(JoreNoeVideo.Domain.Models.MovieDesc)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieDescServiceController.AllMovieDesc">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieDescServiceController.SingleMovieDesc(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieDescServiceController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JoreNoeVideo.Controllers.UserController">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="M:JoreNoeVideo.Controllers.UserController.AddUser(JoreNoeVideo.Domain.Models.User)">
+            <summary>
+            添加数据
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.Controllers.UserController.EditUser(JoreNoeVideo.Domain.Models.User)">
+            <summary>
+            修改数据
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.Controllers.UserController.AddUser(System.Guid)">
+            <summary>
+            根据Id查询单条数据
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.Controllers.UserController.Delete(System.Guid)">
+            <summary>
+            根据Id删除用户
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JoreNoeVideo.Startup">
+            <summary>
+            swagger
+            </summary>
+        </member>
+        <member name="M:JoreNoeVideo.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            配置 autofac 
+            </summary>
+            <param name="builder"></param>
+        </member>
+    </members>
+</doc>
