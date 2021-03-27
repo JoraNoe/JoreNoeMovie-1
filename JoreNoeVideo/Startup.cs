@@ -29,7 +29,7 @@ namespace JoreNoeVideo
         public IConfiguration Configuration { get; }
 
 
-        public void ConfigureServices(IServiceCollection services, ICarouselMapDomainService server)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
             //‘ –ÌøÁ”Ú
