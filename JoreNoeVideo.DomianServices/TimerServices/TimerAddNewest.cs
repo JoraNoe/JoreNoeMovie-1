@@ -13,7 +13,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
     /// <summary>
     /// 最新影视 定时
     /// </summary>
-    public class TimerAddNewest: IJob
+    public class TimerAddNewest : IJob
     {
         public Task Execute(IJobExecutionContext context)
         {
@@ -42,12 +42,12 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                         MovieDesc = item.ChildNodes[1].ChildNodes[1].InnerText,
                         MovieImgUrl = item.ChildNodes[0].ChildNodes[0].Attributes["src"].Value.ToString(),
                         MovieLink = Url + item.Attributes["href"].Value.ToString(),
-                        MovieTitle = item.ChildNodes[0].ChildNodes[2].InnerText.ToString()
-                    }) ;
+                        MovieTitle = this.JudgeMovieDefinition(item.ChildNodes[0].ChildNodes[2].InnerText.ToString())
+                    });
                     FlgCount++;
                 }
                 //验证是否一致数据
-                DbContextFace<NewestMovie>  Server = new DbContextFace<NewestMovie>();
+                DbContextFace<NewestMovie> Server = new DbContextFace<NewestMovie>();
                 var mapList = Server.All();
                 if (mapList == null || mapList.Count == 0)
                 {
@@ -70,10 +70,50 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 LogStreamWrite.WriteLineLog(Message);
             });
         }
+        /// <summary>
+        /// 展示类型的转换
+        /// </summary>
+        /// <param name="Definition">类型</param>
+        /// <returns></returns>
+        private string JudgeMovieDefinition(string Definition)
+        {
+            if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_HD)
+            {
+                return ConstantsKey.JORENOEVIDEO_MOVIEHD;
+            }
+            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIEHD_CHINASE)
+            {
+                return ConstantsKey.JORENOEVIDEO_MOVIEHDCHINAES;
+            }
 
-        //private string JudgeMovieDefinition(string Definition)
-        //{
-        //    if (Definition == ConstantsKey.) { }
-        //}
+            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_BLUELIGHT)
+            {
+                return ConstantsKey.JORENOEVIDEO_MOVIEBLUELIGHT;
+            }
+
+            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_TC)
+            {
+                return ConstantsKey.JORENOEVIDEO_MOVIETC;
+            }
+
+            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_TCCHINASE)
+            {
+                return ConstantsKey.JORENOEVIDEO_MOVIETCCHINASE;
+            }
+
+            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_SP)
+            {
+                return ConstantsKey.JORENOEVIDEO_MOVIESP;
+            }
+            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_Hc)
+            {
+                return ConstantsKey.JORENOEVIDEO_MOVIEHC;
+            }
+            else
+            {
+                return Definition;
+            }
+
+        }
     }
 }
