@@ -12,6 +12,12 @@
     <WarningLevel>2</WarningLevel>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\JoreNoeVideo.API.xml</DocumentationFile>
+    <OutputPath></OutputPath>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.1.0" />
     <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
@@ -30,6 +36,12 @@
   <ItemGroup>
     <ProjectReference Include="..\JoreNoeVideo.Domain\JoreNoeVideo.Domain.csproj" />
     <ProjectReference Include="..\JoreNoeVideo.DomianServices\JoreNoeVideo.DomainServices.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="JoreNoeVideo.API.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 
