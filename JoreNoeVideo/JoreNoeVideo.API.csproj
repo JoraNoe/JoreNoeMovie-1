@@ -13,11 +13,14 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\JoreNoeVideo.API.xml</DocumentationFile>
+    <DocumentationFile>D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\</DocumentationFile>
     <OutputPath></OutputPath>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.1.0" />
     <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
@@ -43,6 +46,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 
 </Project>

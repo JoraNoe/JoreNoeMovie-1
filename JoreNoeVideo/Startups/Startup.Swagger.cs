@@ -18,7 +18,7 @@ namespace JoreNoeVideo
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "影视appApi", Version = "v1" });
-                c.IncludeXmlComments(Path.Combine(Path.GetDirectoryName(typeof(Program).Assembly.Location), "JoreNoeVideo.xml"), true);
+                c.IncludeXmlComments(Path.Combine(Path.GetDirectoryName(typeof(Program).Assembly.Location), "JoreNoeVideo.API.xml"), true);
             });
         }
 
