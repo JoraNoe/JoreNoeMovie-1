@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\JoreNoeVideo.API.xml</DocumentationFile>
+    <DocumentationFile>D:\Jore\JoreNoeMovie-1\JoreNoeVideo\JoreNoeVideo.API.xml</DocumentationFile>
     <WarningLevel>2</WarningLevel>
   </PropertyGroup>
 

@@ -234,6 +234,54 @@
             <param name="PageSize"></param>
             <returns></returns>
         </member>
+        <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.AddUserWatchHistory(JoreNoeVideo.Domain.Models.UserWatchHistory)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.RemovedUserWatchHistory(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.EditUserWatchHistory(JoreNoeVideo.Domain.Models.UserWatchHistory)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.SingleUserWatchHistory(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.AllUserWatchHistory">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+            
+        </member>
         <member name="T:JoreNoeVideo.Controllers.UserController">
             <summary>
             用户
