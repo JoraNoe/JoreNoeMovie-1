@@ -164,9 +164,8 @@ namespace JoreNoeVideo.Store
             if (!this.Db.Set<T>().Any(d => d.Id == Id))
                 return null;
             Re = this.GetSingle(Id).Result;
-            this.Db.Set<T>().Remove(new T { Id = Id });
+            this.Db.Set<T>().Remove(Re);
             this.Db.SaveChanges();
-            this.Db.Dispose();
             return Re;
         }
     }
