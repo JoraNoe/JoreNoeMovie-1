@@ -75,9 +75,13 @@ namespace JoreNoeVideo.Store
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public T Delete(Guid Id)
+        public T SoftDelete(Guid Id)
         {
-            var Re = this.GetSingle(Id).Result;
+            var Re = new T();
+            if (!this.Db.Set<T>().Any(d => d.Id == Id))
+                return null;
+            Re = this.GetSingle(Id).Result;
+
             if (Re == null)
             {
                 return null;
@@ -148,6 +152,22 @@ namespace JoreNoeVideo.Store
         public List<T> All()
         {
             return this.Db.Set<T>().AsNoTracking().Where(d => true && !d.IsDelete).ToList();
+        }
+        /// <summary>
+        /// 硬删除
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public T Delete(Guid Id)
+        {
+            var Re = new T();
+            if (!this.Db.Set<T>().Any(d => d.Id == Id))
+                return null;
+            Re = this.GetSingle(Id).Result;
+            this.Db.Set<T>().Remove(new T { Id = Id });
+            this.Db.SaveChanges();
+            this.Db.Dispose();
+            return Re;
         }
     }
 }

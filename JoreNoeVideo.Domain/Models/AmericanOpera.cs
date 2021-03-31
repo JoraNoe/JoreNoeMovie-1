@@ -7,7 +7,7 @@ namespace JoreNoeVideo.Domain.Models
     /// <summary>
     /// 美剧
     /// </summary>
-    public class AmericanOpera
+    public class AmericanOpera:BaseModel
     {
         /// <summary>
         /// 影片名称

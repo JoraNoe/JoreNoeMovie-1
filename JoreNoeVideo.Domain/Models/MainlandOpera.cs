@@ -7,7 +7,7 @@ namespace JoreNoeVideo.Domain
     /// <summary>
     /// 大陆剧
     /// </summary>
-    public class MainlandOpera
+    public class MainlandOpera:BaseModel
     {
         /// <summary>
         /// 影片名称

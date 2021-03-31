@@ -58,16 +58,39 @@ namespace JoreNoeVide.Store
         /// 影视
         /// </summary>
         public DbSet<Movie> Movies { get; set; }
-
-
-
+        /// <summary>
+        /// 美剧
+        /// </summary>
+        public DbSet<AmericanOpera> AmericanOperas { get; set; }
+        /// <summary>
+        /// 动漫
+        /// </summary>
+        public DbSet<AnimationOpera> AnimationOperas { get; set; }
+        /// <summary>
+        /// 电影
+        /// </summary>
+        public DbSet<FilmOpera> FilmOperas { get; set; }
+        /// <summary>
+        /// 港剧
+        /// </summary>
+        public DbSet<HongKongOpera> HongKongOperas { get; set; }
+        /// <summary>
+        /// 韩剧
+        /// </summary>
+        public DbSet<KoreanDramaOpera> KoreanDramaOperas { get; set; }
+        /// <summary>
+        /// 大陆剧
+        /// </summary>
+        public DbSet<MainlandOpera> MainlandOperas { get; set; }
+        
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //上下文重写此方法，以配置要使用的数据库。对上下文的每个实例调用此方法创建
             //IConfiguration congifuration = new ConfigurationBuilder();
 
             //optionsBuilder.UseSqlServer(this.Configuration.GetConnectionString("NotificationDBContext"));
-            optionsBuilder.UseSqlServer("Server=192.168.2.100;Database=JoreNoeDbContext;Uid=sa;Password=sa");
+            optionsBuilder.UseSqlServer("Server=.;Database=JoreNoeDbContext;Uid=sa;Password=sa");
             base.OnConfiguring(optionsBuilder);
         }
     }

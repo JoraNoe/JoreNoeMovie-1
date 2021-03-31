@@ -7,7 +7,7 @@ namespace JoreNoeVideo.Domain.Models
     /// <summary>
     /// 韩剧
     /// </summary>
-    public class KoreanDrama
+    public class KoreanDramaOpera:BaseModel
     {
         /// <summary>
         /// 影片名称

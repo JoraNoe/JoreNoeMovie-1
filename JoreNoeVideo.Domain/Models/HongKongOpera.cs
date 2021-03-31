@@ -7,7 +7,7 @@ namespace JoreNoeVideo.Domain.Models
     /// <summary>
     /// 港剧
     /// </summary>
-    public class HongKongOpera
+    public class HongKongOpera:BaseModel
     {
         /// <summary>
         /// 影片名称

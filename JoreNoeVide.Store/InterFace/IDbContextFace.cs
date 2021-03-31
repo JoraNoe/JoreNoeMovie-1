@@ -69,11 +69,11 @@ namespace JoreNoeVideo.Store
         T Add(T t);
 
         /// <summary>
-        /// 移除 同步
+        /// 移除 同步 软删除
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        T Delete(Guid Id);
+        T SoftDelete(Guid Id);
         /// <summary>
         /// 批量添加同步
         /// </summary>
@@ -86,6 +86,12 @@ namespace JoreNoeVideo.Store
         /// <param name="t"></param>
         /// <returns></returns>
         List<T> All();
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        T Delete(Guid Id);
         #endregion
 
 

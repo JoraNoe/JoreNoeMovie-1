@@ -6,11 +6,20 @@ using System.Text;
 
 namespace JoreNoeVideo.DomainServices.Tools
 {
+    /// <summary>
+    /// 日志类 
+    /// </summary>
     public static class LogStreamWrite
     {
+        /// <summary>
+        /// 写入日志
+        /// </summary>
+        /// <param name="LogContext"></param>
         public static void WriteLineLog(string LogContext)
         {
-            using (StreamWriter Ws = new StreamWriter(Assembly.GetEntryAssembly().Location,true,Encoding.UTF8))
+            var CurrentSysPaht = Assembly.GetEntryAssembly().Location;
+            var Paht = CurrentSysPaht.Substring(0, CurrentSysPaht.LastIndexOf(@"\")) + "\\SystemLog.log";
+            using (StreamWriter Ws = new StreamWriter("D:\\11.log",true,Encoding.UTF8))
             {
                 Ws.WriteLine(LogContext + "--写入时间："+DateTime.Now);
             }

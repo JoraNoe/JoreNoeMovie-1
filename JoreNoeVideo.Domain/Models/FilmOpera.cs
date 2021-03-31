@@ -7,7 +7,7 @@ namespace JoreNoeVideo.Domain.Models
     /// <summary>
     /// 电影
     /// </summary>
-    public class Film:BaseModel
+    public class FilmOpera:BaseModel
     {
         /// <summary>
         /// 影片名称
