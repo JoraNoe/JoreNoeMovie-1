@@ -15,6 +15,292 @@
             常量定义 影片 清晰度
             </summary>
         </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AmericanOperaController.CreateAmericanOpera(JoreNoeVideo.Domain.Models.AmericanOpera)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AmericanOperaController.RemovedAmericanOpera(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AmericanOperaController.EditAmericanOpera(JoreNoeVideo.Domain.Models.AmericanOpera)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AmericanOperaController.AllAmericanOpera">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AmericanOperaController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AmericanOperaController.SingleAmericanOpera(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AnimationOperaController.CreateAnimationOpera(JoreNoeVideo.Domain.Models.AnimationOpera)">
+            <summary>
+            添加
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AnimationOperaController.EditAnimationOpera(JoreNoeVideo.Domain.Models.AnimationOpera)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AnimationOperaController.RemovedAnimationOpera(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AnimationOperaController.SingleAnimationOpera(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AnimationOperaController.AllAnimationOpera">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.AnimationOperaController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.FilmOperaController.CreateFilmOpera(JoreNoeVideo.Domain.Models.FilmOpera)">
+            <summary>
+            添加
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.FilmOperaController.EditFilmOpera(JoreNoeVideo.Domain.Models.FilmOpera)">
+            <summary>
+            x编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.FilmOperaController.RemovedFilmOpera(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.FilmOperaController.SingleFilmOpera(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.FilmOperaController.AllFilmOpera">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.FilmOperaController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.HongKongOperaController.CreateHongKongOpera(JoreNoeVideo.Domain.Models.HongKongOpera)">
+            <summary>
+            添加
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.HongKongOperaController.EditHongKongOpera(JoreNoeVideo.Domain.Models.HongKongOpera)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.HongKongOperaController.RemovedHongKongOpera(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.HongKongOperaController.SingleHongKongOpera(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.HongKongOperaController.AllHongKongOpera">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.HongKongOperaController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.KoreanDramaOperaController.CreateKoreanDramaOpera(JoreNoeVideo.Domain.Models.KoreanDramaOpera)">
+            <summary>
+            添加
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.KoreanDramaOperaController.EditKoreanDramaOpera(JoreNoeVideo.Domain.Models.KoreanDramaOpera)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.KoreanDramaOperaController.RemovedKoreanDramaOpera(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.KoreanDramaOperaController.SingleKoreanDramaOpera(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.KoreanDramaOperaController.AllKoreanDramaOpera">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.KoreanDramaOperaController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MainlandOperaController.CreateMainlandOpera(JoreNoeVideo.Domain.MainlandOpera)">
+            <summary>
+            添加
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MainlandOperaController.EditMainlandOpera(JoreNoeVideo.Domain.MainlandOpera)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MainlandOperaController.RemovedMainlandOpera(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MainlandOperaController.SingleMainlandOpera(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MainlandOperaController.AllMainlandOpera">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MainlandOperaController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+            
+        </member>
         <member name="M:JoreNoeVideo.API.Controllers.MovieCategoryController.AddMovieCategory(JoreNoeVideo.Domain.Models.MovieCategory)">
             <summary>
             新增
