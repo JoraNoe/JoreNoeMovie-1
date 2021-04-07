@@ -20,7 +20,7 @@ namespace JoreNoeVideo
                 IScheduler scheduler;
                 ISchedulerFactory factory = new StdSchedulerFactory();
                 scheduler = factory.GetScheduler().Result;
-                scheduler.Start();
+                //scheduler.Start();
 
                 //创建触发器(也叫时间策略)
                 var trigger = TriggerBuilder.Create()
@@ -43,7 +43,7 @@ namespace JoreNoeVideo
                 IScheduler scheduler;
                 ISchedulerFactory factory = new StdSchedulerFactory();
                 scheduler = factory.GetScheduler().Result;
-                scheduler.Start();
+                //scheduler.Start();
 
                 //创建触发器(也叫时间策略)
                 var trigger = TriggerBuilder.Create()
