@@ -44,7 +44,5 @@ namespace JoreNoeVideo.API.CommonInterFaces
 
         public string JORENOEVIDEO_MOVIEHC = "抢先版";
         public string JORENOEVIDEO_MOVIE_Hc = "HC";
-
-        
     }
 }

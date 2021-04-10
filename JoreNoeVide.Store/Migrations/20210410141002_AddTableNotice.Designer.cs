@@ -4,14 +4,16 @@ using JoreNoeVide.Store;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JoreNoeVideo.Store.Migrations
 {
     [DbContext(typeof(JoreNoeVideoDbContext))]
-    partial class JoreNoeVideoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210410141002_AddTableNotice")]
+    partial class AddTableNotice
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -446,26 +448,6 @@ namespace JoreNoeVideo.Store.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Notices");
-                });
-
-            modelBuilder.Entity("JoreNoeVideo.Domain.Models.SystemIcon", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("IconUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SystemIcons");
                 });
 
             modelBuilder.Entity("JoreNoeVideo.Domain.Models.User", b =>

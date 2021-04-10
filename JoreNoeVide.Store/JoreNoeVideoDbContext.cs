@@ -82,8 +82,18 @@ namespace JoreNoeVide.Store
         /// 大陆剧
         /// </summary>
         public DbSet<MainlandOpera> MainlandOperas { get; set; }
-        
-        
+        /// <summary>
+        /// 公告
+        /// </summary>
+        public DbSet<Notice> Notices { get; set; }
+        /// <summary>
+        /// 系统标题
+        /// </summary>
+        public DbSet<SystemIcon> SystemIcons { get; set; }
+
+
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //上下文重写此方法，以配置要使用的数据库。对上下文的每个实例调用此方法创建
