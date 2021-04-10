@@ -11,23 +11,32 @@ namespace JoreNoeVideo.Domain.Models
     public class User:BaseModel
     {
         /// <summary>
-        /// 用户姓名
+        /// 使用Id  对应 Signature 签名
         /// </summary>
-        public string Name { get; set; }
+        public string UserId { get; set; }
         /// <summary>
-        /// 用户手机号
+        /// 县
         /// </summary>
-        public string Phone { get; set; }
+        public string Province { get; set; }
+        /// <summary>
+        /// 城市 
+        /// </summary>
+        public string Citry { get; set; }
+        /// <summary>
+        /// 语言
+        /// </summary>
+        public string Language { get; set; }
+        /// <summary>
+        /// 性别
+        /// </summary>
+        public int Gender { get; set; }
         /// <summary>
         /// 昵称
         /// </summary>
         public string NickName { get; set; }
         /// <summary>
-        /// 基本信息
+        /// 用户头像 长连接
         /// </summary>
-        [ForeignKey("UserId")]
-        public UserBaseInFo UserBaseInFo { get; set; }
-
-        public Guid UserId { get; set; }
+        public string UserHeaderImg { get; set; }
     }
 }
