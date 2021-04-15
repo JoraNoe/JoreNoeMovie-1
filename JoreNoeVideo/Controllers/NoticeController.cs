@@ -25,6 +25,8 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// 
+        [HttpPost("CreateNotice")]
         public async Task<ActionResult<APIReturnInFo<Notice>>> CreateNotice(Notice model)
         {
             return APIReturnInFo<Notice>.Success(await this.noticeDomainService.CreateNotice(model));
@@ -35,6 +37,8 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// 
+        [HttpPut("EditNotice")]
         public async Task<ActionResult<APIReturnInFo<Notice>>> EditNotice(Notice model)
         {
             return APIReturnInFo<Notice>.Success(await this.noticeDomainService.EditNotice(model));
@@ -45,7 +49,9 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public async Task<ActionResult<APIReturnInFo<Notice>>> Removed(Guid Id)
+        /// 
+        [HttpDelete("{Id}/RemovedNotice")]
+        public async Task<ActionResult<APIReturnInFo<Notice>>> RemovedNotice(Guid Id)
         {
             return APIReturnInFo<Notice>.Success(await this.noticeDomainService.RemovedNotice(Id));
         }
@@ -55,6 +61,8 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
+        /// 
+        [HttpGet("{Id/SingleNotice}")]
         public async Task<ActionResult<APIReturnInFo<Notice>>> SingleNotice(Guid Id)
         {
             return APIReturnInFo<Notice>.Success(await this.noticeDomainService.SingleNotice(Id));
@@ -64,6 +72,8 @@ namespace JoreNoeVideo.API.Controllers
         /// 查询全部
         /// </summary>
         /// <returns></returns>
+        /// 
+        [HttpGet("AllNotice")]
         public async Task<ActionResult<APIReturnInFo<IList<Notice>>>> AllNotice()
         {
             return APIReturnInFo<IList<Notice>>.Success(await this.noticeDomainService.AllNotice());
@@ -75,6 +85,8 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="PageNum"></param>
         /// <param name="PageSize"></param>
         /// <returns></returns>
+        /// 
+        [HttpGet("Pagin")]
         public async Task<ActionResult<APIReturnInFo<IList<Notice>>>> Pagin(int PageNum, int PageSize)
         {
             return APIReturnInFo<IList<Notice>>.Success(await this.noticeDomainService.Pagin(PageNum, PageSize));
