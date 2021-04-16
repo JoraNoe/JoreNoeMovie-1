@@ -38,6 +38,9 @@ namespace JoreNoeVideo
             //添加Swagger
             this.AddSwagger(services);
 
+
+            services.AddSingleton<IConfiguration>(Configuration);
+
             //定时
             this.EnableQuartz();
         }
@@ -56,7 +59,6 @@ namespace JoreNoeVideo
                 .AsImplementedInterfaces();//注册仓储，所有IRepository接口到Repository的映射
             builder.RegisterGeneric(typeof(DbContextFace<>))//InstancePerDependency：默认模式，每次调用，都会重新实例化对象；每次请求都创建一个新的对象；
                 .As(typeof(IDbContextFace<>)).InstancePerDependency();
-
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -76,6 +78,11 @@ namespace JoreNoeVideo
             });
 
             app.UseCors();
+
+            var builder = new ConfigurationBuilder()
+                   .SetBasePath(env.ContentRootPath)
+                   .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                   .AddEnvironmentVariables();
 
             this.UseSwagger(app);
 

@@ -62,7 +62,7 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         /// 
-        [HttpGet("{Id/SingleNotice}")]
+        [HttpGet("{Id}/SingleNotice")]
         public async Task<ActionResult<APIReturnInFo<Notice>>> SingleNotice(Guid Id)
         {
             return APIReturnInFo<Notice>.Success(await this.noticeDomainService.SingleNotice(Id));

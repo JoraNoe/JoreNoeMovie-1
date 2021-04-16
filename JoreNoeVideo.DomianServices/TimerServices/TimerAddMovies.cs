@@ -64,9 +64,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                     NewestServer.AddRange(InsertData.Take(10).ToList());
                     Message += "数据添加成功 -- 推荐 \n";
                 }
-
                 //存入 电影
-
                 DbContextFace<FilmOpera> FilmService = new DbContextFace<FilmOpera>();
                 var FilmOperaList = FilmService.All();
                 List<FilmOpera> FilmOpra = InsertData.Skip(10).Take(20).ToList().Select(d => new FilmOpera

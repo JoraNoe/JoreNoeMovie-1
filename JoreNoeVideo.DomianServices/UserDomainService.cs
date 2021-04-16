@@ -1,5 +1,7 @@
 ﻿using JoreNoeVideo.Domain.Models;
+using JoreNoeVideo.DomainServices.Tools;
 using JoreNoeVideo.Store;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,10 +11,16 @@ namespace JoreNoeVideo.DomianServices
 {
     public class UserDomainService : IUserDomainService
     {
-        public UserDomainService(IDbContextFace<User> Server)
+        public UserDomainService(IDbContextFace<User> Server,
+            IHttpRequestDomainService Http,
+            IConfiguration Configuration)
         {
             this.Server = Server;
+            this.Http = Http;
+            this.Configuration = Configuration;
         }
+        private readonly IConfiguration Configuration;
+        private readonly IHttpRequestDomainService Http;
         private readonly IDbContextFace<User> Server;
         /// <summary>
         /// tianjia
@@ -46,6 +54,19 @@ namespace JoreNoeVideo.DomianServices
         public async Task<User> SingleUser(Guid Id)
         {
             return await this.Server.GetSingle(Id).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// 根据Code获取OpenId
+        /// </summary>
+        /// <param name="Code"></param>
+        /// <returns></returns>
+        public Task<string> Authorization(string Code)
+        {
+            var Configuration = this.Configuration.GetSection("MiniProgress");
+            
+            var Response = Http.HttpRequest(Configuration["Url"]+Code);
+
+            return null;
         }
     }
 }

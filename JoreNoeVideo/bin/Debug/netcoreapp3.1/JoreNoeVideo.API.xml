@@ -597,6 +597,54 @@
             <param name="PageSize"></param>
             <returns></returns>
         </member>
+        <member name="M:JoreNoeVideo.API.Controllers.NoticeController.CreateNotice(JoreNoeVideo.Domain.Models.Notice)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.NoticeController.EditNotice(JoreNoeVideo.Domain.Models.Notice)">
+            <summary>
+            编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.NoticeController.RemovedNotice(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.NoticeController.SingleNotice(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.NoticeController.AllNotice">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.NoticeController.Pagin(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="PageNum"></param>
+            <param name="PageSize"></param>
+            <returns></returns>
+            
+        </member>
         <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.AddUserWatchHistory(JoreNoeVideo.Domain.Models.UserWatchHistory)">
             <summary>
             新增
@@ -676,6 +724,13 @@
             根据Id删除用户
             </summary>
             <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JoreNoeVideo.Controllers.UserController.Authorization(System.String)">
+            <summary>
+            授权根据Code 获取OpenId
+            </summary>
+            <param name="Code"></param>
             <returns></returns>
         </member>
         <member name="T:JoreNoeVideo.Startup">

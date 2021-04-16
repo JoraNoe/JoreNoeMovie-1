@@ -91,5 +91,7 @@ namespace JoreNoeVideo.API.Controllers
         {
             return APIReturnInFo<IList<UserWatchHistory>>.Success(await this.UserWatchHistoryDomainService.Pagin(PageNum,PageSize));
         }
+
+
     }
 }

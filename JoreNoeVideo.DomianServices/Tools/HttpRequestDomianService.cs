@@ -6,8 +6,16 @@ using System.Text;
 
 namespace JoreNoeVideo.DomainServices.Tools
 {
+    /// <summary>
+    /// 请求
+    /// </summary>
     public class HttpRequestDomianService : IHttpRequestDomainService
     {
+        /// <summary>
+        /// 发送请求
+        /// </summary>
+        /// <param name="Url"></param>
+        /// <returns></returns>
         public string HttpRequest(string Url)
         {
             WebRequest Request = null;
@@ -39,21 +47,13 @@ namespace JoreNoeVideo.DomainServices.Tools
             finally
             {
                 if (Request != null)
-                {
                     Request.Abort();
-                }
                 if (Response != null)
-                {
                     Response.Close();
-                }
                 if (_Stream != null)
-                {
                     _Stream.Close();
-                }
                 if (Reader != null)
-                {
                     Reader.Close();
-                }
             }
         }
     }

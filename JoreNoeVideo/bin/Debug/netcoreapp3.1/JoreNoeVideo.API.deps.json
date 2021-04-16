@@ -2306,6 +2306,7 @@
           "HtmlAgilityPack": "1.11.24",
           "JoreNoeVideo.Domain": "1.0.0",
           "JoreNoeVideo.Store": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
           "Quartz": "3.2.4"
         },
         "runtime": {

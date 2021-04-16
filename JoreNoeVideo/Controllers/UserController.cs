@@ -62,5 +62,16 @@ namespace JoreNoeVideo.Controllers
         {
             return APIReturnInFo<User>.Success(await this.userDomainService.RemoveUser(Id));
         }
+
+        /// <summary>
+        /// 授权根据Code 获取OpenId
+        /// </summary>
+        /// <param name="Code"></param>
+        /// <returns></returns>
+        [HttpGet("Authorization/{Code}")]
+        public async Task<ActionResult<APIReturnInFo<string>>> Authorization(string Code)
+        {
+            return APIReturnInFo<string>.Success(await this.userDomainService.Authorization(Code));
+        }
     }
 }
