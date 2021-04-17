@@ -1,4 +1,5 @@
 ﻿using JoreNoeVideo.Domain.Models;
+using JoreNoeVideo.DomainServices;
 using JoreNoeVideo.DomainServices.Tools;
 using JoreNoeVideo.Store;
 using Microsoft.Extensions.Configuration;
@@ -6,17 +7,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace JoreNoeVideo.DomianServices
 {
     public class UserDomainService : IUserDomainService
     {
-        public UserDomainService(IDbContextFace<User> Server,
-            IHttpRequestDomainService Http,
-            IConfiguration Configuration)
+        public UserDomainService(IDbContextFace<User> Server,IConfiguration Configuration
+           
+            )
         {
             this.Server = Server;
-            this.Http = Http;
+            this.Http = RelitClass.HttpRequestDomain;
             this.Configuration = Configuration;
         }
         private readonly IConfiguration Configuration;
@@ -29,6 +31,9 @@ namespace JoreNoeVideo.DomianServices
         /// <returns></returns>
         public async Task<User> AddUser(User Model)
         {
+            //查询是否选在
+            if (this.Server.All().Any(d => d.UserId == Model.UserId))
+                return this.Server.All().Single(d => d.UserId == Model.UserId);
             return await this.Server.AddAsync(Model).ConfigureAwait(false);
         }
         /// <summary>
@@ -62,11 +67,14 @@ namespace JoreNoeVideo.DomianServices
         /// <returns></returns>
         public Task<string> Authorization(string Code)
         {
-            var Configuration = this.Configuration.GetSection("MiniProgress");
-            
-            var Response = Http.HttpRequest(Configuration["Url"]+Code);
+            if(string.IsNullOrEmpty(Code))
+                throw new ArgumentNullException(nameof(Code));
 
-            return null;
+            var Configuration = this.Configuration.GetSection("MiniProgress");
+            var Response = Http.HttpRequest(Configuration["Url"]+Code);
+            return Task.Run(()=> {
+                return Response;
+            });
         }
     }
 }

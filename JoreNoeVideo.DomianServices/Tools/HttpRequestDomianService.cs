@@ -4,7 +4,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace JoreNoeVideo.DomainServices.Tools
+namespace JoreNoeVideo.DomainServices
 {
     /// <summary>
     /// 请求

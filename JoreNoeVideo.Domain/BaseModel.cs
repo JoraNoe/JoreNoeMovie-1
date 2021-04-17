@@ -13,10 +13,10 @@ namespace JoreNoeVideo.Domain
             this.CreateTime = DateTime.Now;
 
         }
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         public bool IsDelete { get; set; } = false;
 
-        public DateTime CreateTime { get; set; }
+        public DateTime CreateTime { get; set; } = DateTime.Now;
     }
 }

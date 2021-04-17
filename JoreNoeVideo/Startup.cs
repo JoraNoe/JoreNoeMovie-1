@@ -39,8 +39,6 @@ namespace JoreNoeVideo
             this.AddSwagger(services);
 
 
-            services.AddSingleton<IConfiguration>(Configuration);
-
             //¶¨Ê±
             this.EnableQuartz();
         }
