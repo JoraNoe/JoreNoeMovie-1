@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
-      "projectName": "JoreNoeVideo.Domain",
-      "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
+      "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj",
+      "projectName": "JoreNoeVideo.Abstractions",
+      "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\obj\\",
+      "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
