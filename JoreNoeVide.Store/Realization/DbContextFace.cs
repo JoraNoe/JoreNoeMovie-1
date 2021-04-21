@@ -168,5 +168,18 @@ namespace JoreNoeVideo.Store
             this.Db.SaveChanges();
             return Re;
         }
+        /// <summary>
+        /// 自定义查询数据
+        /// </summary>
+        /// <param name="Func"></param>
+        /// <returns></returns>
+        public async Task<IList<T>> FindAsync(Func<T, bool> Func)
+        {
+            var Result = this.Db.Set<T>().Where(Func);
+            return await Task.Run(() =>
+            {
+                return Result.ToList();
+            });
+        }
     }
 }

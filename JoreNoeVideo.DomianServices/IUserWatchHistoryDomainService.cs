@@ -1,4 +1,5 @@
-﻿using JoreNoeVideo.Domain.Models;
+﻿using JoreNoeVideo.Abstractions.Models;
+using JoreNoeVideo.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -44,5 +45,12 @@ namespace JoreNoeVideo.DomainServices
         /// <param name="PageSize"></param>
         /// <returns></returns>
         Task<IList<UserWatchHistory>> Pagin(int PageNum, int PageSize);
+
+        /// <summary>
+        /// 根据用户UseId 查询  观看历史记录
+        /// </summary>
+        /// <param name="UseId"></param>
+        /// <returns></returns>
+        Task<IList<UserWatchHistoryValue>> FindWatchHistoryByUserId(string UseId);
     }
 }

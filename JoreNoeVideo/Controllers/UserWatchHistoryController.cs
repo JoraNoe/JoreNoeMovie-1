@@ -1,4 +1,5 @@
-﻿using JoreNoeVideo.CommonInterFaces;
+﻿using JoreNoeVideo.Abstractions.Models;
+using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.DomainServices;
 using Microsoft.AspNetCore.Http;
@@ -79,6 +80,19 @@ namespace JoreNoeVideo.API.Controllers
             return APIReturnInFo<IList<UserWatchHistory>>.Success(await this.UserWatchHistoryDomainService.AllUserWatchHistory());
         }
 
+
+        /// <summary>
+        /// 查询全部
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        [HttpGet("FindWathcHistoryByUserId/{UserId}")]
+        public async Task<ActionResult<APIReturnInFo<IList<UserWatchHistoryValue>>>> FindWathcHistoryByUserId(string UserId)
+        {
+            return APIReturnInFo<IList<UserWatchHistoryValue>>.Success(await this.UserWatchHistoryDomainService.FindWatchHistoryByUserId(UserId));
+        }
+
+
         /// <summary>
         /// 分页
         /// </summary>
@@ -89,7 +103,7 @@ namespace JoreNoeVideo.API.Controllers
         [HttpGet("Pagin")]
         public async Task<ActionResult<APIReturnInFo<IList<UserWatchHistory>>>> Pagin(int PageNum, int PageSize)
         {
-            return APIReturnInFo<IList<UserWatchHistory>>.Success(await this.UserWatchHistoryDomainService.Pagin(PageNum,PageSize));
+            return APIReturnInFo<IList<UserWatchHistory>>.Success(await this.UserWatchHistoryDomainService.Pagin(PageNum, PageSize));
         }
 
 

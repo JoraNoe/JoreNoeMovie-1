@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "JoreNoeVideo.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/JoreNoeVideo.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JoreNoeVideo.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "JoreNoeVideo.Domain/1.0.0": {
+      "type": "project",
+      "path": "../JoreNoeVideo.Domain/JoreNoeVideo.Domain.csproj",
+      "msbuildProject": "../JoreNoeVideo.Domain/JoreNoeVideo.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "JoreNoeVideo.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Administrator\\.nuget\\packages\\": {}
@@ -34,7 +53,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+              "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

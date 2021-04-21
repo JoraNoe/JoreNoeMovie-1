@@ -11,6 +11,12 @@ namespace JoreNoeVideo.Store
     {
         #region 异步数据
         /// <summary>
+        /// 自定义查询内容
+        /// </summary>
+        /// <param name="Func"></param>
+        /// <returns></returns>
+        Task<IList<T>> FindAsync(Func<T,bool> Func);
+        /// <summary>
         /// 添加
         /// </summary>
         /// <param name="t"></param>
