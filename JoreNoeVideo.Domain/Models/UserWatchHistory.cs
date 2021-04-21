@@ -16,7 +16,7 @@ namespace JoreNoeVideo.Domain.Models
         /// <summary>
         /// 用户Id
         /// </summary>
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
         /// <summary>
         /// 影片Id
         /// </summary>

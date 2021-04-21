@@ -2292,6 +2292,17 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
+      "JoreNoeVideo.Abstractions/1.0.0": {
+        "dependencies": {
+          "JoreNoeVideo.Domain": "1.0.0"
+        },
+        "runtime": {
+          "JoreNoeVideo.Abstractions.dll": {}
+        },
+        "compile": {
+          "JoreNoeVideo.Abstractions.dll": {}
+        }
+      },
       "JoreNoeVideo.Domain/1.0.0": {
         "runtime": {
           "JoreNoeVideo.Domain.dll": {}
@@ -2304,6 +2315,7 @@
         "dependencies": {
           "Autofac": "6.1.0",
           "HtmlAgilityPack": "1.11.24",
+          "JoreNoeVideo.Abstractions": "1.0.0",
           "JoreNoeVideo.Domain": "1.0.0",
           "JoreNoeVideo.Store": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
@@ -5142,6 +5154,11 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "JoreNoeVideo.Abstractions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "JoreNoeVideo.Domain/1.0.0": {
       "type": "project",
