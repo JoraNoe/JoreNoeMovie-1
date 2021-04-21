@@ -16,6 +16,8 @@ using JoreNoeVideo.DomainServices;
 using Quartz;
 using Quartz.Impl;
 using JoreNoeVideo.DomainServices.Tools;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace JoreNoeVideo
 {
@@ -67,12 +69,19 @@ namespace JoreNoeVideo
             }
 
             app.UseRouting();
-
+            app.UseStaticFiles();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            app.UseFileServer(new FileServerOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+              Path.Combine(Directory.GetCurrentDirectory(), "SystemIcon")),
+                RequestPath = "/SystemIcon",
+                EnableDirectoryBrowsing = true
             });
 
             app.UseCors();
