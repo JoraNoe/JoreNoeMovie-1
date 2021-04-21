@@ -11,7 +11,7 @@ namespace JoreNoeVideo.Domain.Models
     public class User:BaseModel
     {
         /// <summary>
-        /// 使用Id  对应 Signature 签名
+        /// 使用Id 微信openid
         /// </summary>
         public string UserId { get; set; }
         /// <summary>
