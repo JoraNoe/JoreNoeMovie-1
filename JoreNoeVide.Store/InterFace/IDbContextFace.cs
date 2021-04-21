@@ -15,7 +15,7 @@ namespace JoreNoeVideo.Store
         /// </summary>
         /// <param name="Func"></param>
         /// <returns></returns>
-        Task<IList<T>> FindAsync(Func<T,bool> Func);
+        Task<IList<T>> FindAsync(Func<T, bool> Func);
         /// <summary>
         /// 添加
         /// </summary>
@@ -66,7 +66,12 @@ namespace JoreNoeVideo.Store
         Task<IList<T>> Page(int PageNum = 0, int PageSize = 10);
         #endregion
         #region 同步 数据
-
+        /// <summary>
+        /// 自定义查询内容
+        /// </summary>
+        /// <param name="Func"></param>
+        /// <returns></returns>
+        List<T> Find(Func<T, bool> Func);
         /// <summary>
         /// 添加同步
         /// </summary>

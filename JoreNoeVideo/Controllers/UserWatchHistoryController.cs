@@ -80,12 +80,11 @@ namespace JoreNoeVideo.API.Controllers
             return APIReturnInFo<IList<UserWatchHistory>>.Success(await this.UserWatchHistoryDomainService.AllUserWatchHistory());
         }
 
-
         /// <summary>
-        /// 查询全部
+        /// 根据用户Id查询观看历史记录
         /// </summary>
+        /// <param name="UserId"></param>
         /// <returns></returns>
-        /// 
         [HttpGet("FindWathcHistoryByUserId/{UserId}")]
         public async Task<ActionResult<APIReturnInFo<IList<UserWatchHistoryValue>>>> FindWathcHistoryByUserId(string UserId)
         {

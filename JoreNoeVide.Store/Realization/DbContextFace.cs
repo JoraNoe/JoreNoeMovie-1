@@ -181,5 +181,15 @@ namespace JoreNoeVideo.Store
                 return Result.ToList();
             });
         }
+        /// <summary>
+        /// 自定义查询内容 同步
+        /// </summary>
+        /// <param name="Func"></param>
+        /// <returns></returns>
+        public List<T> Find(Func<T, bool> Func)
+        {
+            return this.Db.Set<T>().Where(Func).ToList();
+            
+        }
     }
 }

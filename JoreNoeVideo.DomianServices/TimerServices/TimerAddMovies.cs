@@ -44,211 +44,237 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                         });
                     }
                 }
-                //验证是否一致数据  -- 存入 推荐电影
-                DbContextFace<NewestMovie> NewestServer = new DbContextFace<NewestMovie>();
-                var mapList = NewestServer.All();
-                if (mapList == null || mapList.Count == 0)
-                {
-                    NewestServer.AddRange(InsertData.Take(10).ToList());
-                    Message += "旧数据库数据为空 -- 插入成功 -- 推荐 /n";
-                }
-                else
-                {
-                    foreach (var item in mapList)
-                    {
-                        //清空数据
-                        NewestServer.Delete(item.Id);
-                        Message += "数据清楚成功 -- 推荐！/n";
-                    }
-                    //插入数据
-                    NewestServer.AddRange(InsertData.Take(10).ToList());
-                    Message += "数据添加成功 -- 推荐 \n";
-                }
-                //存入 电影
-                DbContextFace<FilmOpera> FilmService = new DbContextFace<FilmOpera>();
-                var FilmOperaList = FilmService.All();
-                List<FilmOpera> FilmOpra = InsertData.Skip(10).Take(20).ToList().Select(d => new FilmOpera
-                {
-                    MovieName = d.MovieName,
-                    MovieDesc = d.MovieDesc,
-                    MovieImgUrl = d.MovieImgUrl,
-                    MovieLink = d.MovieLink,
-                    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
-                }).ToList();
-                if (FilmOperaList == null || FilmOperaList.Count == 0)
-                {
-                    FilmService.AddRange(FilmOpra);
-                    Message += "旧数据库数据为空 -- 插入成功 -- 电影/n";
-                }
-                else
-                {
-                    foreach (var item in FilmOperaList)
-                    {
-                        //清空数据
-                        FilmService.Delete(item.Id);
-                        Message += "数据清楚成功 -- 电影！/n";
-                    }
-                    //插入数据
-                    FilmService.AddRange(FilmOpra);
-                    Message += "数据添加成功 -- 电影 /n";
-                }
+
+
+                #region 注释
+                //////验证是否一致数据  -- 存入 推荐电影
+                ////DbContextFace<NewestMovie> NewestServer = new DbContextFace<NewestMovie>();
+                ////var mapList = NewestServer.All();
+                ////if (mapList == null || mapList.Count == 0)
+                ////{
+                ////    NewestServer.AddRange(InsertData.Take(10).ToList());
+                ////    Message += "旧数据库数据为空 -- 插入成功 -- 推荐 /n";
+                ////}
+                ////else
+                ////{
+                ////    foreach (var item in mapList)
+                ////    {
+                ////        //清空数据
+                ////        NewestServer.Delete(item.Id);
+                ////        Message += "数据清楚成功 -- 推荐！/n";
+                ////    }
+                ////    //插入数据
+                ////    NewestServer.AddRange(InsertData.Take(10).ToList());
+                ////    Message += "数据添加成功 -- 推荐 \n";
+                ////}
+                //////存入 电影
+                ////DbContextFace<FilmOpera> FilmService = new DbContextFace<FilmOpera>();
+                ////var FilmOperaList = FilmService.All();
+                ////List<FilmOpera> FilmOpra = InsertData.Skip(10).Take(20).ToList().Select(d => new FilmOpera
+                ////{
+                ////    MovieName = d.MovieName,
+                ////    MovieDesc = d.MovieDesc,
+                ////    MovieImgUrl = d.MovieImgUrl,
+                ////    MovieLink = d.MovieLink,
+                ////    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
+                ////}).ToList();
+                ////if (FilmOperaList == null || FilmOperaList.Count == 0)
+                ////{
+                ////    FilmService.AddRange(FilmOpra);
+                ////    Message += "旧数据库数据为空 -- 插入成功 -- 电影/n";
+                ////}
+                ////else
+                ////{
+                ////    foreach (var item in FilmOperaList)
+                ////    {
+                ////        //清空数据
+                ////        FilmService.Delete(item.Id);
+                ////        Message += "数据清楚成功 -- 电影！/n";
+                ////    }
+                ////    //插入数据
+                ////    FilmService.AddRange(FilmOpra);
+                ////    Message += "数据添加成功 -- 电影 /n";
+                ////}
 
 
 
-                // 存入 大陆剧
-                DbContextFace<MainlandOpera> MainLandServer = new DbContextFace<MainlandOpera>();
-                var MainLandList = MainLandServer.All();
-                List<MainlandOpera> MainLandOpera = InsertData.Skip(20).Take(30).ToList().Select(d => new MainlandOpera
-                {
-                    MovieName = d.MovieName,
-                    MovieDesc = d.MovieDesc,
-                    MovieImgUrl = d.MovieImgUrl,
-                    MovieLink = d.MovieLink,
-                    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
-                }).ToList();
-                if (MainLandList == null || MainLandList.Count == 0)
-                {
-                    MainLandServer.AddRange(MainLandOpera);
-                    Message += "旧数据库数据为空 -- 插入成功 -- 大陆剧/n";
-                }
-                else
-                {
-                    foreach (var item in MainLandList)
-                    {
-                        //清空数据
-                        MainLandServer.Delete(item.Id);
-                        Message += "数据清楚成功 -- 大陆剧！/n";
-                    }
-                    //插入数据
-                    MainLandServer.AddRange(MainLandOpera);
-                    Message += "数据添加成功 -- 大陆剧 /n";
-                }
+                ////// 存入 大陆剧
+                ////DbContextFace<MainlandOpera> MainLandServer = new DbContextFace<MainlandOpera>();
+                ////var MainLandList = MainLandServer.All();
+                ////List<MainlandOpera> MainLandOpera = InsertData.Skip(20).Take(30).ToList().Select(d => new MainlandOpera
+                ////{
+                ////    MovieName = d.MovieName,
+                ////    MovieDesc = d.MovieDesc,
+                ////    MovieImgUrl = d.MovieImgUrl,
+                ////    MovieLink = d.MovieLink,
+                ////    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
+                ////}).ToList();
+                ////if (MainLandList == null || MainLandList.Count == 0)
+                ////{
+                ////    MainLandServer.AddRange(MainLandOpera);
+                ////    Message += "旧数据库数据为空 -- 插入成功 -- 大陆剧/n";
+                ////}
+                ////else
+                ////{
+                ////    foreach (var item in MainLandList)
+                ////    {
+                ////        //清空数据
+                ////        MainLandServer.Delete(item.Id);
+                ////        Message += "数据清楚成功 -- 大陆剧！/n";
+                ////    }
+                ////    //插入数据
+                ////    MainLandServer.AddRange(MainLandOpera);
+                ////    Message += "数据添加成功 -- 大陆剧 /n";
+                ////}
 
 
-                // 存入 港剧
-                DbContextFace<HongKongOpera> HongKongService = new DbContextFace<HongKongOpera>();
-                var HongKongList = HongKongService.All();
-                List<HongKongOpera> HongKongOpera = InsertData.Skip(30).Take(40).ToList().Select(d => new HongKongOpera
-                {
-                    MovieName = d.MovieName,
-                    MovieDesc = d.MovieDesc,
-                    MovieImgUrl = d.MovieImgUrl,
-                    MovieLink = d.MovieLink,
-                    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
-                }).ToList();
-                if (HongKongList == null || HongKongList.Count == 0)
-                {
-                    HongKongService.AddRange(HongKongOpera);
-                    Message += "旧数据库数据为空 -- 插入成功 -- 港剧/n";
-                }
-                else
-                {
-                    foreach (var item in HongKongList)
-                    {
-                        //清空数据
-                        HongKongService.Delete(item.Id);
-                        Message += "数据清楚成功 -- 港剧！/n";
-                    }
-                    //插入数据
-                    HongKongService.AddRange(HongKongOpera);
-                    Message += "数据添加成功 -- 港剧 /n";
-                }
-
-
-
-                // 存入 韩剧
-                DbContextFace<KoreanDramaOpera> KoreanDramaService = new DbContextFace<KoreanDramaOpera>();
-                var KoreanDramaList = KoreanDramaService.All();
-                List<KoreanDramaOpera> KoreanDramaOpera = InsertData.Skip(40).Take(50).ToList().Select(d => new KoreanDramaOpera
-                {
-                    MovieName = d.MovieName,
-                    MovieDesc = d.MovieDesc,
-                    MovieImgUrl = d.MovieImgUrl,
-                    MovieLink = d.MovieLink,
-                    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
-                }).ToList();
-                if (KoreanDramaList == null || KoreanDramaList.Count == 0)
-                {
-                    KoreanDramaService.AddRange(KoreanDramaOpera);
-                    Message += "旧数据库数据为空 -- 插入成功 -- 韩剧/n";
-                }
-                else
-                {
-                    foreach (var item in HongKongList)
-                    {
-                        //清空数据
-                        KoreanDramaService.Delete(item.Id);
-                        Message += "数据清楚成功 -- 韩剧！/n";
-                    }
-                    //插入数据
-                    KoreanDramaService.AddRange(KoreanDramaOpera);
-                    Message += "数据添加成功 -- 韩剧 /n";
-                }
+                ////// 存入 港剧
+                ////DbContextFace<HongKongOpera> HongKongService = new DbContextFace<HongKongOpera>();
+                ////var HongKongList = HongKongService.All();
+                ////List<HongKongOpera> HongKongOpera = InsertData.Skip(30).Take(40).ToList().Select(d => new HongKongOpera
+                ////{
+                ////    MovieName = d.MovieName,
+                ////    MovieDesc = d.MovieDesc,
+                ////    MovieImgUrl = d.MovieImgUrl,
+                ////    MovieLink = d.MovieLink,
+                ////    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
+                ////}).ToList();
+                ////if (HongKongList == null || HongKongList.Count == 0)
+                ////{
+                ////    HongKongService.AddRange(HongKongOpera);
+                ////    Message += "旧数据库数据为空 -- 插入成功 -- 港剧/n";
+                ////}
+                ////else
+                ////{
+                ////    foreach (var item in HongKongList)
+                ////    {
+                ////        //清空数据
+                ////        HongKongService.Delete(item.Id);
+                ////        Message += "数据清楚成功 -- 港剧！/n";
+                ////    }
+                ////    //插入数据
+                ////    HongKongService.AddRange(HongKongOpera);
+                ////    Message += "数据添加成功 -- 港剧 /n";
+                ////}
 
 
 
-                // 存入 美剧
-                DbContextFace<AmericanOpera> AmericanOperaService = new DbContextFace<AmericanOpera>();
-                var AmericanOperaList = AmericanOperaService.All();
-                List<AmericanOpera> AmericanOpera = InsertData.Skip(50).Take(60).ToList().Select(d => new AmericanOpera
-                {
-                    MovieName = d.MovieName,
-                    MovieDesc = d.MovieDesc,
-                    MovieImgUrl = d.MovieImgUrl,
-                    MovieLink = d.MovieLink,
-                    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
-                }).ToList();
-                if (AmericanOperaList == null || AmericanOperaList.Count == 0)
-                {
-                    AmericanOperaService.AddRange(AmericanOpera);
-                    Message += "旧数据库数据为空 -- 插入成功 -- 美剧/n";
-                }
-                else
-                {
-                    foreach (var item in AmericanOperaList)
-                    {
-                        //清空数据
-                        AmericanOperaService.Delete(item.Id);
-                        Message += "数据清楚成功 -- 美剧！/n";
-                    }
-                    //插入数据
-                    AmericanOperaService.AddRange(AmericanOpera);
-                    Message += "数据添加成功 -- 美剧 /n";
-                }
-
-
-                // 存入 动漫
-                DbContextFace<AnimationOpera> AnimationOperaService = new DbContextFace<AnimationOpera>();
-                var AnimationOperaList = AnimationOperaService.All();
-                List<AnimationOpera> AnimationOpera = InsertData.Skip(60).Take(70).ToList().Select(d => new AnimationOpera
-                {
-                    MovieName = d.MovieName,
-                    MovieDesc = d.MovieDesc,
-                    MovieImgUrl = d.MovieImgUrl,
-                    MovieLink = d.MovieLink,
-                    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
-                }).ToList();
-                if (AnimationOperaList == null || AnimationOperaList.Count == 0)
-                {
-                    AnimationOperaService.AddRange(AnimationOpera);
-                    Message += "旧数据库数据为空 -- 插入成功 -- 动漫/n";
-                }
-                else
-                {
-                    foreach (var item in AnimationOperaList)
-                    {
-                        //清空数据
-                        AnimationOperaService.Delete(item.Id);
-                        Message += "数据清楚成功 -- 动漫！/n";
-                    }
-                    //插入数据
-                    AnimationOperaService.AddRange(AnimationOpera);
-                    Message += "数据添加成功 -- 动漫 /n";
-                }
+                ////// 存入 韩剧
+                ////DbContextFace<KoreanDramaOpera> KoreanDramaService = new DbContextFace<KoreanDramaOpera>();
+                ////var KoreanDramaList = KoreanDramaService.All();
+                ////List<KoreanDramaOpera> KoreanDramaOpera = InsertData.Skip(40).Take(50).ToList().Select(d => new KoreanDramaOpera
+                ////{
+                ////    MovieName = d.MovieName,
+                ////    MovieDesc = d.MovieDesc,
+                ////    MovieImgUrl = d.MovieImgUrl,
+                ////    MovieLink = d.MovieLink,
+                ////    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
+                ////}).ToList();
+                ////if (KoreanDramaList == null || KoreanDramaList.Count == 0)
+                ////{
+                ////    KoreanDramaService.AddRange(KoreanDramaOpera);
+                ////    Message += "旧数据库数据为空 -- 插入成功 -- 韩剧/n";
+                ////}
+                ////else
+                ////{
+                ////    foreach (var item in HongKongList)
+                ////    {
+                ////        //清空数据
+                ////        KoreanDramaService.Delete(item.Id);
+                ////        Message += "数据清楚成功 -- 韩剧！/n";
+                ////    }
+                ////    //插入数据
+                ////    KoreanDramaService.AddRange(KoreanDramaOpera);
+                ////    Message += "数据添加成功 -- 韩剧 /n";
+                ////}
 
 
 
+                ////// 存入 美剧
+                ////DbContextFace<AmericanOpera> AmericanOperaService = new DbContextFace<AmericanOpera>();
+                ////var AmericanOperaList = AmericanOperaService.All();
+                ////List<AmericanOpera> AmericanOpera = InsertData.Skip(50).Take(60).ToList().Select(d => new AmericanOpera
+                ////{
+                ////    MovieName = d.MovieName,
+                ////    MovieDesc = d.MovieDesc,
+                ////    MovieImgUrl = d.MovieImgUrl,
+                ////    MovieLink = d.MovieLink,
+                ////    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
+                ////}).ToList();
+                ////if (AmericanOperaList == null || AmericanOperaList.Count == 0)
+                ////{
+                ////    AmericanOperaService.AddRange(AmericanOpera);
+                ////    Message += "旧数据库数据为空 -- 插入成功 -- 美剧/n";
+                ////}
+                ////else
+                ////{
+                ////    foreach (var item in AmericanOperaList)
+                ////    {
+                ////        //清空数据
+                ////        AmericanOperaService.Delete(item.Id);
+                ////        Message += "数据清楚成功 -- 美剧！/n";
+                ////    }
+                ////    //插入数据
+                ////    AmericanOperaService.AddRange(AmericanOpera);
+                ////    Message += "数据添加成功 -- 美剧 /n";
+                ////}
 
+
+                ////// 存入 动漫
+                ////DbContextFace<AnimationOpera> AnimationOperaService = new DbContextFace<AnimationOpera>();
+                ////var AnimationOperaList = AnimationOperaService.All();
+                ////List<AnimationOpera> AnimationOpera = InsertData.Skip(60).Take(70).ToList().Select(d => new AnimationOpera
+                ////{
+                ////    MovieName = d.MovieName,
+                ////    MovieDesc = d.MovieDesc,
+                ////    MovieImgUrl = d.MovieImgUrl,
+                ////    MovieLink = d.MovieLink,
+                ////    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
+                ////}).ToList();
+                ////if (AnimationOperaList == null || AnimationOperaList.Count == 0)
+                ////{
+                ////    AnimationOperaService.AddRange(AnimationOpera);
+                ////    Message += "旧数据库数据为空 -- 插入成功 -- 动漫/n";
+                ////}
+                ////else
+                ////{
+                ////    foreach (var item in AnimationOperaList)
+                ////    {
+                ////        //清空数据
+                ////        AnimationOperaService.Delete(item.Id);
+                ////        Message += "数据清楚成功 -- 动漫！/n";
+                ////    }
+                ////    //插入数据
+                ////    AnimationOperaService.AddRange(AnimationOpera);
+                ////    Message += "数据添加成功 -- 动漫 /n";
+                ////}
+
+                #endregion
+
+
+                // 将数据全部导入 Movie
+                DbContextFace<Movie> MovieService = new DbContextFace<Movie>();
+                //处理名称
+                var HttpWebRequestArray = InsertData.Select(d => d.MovieName + ConstVariables.CONST_INDEXNAME).ToArray();
+
+                var FindMovieService = MovieService.Find(d=>HttpWebRequestArray.Contains(d.MovieName + ConstVariables.CONST_INDEXNAME));
+
+
+                //var Insert = InsertData.ToList().Select(d => new Movie
+                //{
+                //    MovieName = d.MovieName,
+                //    MovieDesc = d.MovieDesc,
+                //    MovieImgUrl = d.MovieImgUrl,
+                //    MovieLink = d.MovieLink,
+                //    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
+                //}).ToList();
+
+                //if (FindMovieService == null || FindMovieService.Count == 0)
+                //{
+                //    MovieService.AddRange(HttpWebRequestArray);
+                //}
+                //HttpWebRequestArray
+               
 
 
                 //日志写入
