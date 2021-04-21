@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JoreNoeVide.Store\JoreNoeVideo.Store.csproj" />
+    <ProjectReference Include="..\JoreNoeVideo.Store\JoreNoeVideo.Store.csproj" />
     <ProjectReference Include="..\JoreNoeVideo.Abstractions\JoreNoeVideo.Abstractions.csproj" />
     <ProjectReference Include="..\JoreNoeVideo.Domain\JoreNoeVideo.Domain.csproj" />
   </ItemGroup>
