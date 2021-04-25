@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "JoreNoeVideo.Abstractions/1.0.0": {
+        "dependencies": {
+          "JoreNoeVideo.Domain": "1.0.0"
+        },
+        "runtime": {
+          "JoreNoeVideo.Abstractions.dll": {}
+        }
+      },
+      "JoreNoeVideo.Domain/1.0.0": {
+        "runtime": {
+          "JoreNoeVideo.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JoreNoeVideo.Abstractions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JoreNoeVideo.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

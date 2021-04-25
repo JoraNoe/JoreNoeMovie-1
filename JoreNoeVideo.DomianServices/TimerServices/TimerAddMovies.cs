@@ -1,7 +1,6 @@
 ﻿using HtmlAgilityPack;
 using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.DomainServices.Tools;
-using JoreNoeVideo.Store;
 using Quartz;
 using System;
 using System.Collections.Generic;
@@ -9,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using JoreNoeVideo.Domain;
+using JoreNoeVideo.Store;
 
 namespace JoreNoeVideo.DomainServices.TimerServices
 {
@@ -258,6 +258,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 var HttpWebRequestArray = InsertData.Select(d => d.MovieName + ConstVariables.CONST_INDEXNAME).ToArray();
 
                 var FindMovieService = MovieService.Find(d=>HttpWebRequestArray.Contains(d.MovieName + ConstVariables.CONST_INDEXNAME));
+
 
 
                 //var Insert = InsertData.ToList().Select(d => new Movie

@@ -686,10 +686,10 @@
         </member>
         <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.FindWathcHistoryByUserId(System.String)">
             <summary>
-            查询全部
+            根据用户Id查询观看历史记录
             </summary>
+            <param name="UserId"></param>
             <returns></returns>
-            
         </member>
         <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.Pagin(System.Int32,System.Int32)">
             <summary>

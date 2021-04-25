@@ -8,7 +8,7 @@ using System.IO;
 using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.Domain;
 
-namespace JoreNoeVide.Store
+namespace JoreNoeVideo.Store
 {
     public class JoreNoeVideoDbContext:DbContext
     {

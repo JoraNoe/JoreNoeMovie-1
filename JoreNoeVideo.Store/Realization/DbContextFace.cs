@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using JoreNoeVide.Store;
+using JoreNoeVideo.Store;
 using System.Linq;
 using JoreNoeVideo.Domain;
 
