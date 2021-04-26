@@ -43,12 +43,12 @@ namespace JoreNoeVideo
                 IScheduler scheduler;
                 ISchedulerFactory factory = new StdSchedulerFactory();
                 scheduler = factory.GetScheduler().Result;
-                //scheduler.Start();
+                scheduler.Start();
 
                 //创建触发器(也叫时间策略)
                 var trigger = TriggerBuilder.Create()
                                 //.WithSchedule(CronScheduleBuilder.DailyAtHourAndMinute(2, 30))
-                                .WithSimpleSchedule(x => x.WithIntervalInSeconds(30).RepeatForever())
+                                .WithSimpleSchedule(x => x.WithIntervalInSeconds(60).RepeatForever())
                                 .Build();
                 //创建作业实例
                 //Jobs即我们需要执行的作业

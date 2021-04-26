@@ -29,18 +29,59 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 HtmlDocument html = new HtmlDocument();
                 html.LoadHtml(DocumentHtml);
                 var DataNode = html.DocumentNode.SelectNodes("//div[@class='box-model-cont fn-clear']");
-                var InsertData = new List<NewestMovie>();
+                var InsertData = new List<Movie>();
+                //读取链接 
                 foreach (var item in DataNode)
                 {
                     foreach (var itemSon in item.ChildNodes)
                     {
-                        InsertData.Add(new NewestMovie
+                        InsertData.Add(new Movie
                         {
-                            MovieName = itemSon.ChildNodes[1].ChildNodes[0].InnerText,
+                            MovieName = itemSon.ChildNodes[1].ChildNodes[0].InnerText + ConstVariables.CONST_INDEXNAME,
                             MovieDesc = itemSon.ChildNodes[1].ChildNodes[1].InnerText,
                             MovieImgUrl = itemSon.ChildNodes[0].ChildNodes[0].Attributes["src"].Value.ToString(),
                             MovieLink = Url + itemSon.Attributes["href"].Value.ToString(),
                             MovieTitle = this.JudgeMovieDefinition(itemSon.ChildNodes[0].ChildNodes[2].InnerText.ToString())
+                        });
+                    }
+                }
+
+                //读取详情内容
+                for (int i = 0; i < InsertData.Count; i++)
+                {
+                    var TempInsert = InsertData[i];
+
+                    var DesctionHTML = HttpRequestDomain.HttpRequest(TempInsert.MovieLink);
+                    HtmlDocument DectionDocument = new HtmlDocument();
+                    DectionDocument.LoadHtml(DesctionHTML);
+                    //拆解信息
+                    var DesctionNode = DectionDocument.DocumentNode.SelectSingleNode("//div[@class='fd-box']");
+                    var Index = DesctionNode.ChildNodes[4].ChildNodes[2].InnerText.IndexOf("：") + 1;
+                    //读取信息
+                    InsertData[i].MovieDesction = new MovieDesc
+                    {
+                        Director = DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.NextSibling == null
+                        ? DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.InnerText:
+                        DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.NextSibling.InnerText,
+                        Describe = DesctionNode.ChildNodes[6].ChildNodes[0].FirstChild.InnerText,
+                        Address = DesctionNode.ChildNodes[4].ChildNodes[0].FirstChild.NextSibling.InnerText,
+                        Year = DesctionNode.ChildNodes[4].ChildNodes[1].FirstChild.NextSibling.InnerText,
+                        UpdateTime = DateTime.Parse(DesctionNode.ChildNodes[4].ChildNodes[2].InnerText.Substring(
+                          Index, DesctionNode.ChildNodes[4].ChildNodes[2].InnerText.Length - Index) ?? ""),
+                    };
+
+                    //读取主演
+                    InsertData[i].MovieDesction.MainDirector = DesctionNode.ChildNodes[3].FirstChild.InnerText;
+
+                    //读取影片集数 
+                    var Collections = DectionDocument.DocumentNode.SelectNodes("//div[@class='lv-bf-list']//a");
+                    InsertData[i].MovieDesction.MovieCollections = new List<MovieCollections>();
+                    foreach (var item in Collections)
+                    {
+                        InsertData[i].MovieDesction.MovieCollections.Add(new MovieCollections
+                        {
+                            ColletionName = this.JudgeMovieDefinition(item.Attributes["title"].Value.ToString()),
+                            Link = Url + item.Attributes["href"].Value.ToString()
                         });
                     }
                 }
@@ -257,10 +298,13 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 //处理名称
                 var HttpWebRequestArray = InsertData.Select(d => d.MovieName + ConstVariables.CONST_INDEXNAME).ToArray();
 
-                var FindMovieService = MovieService.Find(d=>HttpWebRequestArray.Contains(d.MovieName + ConstVariables.CONST_INDEXNAME));
+                var FindMovieService = MovieService.Find(d => HttpWebRequestArray.Contains(d.MovieName + ConstVariables.CONST_INDEXNAME));
 
-
-
+                if (FindMovieService == null || FindMovieService.Count == 0)
+                {
+                    //插入数据
+                     MovieService.AddRange(InsertData);
+                }
                 //var Insert = InsertData.ToList().Select(d => new Movie
                 //{
                 //    MovieName = d.MovieName,
@@ -275,7 +319,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 //    MovieService.AddRange(HttpWebRequestArray);
                 //}
                 //HttpWebRequestArray
-               
+
 
 
                 //日志写入

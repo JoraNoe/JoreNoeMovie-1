@@ -25,7 +25,7 @@ namespace JoreNoeVideo.Domain.Models
         /// <summary>
         /// 详情
         /// </summary>
-        public MovieDesc MovieDescqe { get; set; }
+        public MovieDesc MovieDesction { get; set; }
 
         /// <summary>
         /// 影视标题 可空
