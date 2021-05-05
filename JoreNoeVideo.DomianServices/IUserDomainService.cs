@@ -18,5 +18,11 @@ namespace JoreNoeVideo.DomianServices
         /// <param name="Code"></param>
         /// <returns></returns>
         Task<string> Authorization(string Code);
+        /// <summary>
+        /// 根据用户OpenId查询数据
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        Task<User> FindUserByUserOpenId(string Id);
     }
 }

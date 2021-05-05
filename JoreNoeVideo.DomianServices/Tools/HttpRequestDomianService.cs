@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JoreNoeVideo.DomainServices.Tools;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -35,14 +36,14 @@ namespace JoreNoeVideo.DomainServices
                 Reader = new StreamReader(_Stream, Encoding.UTF8);
                 HTML = Reader.ReadToEnd();
                 //Request.Abort();
-                Response.Close();
-                _Stream.Close();
-                Reader.Close();
-                return HTML;
+                //Response.Close();
+                //_Stream.Close();
+                //Reader.Close();
+               
             }
             catch (Exception ex)
             {
-                throw ex;
+                LogStreamWrite.WriteLineLog("HttpRequest请求错误：" + ex.Message);
             }
             finally
             {
@@ -55,6 +56,7 @@ namespace JoreNoeVideo.DomainServices
                 if (Reader != null)
                     Reader.Close();
             }
+            return HTML;
         }
     }
 }

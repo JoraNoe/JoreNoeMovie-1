@@ -32,7 +32,7 @@ namespace JoreNoeVideo
 
 
         public void ConfigureServices(IServiceCollection services)
-        {
+        { 
             services.AddControllers();
             //‘ –ÌøÁ”Ú
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);

@@ -13,7 +13,7 @@ using JoreNoeVideo.Store;
 namespace JoreNoeVideo.DomainServices.TimerServices
 {
     /// <summary>
-    /// 最新影视 定时
+    /// 最新影视 定时 爬取网站数据
     /// </summary>
     public class TimerAddMovies : IJob
     {
@@ -24,7 +24,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 var HttpRequestDomain = RelitClass.HttpRequestDomain;
                 var jobData = context.JobDetail.JobDataMap;//获取Job中的参数
                 string Url = jobData.GetString("Url");
-                string Message = "";
+                string Message = "开始请求数据";
                 var DocumentHtml = HttpRequestDomain.HttpRequest(Url);
                 HtmlDocument html = new HtmlDocument();
                 html.LoadHtml(DocumentHtml);
@@ -61,7 +61,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                     InsertData[i].MovieDesction = new MovieDesc
                     {
                         Director = DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.NextSibling == null
-                        ? DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.InnerText:
+                        ? DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.InnerText :
                         DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.NextSibling.InnerText,
                         Describe = DesctionNode.ChildNodes[6].ChildNodes[0].FirstChild.InnerText,
                         Address = DesctionNode.ChildNodes[4].ChildNodes[0].FirstChild.NextSibling.InnerText,
@@ -296,31 +296,26 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 // 将数据全部导入 Movie
                 DbContextFace<Movie> MovieService = new DbContextFace<Movie>();
                 //处理名称
-                var HttpWebRequestArray = InsertData.Select(d => d.MovieName + ConstVariables.CONST_INDEXNAME).ToArray();
+                var HttpWebRequestArray = InsertData.Select(d => d.MovieName).ToArray();
 
-                var FindMovieService = MovieService.Find(d => HttpWebRequestArray.Contains(d.MovieName + ConstVariables.CONST_INDEXNAME));
+                var FindMovieService = MovieService.Find(d => HttpWebRequestArray.Contains(d.MovieName));
 
                 if (FindMovieService == null || FindMovieService.Count == 0)
                 {
                     //插入数据
-                     MovieService.AddRange(InsertData);
+                    MovieService.AddRange(InsertData);
+                    Message += "\n数据库数据为空，添加数据成功！";
+                    LogStreamWrite.WriteLineLog(Message);
                 }
-                //var Insert = InsertData.ToList().Select(d => new Movie
-                //{
-                //    MovieName = d.MovieName,
-                //    MovieDesc = d.MovieDesc,
-                //    MovieImgUrl = d.MovieImgUrl,
-                //    MovieLink = d.MovieLink,
-                //    MovieTitle = this.JudgeMovieDefinition(d.MovieTitle)
-                //}).ToList();
-
-                //if (FindMovieService == null || FindMovieService.Count == 0)
-                //{
-                //    MovieService.AddRange(HttpWebRequestArray);
-                //}
-                //HttpWebRequestArray
-
-
+                else
+                {
+                    //筛选不重复数据
+                    var DisctinDataMovieList = InsertData.Where(d => !FindMovieService.
+                    Select(d => d.MovieName).ToArray().Contains(d.MovieName)).ToList();
+                    //添加数据
+                    MovieService.AddRange(DisctinDataMovieList);
+                    Message += "\n重新添加数据成功！";
+                }
 
                 //日志写入
                 LogStreamWrite.WriteLineLog(Message);

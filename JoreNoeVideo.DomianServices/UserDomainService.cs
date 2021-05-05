@@ -50,12 +50,20 @@ namespace JoreNoeVideo.DomianServices
         {
             return await this.Server.EditAsync(Model).ConfigureAwait(false);
         }
-
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public async Task<User> RemoveUser(Guid Id)
         {
             return await this.Server.DeleteAsync(Id).ConfigureAwait(false);
         }
-
+        /// <summary>
+        /// 查询单条数据
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public async Task<User> SingleUser(Guid Id)
         {
             return await this.Server.GetSingle(Id).ConfigureAwait(false);
@@ -75,6 +83,15 @@ namespace JoreNoeVideo.DomianServices
             return Task.Run(()=> {
                 return Response;
             });
+        }
+
+        public async Task<User> FindUserByUserOpenId(string Id)
+        {
+            if (string.IsNullOrEmpty(Id))
+                throw new ArgumentNullException(nameof(Id));
+
+            var Result = await this.Server.FindAsync(d=>d.UserId == Id);
+            return Result.First();
         }
     }
 }
