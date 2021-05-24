@@ -10,5 +10,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
         /// 使用内容 -- Name
         /// </summary>
         public static string CONST_INDEXNAME { get; set; } = "--INDEXMOVIE";
+
+        public static string CONST_INDEX => "INDEXMOVIE";
     }
 }

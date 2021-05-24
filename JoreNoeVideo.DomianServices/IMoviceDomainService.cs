@@ -36,5 +36,11 @@ namespace JoreNoeVideo.DomainServices
         /// <param name="MovieId"></param>
         /// <returns></returns>
         Task<IList<Movie>> FindByMovieIdsMovie(Guid[] MovieIds);
+
+        /// <summary>
+        /// 获取首页视频信息
+        /// </summary>
+        /// <returns></returns>
+        Task<IList<Movie>> GetIndexMovie();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using JoreNoeVideo.Domain.Models;
+using JoreNoeVideo.DomainServices.TimerServices;
 using JoreNoeVideo.Store;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<IList<Movie>> Pagin(int PageNum, int PageSize)
         {
-           return await this.Server.Page(PageNum,PageSize).ConfigureAwait(false);
+            return await this.Server.Page(PageNum, PageSize).ConfigureAwait(false);
         }
         /// <summary>
         /// 移除
@@ -77,6 +78,21 @@ namespace JoreNoeVideo.DomainServices
         {
             return await this.Server.FindAsync(d => MovieIds.ToString().Contains(d.Id.ToString()));
 
+        }
+        /// <summary>
+        /// 获取首页视频
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IList<Movie>> GetIndexMovie()
+        {
+            //筛选数据 
+            var Result = await this.Server.FindAsync(d => d.MovieName.Contains(ConstVariables.CONST_INDEXNAME));
+            for (int i = 0; i < Result.Count; i++)
+            {
+                var temp = Result[i].MovieName;
+                Result[i].MovieName = Result[i].MovieName.Substring(0, temp.IndexOf('-'));
+            }
+            return Result;
         }
     }
 }

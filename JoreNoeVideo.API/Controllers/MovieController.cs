@@ -32,6 +32,15 @@ namespace JoreNoeVideo.API.Controllers
         {
             return APIReturnInFo<Movie>.Success(await this.MovieDomainservice.AddMovie(Model));
         }
-       
+        /// <summary>
+        /// 查询 index 视频
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("")]
+        public async Task<ActionResult<APIReturnInFo<IList<Movie>>>> Movie()
+        {
+            return APIReturnInFo<IList<Movie>>.Success(await this.MovieDomainservice.GetIndexMovie());
+        }
+
     }
 }

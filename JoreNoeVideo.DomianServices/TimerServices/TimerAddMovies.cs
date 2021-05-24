@@ -19,6 +19,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
     {
         public Task Execute(IJobExecutionContext context)
         {
+            Console.WriteLine(context.ToString());
             return Task.Run(() =>
             {
                 var HttpRequestDomain = RelitClass.HttpRequestDomain;

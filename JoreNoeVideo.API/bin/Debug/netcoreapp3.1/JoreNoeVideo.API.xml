@@ -10,11 +10,6 @@
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="T:JoreNoeVideo.API.CommonInterFaces.ConstantsKey">
-            <summary>
-            常量定义 影片 清晰度
-            </summary>
-        </member>
         <member name="M:JoreNoeVideo.API.Controllers.AmericanOperaController.CreateAmericanOpera(JoreNoeVideo.Domain.Models.AmericanOpera)">
             <summary>
             新增
@@ -476,6 +471,12 @@
             <param name="Model"></param>
             <returns></returns>
         </member>
+        <member name="M:JoreNoeVideo.API.Controllers.MovieController.Movie">
+            <summary>
+            查询 index 视频
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:JoreNoeVideo.API.Controllers.MovieDescServiceController.AddMovieDesc(JoreNoeVideo.Domain.Models.MovieDesc)">
             <summary>
             新建
@@ -699,6 +700,12 @@
             <param name="PageSize"></param>
             <returns></returns>
             
+        </member>
+        <member name="M:JoreNoeVideo.API.Filter.UserAuthentication.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="context"></param>
         </member>
         <member name="T:JoreNoeVideo.Controllers.UserController">
             <summary>
