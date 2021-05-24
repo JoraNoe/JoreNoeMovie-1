@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JoreNoeVideo.DomainServices.Tools
+namespace JoreNoeVideo.DomainServices
 {
     public interface IHttpRequestDomainService
     {

@@ -1531,6 +1531,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "JoreNoeVideo.Abstractions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "JoreNoeVideo.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/JoreNoeVideo.Abstractions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JoreNoeVideo.Abstractions.dll": {}
+        }
+      },
       "JoreNoeVideo.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -2361,6 +2374,7 @@
       "path": "runtime.native.system/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -2374,6 +2388,7 @@
       "path": "system.collections/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2441,6 +2456,7 @@
       "path": "system.collections.concurrent/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2534,6 +2550,7 @@
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2572,6 +2589,7 @@
       "path": "system.collections.specialized/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2610,6 +2628,7 @@
       "path": "system.componentmodel/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2758,6 +2777,7 @@
       "path": "system.componentmodel.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2796,6 +2816,7 @@
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2871,6 +2892,7 @@
       "path": "system.diagnostics.debug/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2966,6 +2988,7 @@
       "path": "system.diagnostics.tools/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3022,6 +3045,7 @@
       "path": "system.diagnostics.tracing/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3150,6 +3174,7 @@
       "path": "system.dynamic.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3220,6 +3245,7 @@
       "path": "system.globalization/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3287,6 +3313,7 @@
       "path": "system.globalization.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3348,6 +3375,7 @@
       "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3428,6 +3456,7 @@
       "path": "system.io.filesystem/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3465,6 +3494,7 @@
       "path": "system.io.filesystem.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3503,6 +3533,7 @@
       "path": "system.linq/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3574,6 +3605,7 @@
       "path": "system.linq.expressions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3657,6 +3689,7 @@
       "path": "system.net.nameresolution/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3698,6 +3731,7 @@
       "path": "system.net.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3776,6 +3810,7 @@
       "path": "system.objectmodel/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3845,6 +3880,7 @@
       "path": "system.private.datacontractserialization/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.3/System.Private.DataContractSerialization.dll",
@@ -3874,6 +3910,7 @@
       "path": "system.reflection/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4080,6 +4117,7 @@
       "path": "system.reflection.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4136,6 +4174,7 @@
       "path": "system.reflection.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4192,6 +4231,7 @@
       "path": "system.reflection.typeextensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4245,6 +4285,7 @@
       "path": "system.resources.resourcemanager/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4301,6 +4342,7 @@
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4428,6 +4470,7 @@
       "path": "system.runtime.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4508,6 +4551,7 @@
       "path": "system.runtime.handles/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4545,6 +4589,7 @@
       "path": "system.runtime.interopservices/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4637,6 +4682,7 @@
       "path": "system.runtime.numerics/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4693,6 +4739,7 @@
       "path": "system.runtime.serialization.formatters/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4780,6 +4827,7 @@
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4961,6 +5009,7 @@
       "path": "system.security.cryptography.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5156,6 +5205,7 @@
       "path": "system.text.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5263,6 +5313,7 @@
       "path": "system.text.encoding.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5330,6 +5381,7 @@
       "path": "system.text.regularexpressions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5413,6 +5465,7 @@
       "path": "system.threading/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5483,6 +5536,7 @@
       "path": "system.threading.tasks/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5550,6 +5604,7 @@
       "path": "system.threading.tasks.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
@@ -5587,6 +5642,7 @@
       "path": "system.xml.readerwriter/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5658,6 +5714,7 @@
       "path": "system.xml.xdocument/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5727,6 +5784,7 @@
       "path": "system.xml.xmldocument/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5765,6 +5823,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5829,6 +5888,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "JoreNoeVideo.Abstractions/1.0.0": {
+      "type": "project",
+      "path": "../JoreNoeVideo.Abstractions/JoreNoeVideo.Abstractions.csproj",
+      "msbuildProject": "../JoreNoeVideo.Abstractions/JoreNoeVideo.Abstractions.csproj"
+    },
     "JoreNoeVideo.Domain/1.0.0": {
       "type": "project",
       "path": "../JoreNoeVideo.Domain/JoreNoeVideo.Domain.csproj",
@@ -5836,37 +5900,39 @@
     },
     "JoreNoeVideo.Store/1.0.0": {
       "type": "project",
-      "path": "../JoreNoeVide.Store/JoreNoeVideo.Store.csproj",
-      "msbuildProject": "../JoreNoeVide.Store/JoreNoeVideo.Store.csproj"
+      "path": "../JoreNoeVideo.Store/JoreNoeVideo.Store.csproj",
+      "msbuildProject": "../JoreNoeVideo.Store/JoreNoeVideo.Store.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Autofac >= 6.1.0",
       "HtmlAgilityPack >= 1.11.24",
+      "JoreNoeVideo.Abstractions >= 1.0.0",
       "JoreNoeVideo.Domain >= 1.0.0",
       "JoreNoeVideo.Store >= 1.0.0",
+      "Microsoft.Extensions.Configuration.Abstractions >= 5.0.0",
       "Quartz >= 3.2.4"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
+      "projectUniqueName": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
       "projectName": "JoreNoeVideo.DomainServices",
-      "projectPath": "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\obj\\",
+      "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.DomianServices\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5874,18 +5940,19 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj": {
-              "projectPath": "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVide.Store\\JoreNoeVideo.Store.csproj"
+            "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj": {
+              "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj"
             },
-            "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
-              "projectPath": "D:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
+            "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+              "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
+            },
+            "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj": {
+              "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj"
             }
           }
         }
@@ -5898,7 +5965,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Autofac": {
             "target": "Package",
@@ -5907,6 +5973,10 @@
           "HtmlAgilityPack": {
             "target": "Package",
             "version": "[1.11.24, )"
+          },
+          "Microsoft.Extensions.Configuration.Abstractions": {
+            "target": "Package",
+            "version": "[5.0.0, )"
           },
           "Quartz": {
             "target": "Package",
@@ -5928,7 +5998,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -68,5 +68,15 @@ namespace JoreNoeVideo.DomainServices
         {
             return await this.Server.GetSingle(Id).ConfigureAwait(false);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="MovieId"></param>
+        /// <returns></returns>
+        public async Task<IList<Movie>> FindByMovieIdsMovie(Guid[] MovieIds)
+        {
+            return await this.Server.FindAsync(d => MovieIds.ToString().Contains(d.Id.ToString()));
+
+        }
     }
 }

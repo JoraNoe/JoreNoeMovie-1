@@ -13,9 +13,7 @@ namespace JoreNoeVideo.Domain.Models
         /// <summary>
         /// 影片类型
         /// </summary>
-        [ForeignKey("CategoryId")]
         public List<MovieCategory> Category { get; set; }
-        public Guid CategoryId { get; set; }
         /// <summary>
         /// 导演
         /// </summary>
@@ -44,10 +42,6 @@ namespace JoreNoeVideo.Domain.Models
         /// 影片集数
         /// </summary>
         public List<MovieCollections> MovieCollections { get; set; }
-        
-        [ForeignKey("MovieCollectionsId")]
-        public MovieMindCollections MovieMindCollections { get; set; }
-        public Guid MovieCollectionsId { get; set; }
         /// <summary>
         /// 描述
         /// </summary>

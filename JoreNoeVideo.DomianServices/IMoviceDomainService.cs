@@ -30,5 +30,11 @@ namespace JoreNoeVideo.DomainServices
         Task<Movie> SingleMovie(Guid Id);
         Task<IList<Movie>> AllMovie();
         Task<IList<Movie>> Pagin(int PageNum,int PageSize);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="MovieId"></param>
+        /// <returns></returns>
+        Task<IList<Movie>> FindByMovieIdsMovie(Guid[] MovieIds);
     }
 }

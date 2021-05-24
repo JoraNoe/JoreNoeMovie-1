@@ -1,18 +1,23 @@
-﻿using JoreNoeVideo.Domain.Models;
+﻿using JoreNoeVideo.Abstractions.Models;
+using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.Store;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace JoreNoeVideo.DomainServices
 {
     public class UserWatchHistoryDomainService : IUserWatchHistoryDomainService
     {
         private readonly IDbContextFace<UserWatchHistory> server;
-        public UserWatchHistoryDomainService(IDbContextFace<UserWatchHistory> server)
+        private readonly IMoviceDomainService MoviceDomainService;
+        public UserWatchHistoryDomainService(IDbContextFace<UserWatchHistory> server,
+            IMoviceDomainService MoviceDomainService)
         {
             this.server = server;
+            this.MoviceDomainService = MoviceDomainService;
         }
 
         /// <summary>
@@ -42,6 +47,28 @@ namespace JoreNoeVideo.DomainServices
         public async Task<UserWatchHistory> EditUserWatchHistory(UserWatchHistory model)
         {
             return await this.server.EditAsync(model).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// 根据用户查历史记录
+        /// </summary>
+        /// <param name="UseId"></param>
+        /// <returns></returns>
+        public async Task<IList<UserWatchHistoryValue>> FindWatchHistoryByUserId(string UseId)
+        {
+            var Result = await this.server.FindAsync(d=>d.UserId == UseId);
+            var MoviesIdsArray = Result.Select(d => d.MovieId);
+            //查询 - 电影内容
+            var MovieList = await MoviceDomainService.FindByMovieIdsMovie(MoviesIdsArray.ToArray());
+            
+            var ConvertValueResult = Result.Select(d => new UserWatchHistoryValue {
+                Movie = MovieList.FirstOrDefault(d=>MoviesIdsArray.Contains(d.Id)),
+                MovieId = d.MovieId,
+                MovieLink = d.MovieLink,
+                MovieName = d.MovieName,
+                UserId = d.UserId
+            }).ToList();
+
+            return ConvertValueResult;
         }
 
         /// <summary>

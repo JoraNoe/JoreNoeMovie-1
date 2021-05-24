@@ -1,13 +1,22 @@
-﻿using System;
+﻿using JoreNoeVideo.DomainServices.Tools;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
 
-namespace JoreNoeVideo.DomainServices.Tools
+namespace JoreNoeVideo.DomainServices
 {
+    /// <summary>
+    /// 请求
+    /// </summary>
     public class HttpRequestDomianService : IHttpRequestDomainService
     {
+        /// <summary>
+        /// 发送请求
+        /// </summary>
+        /// <param name="Url"></param>
+        /// <returns></returns>
         public string HttpRequest(string Url)
         {
             WebRequest Request = null;
@@ -27,34 +36,27 @@ namespace JoreNoeVideo.DomainServices.Tools
                 Reader = new StreamReader(_Stream, Encoding.UTF8);
                 HTML = Reader.ReadToEnd();
                 //Request.Abort();
-                Response.Close();
-                _Stream.Close();
-                Reader.Close();
-                return HTML;
+                //Response.Close();
+                //_Stream.Close();
+                //Reader.Close();
+               
             }
             catch (Exception ex)
             {
-                throw ex;
+                LogStreamWrite.WriteLineLog("HttpRequest请求错误：" + ex.Message);
             }
             finally
             {
                 if (Request != null)
-                {
                     Request.Abort();
-                }
                 if (Response != null)
-                {
                     Response.Close();
-                }
                 if (_Stream != null)
-                {
                     _Stream.Close();
-                }
                 if (Reader != null)
-                {
                     Reader.Close();
-                }
             }
+            return HTML;
         }
     }
 }
