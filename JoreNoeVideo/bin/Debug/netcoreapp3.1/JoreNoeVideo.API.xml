@@ -645,6 +645,22 @@
             <returns></returns>
             
         </member>
+        <member name="M:JoreNoeVideo.API.Controllers.SystemIconController.CreateSystemIcon(JoreNoeVideo.Domain.Models.SystemIcon)">
+            <summary>
+            新增或编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:JoreNoeVideo.API.Controllers.SystemIconController.SingleSystemIcon(System.Guid)">
+            <summary>
+            查询单个
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+            
+        </member>
         <member name="M:JoreNoeVideo.API.Controllers.UserWatchHistoryController.AddUserWatchHistory(JoreNoeVideo.Domain.Models.UserWatchHistory)">
             <summary>
             新增
