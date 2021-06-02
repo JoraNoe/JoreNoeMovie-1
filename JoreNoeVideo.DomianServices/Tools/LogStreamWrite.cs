@@ -18,10 +18,10 @@ namespace JoreNoeVideo.DomainServices.Tools
         public static void WriteLineLog(string LogContext)
         {
             var CurrentSysPaht = Assembly.GetEntryAssembly().Location;
-            var Paht = CurrentSysPaht.Substring(0, CurrentSysPaht.LastIndexOf(@"\")) + "\\SystemLog.log";
-            using (StreamWriter Ws = new StreamWriter("D:\\11.log",true,Encoding.UTF8))
+            var Path = CurrentSysPaht.Substring(0, CurrentSysPaht.LastIndexOf(@"\")) + "\\SystemLog.log";
+            using (StreamWriter Ws = new StreamWriter(Path, true, Encoding.UTF8))
             {
-                Ws.WriteLine(LogContext + "--写入时间："+DateTime.Now);
+                Ws.WriteLine(LogContext + "--写入时间：" + DateTime.Now);
             }
         }
     }

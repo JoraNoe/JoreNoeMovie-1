@@ -17,16 +17,16 @@ namespace JoreNoeVideo.DomainServices.TimerServices
     /// </summary>
     public class TimerAddMovies : IJob
     {
-        public Task Execute(IJobExecutionContext context)
+        public async Task Execute(IJobExecutionContext context)
         {
             Console.WriteLine(context.ToString());
-            return Task.Run(() =>
+            await Task.Run(async () =>
             {
                 var HttpRequestDomain = RelitClass.HttpRequestDomain;
                 var jobData = context.JobDetail.JobDataMap;//获取Job中的参数
                 string Url = jobData.GetString("Url");
                 string Message = "开始请求数据";
-                var DocumentHtml = HttpRequestDomain.HttpRequest(Url);
+                var DocumentHtml = await HttpRequestDomain.HttpRequest(Url);
                 HtmlDocument html = new HtmlDocument();
                 html.LoadHtml(DocumentHtml);
                 var DataNode = html.DocumentNode.SelectNodes("//div[@class='box-model-cont fn-clear']");
@@ -52,7 +52,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 {
                     var TempInsert = InsertData[i];
 
-                    var DesctionHTML = HttpRequestDomain.HttpRequest(TempInsert.MovieLink);
+                    var DesctionHTML = await HttpRequestDomain.HttpRequest(TempInsert.MovieLink);
                     HtmlDocument DectionDocument = new HtmlDocument();
                     DectionDocument.LoadHtml(DesctionHTML);
                     //拆解信息

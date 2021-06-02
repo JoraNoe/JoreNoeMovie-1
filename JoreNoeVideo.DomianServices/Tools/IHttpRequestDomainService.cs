@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace JoreNoeVideo.DomainServices
 {
     public interface IHttpRequestDomainService
     {
-        string HttpRequest(string Url);
+        Task<string> HttpRequest(string Url);
     }
 }
