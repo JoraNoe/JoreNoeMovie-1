@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JoreNoeVideo.API.Filter;
 using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.DomainServices;
@@ -40,6 +41,26 @@ namespace JoreNoeVideo.API.Controllers
         public async Task<ActionResult<APIReturnInFo<IList<Movie>>>> Movie()
         {
             return APIReturnInFo<IList<Movie>>.Success(await this.MovieDomainservice.GetIndexMovie());
+        }
+
+        /// <summary>
+        /// 喜欢
+        /// </summary>
+        /// <returns></returns>
+        [HttpPut("{MovieId}/AddLike")]
+        public async Task<ActionResult<APIReturnInFo<int>>> AddLike(string MovieId)
+        {
+            return APIReturnInFo<int>.Success(await this.MovieDomainservice.AddLike(Guid.Parse(UserInfo.Id), Guid.Parse(MovieId)));
+        }
+
+        /// <summary>
+        /// 不喜欢
+        /// </summary>
+        /// <returns></returns>
+        [HttpPut("{MovieId}/AddDisLike")]
+        public async Task<ActionResult<APIReturnInFo<int>>> AddDisLike(string MovieId)
+        {
+            return APIReturnInFo<int>.Success(await this.MovieDomainservice.AddDisLike(Guid.Parse(UserInfo.Id), Guid.Parse(MovieId)));
         }
 
     }

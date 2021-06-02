@@ -91,7 +91,10 @@ namespace JoreNoeVideo.Store
         /// </summary>
         public DbSet<SystemIcon> SystemIcons { get; set; }
 
-
+        /// <summary>
+        /// 用户点赞影片
+        /// </summary>
+        public DbSet<UserLikeMovie> UserLikeMovies { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

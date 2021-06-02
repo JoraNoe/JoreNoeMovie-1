@@ -25,11 +25,21 @@ namespace JoreNoeVideo.Domain.Models
         /// <summary>
         /// 详情
         /// </summary>
-        public MovieDesc MovieDesction { get; set; }
+        public virtual MovieDesc MovieDesction { get; set; }
 
         /// <summary>
         /// 影视标题 可空
         /// </summary>
         public string MovieTitle { get; set; }
+
+        /// <summary>
+        /// 喜欢数量 
+        /// </summary>
+        public int Likes { get; set; }
+
+        /// <summary>
+        /// 不喜欢数量
+        /// </summary>
+        public int DisLikes { get; set; }
     }
 }

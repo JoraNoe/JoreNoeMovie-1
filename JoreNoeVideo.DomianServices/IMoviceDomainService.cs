@@ -42,5 +42,18 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <returns></returns>
         Task<IList<Movie>> GetIndexMovie();
+
+        /// <summary>
+        /// 喜欢
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        Task<int> AddLike(Guid Id,Guid MovieId);
+        /// <summary>
+        /// 不喜欢
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        Task<int> AddDisLike(Guid Id, Guid MovieId);
     }
 }

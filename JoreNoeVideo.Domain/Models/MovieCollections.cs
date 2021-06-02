@@ -17,5 +17,10 @@ namespace JoreNoeVideo.Domain.Models
         /// 播放跳转链接
         /// </summary>
         public string Link { get; set; }
+
+        /// <summary>
+        /// 影片Id
+        /// </summary>
+        public string MovieId { get; set; }
     }
 }

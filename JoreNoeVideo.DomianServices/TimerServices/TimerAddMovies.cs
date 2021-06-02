@@ -42,7 +42,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                             MovieDesc = itemSon.ChildNodes[1].ChildNodes[1].InnerText,
                             MovieImgUrl = itemSon.ChildNodes[0].ChildNodes[0].Attributes["src"].Value.ToString(),
                             MovieLink = Url + itemSon.Attributes["href"].Value.ToString(),
-                            MovieTitle = this.JudgeMovieDefinition(itemSon.ChildNodes[0].ChildNodes[2].InnerText.ToString())
+                            MovieTitle = this.JudgeMovieDefinition(itemSon.ChildNodes[0].ChildNodes[2].InnerText.ToString()),
                         });
                     }
                 }
@@ -69,6 +69,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                         Year = DesctionNode.ChildNodes[4].ChildNodes[1].FirstChild.NextSibling.InnerText,
                         UpdateTime = DateTime.Parse(DesctionNode.ChildNodes[4].ChildNodes[2].InnerText.Substring(
                           Index, DesctionNode.ChildNodes[4].ChildNodes[2].InnerText.Length - Index) ?? ""),
+                        MovieId = InsertData[i].Id.ToString(),
                     };
 
                     //读取主演
@@ -82,7 +83,8 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                         InsertData[i].MovieDesction.MovieCollections.Add(new MovieCollections
                         {
                             ColletionName = this.JudgeMovieDefinition(item.Attributes["title"].Value.ToString()),
-                            Link = Url + item.Attributes["href"].Value.ToString()
+                            Link = Url + item.Attributes["href"].Value.ToString(),
+                            MovieId = InsertData[i].Id.ToString(),
                         });
                     }
                 }
@@ -320,7 +322,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
 
                 //日志写入
                 LogStreamWrite.WriteLineLog(Message);
-            });
+            }).ConfigureAwait(false);
         }
         /// <summary>
         /// 展示类型的转换

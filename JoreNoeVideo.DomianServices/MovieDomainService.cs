@@ -10,10 +10,13 @@ namespace JoreNoeVideo.DomainServices
 {
     public class MovieDomainService : IMoviceDomainService
     {
-        public MovieDomainService(IDbContextFace<Movie> Server)
+        public MovieDomainService(IDbContextFace<Movie> Server,
+            IUserLikeMovieDomainService UserLikeMovieService)
         {
             this.Server = Server;
+            this.UserLikeMovieService = UserLikeMovieService;
         }
+        private readonly IUserLikeMovieDomainService UserLikeMovieService;
         private readonly IDbContextFace<Movie> Server;
         /// <summary>
         /// 添加数据
@@ -93,6 +96,51 @@ namespace JoreNoeVideo.DomainServices
                 Result[i].MovieName = Result[i].MovieName.Substring(0, temp.IndexOf('-'));
             }
             return Result;
+        }
+
+
+        /// <summary>
+        /// 喜欢
+        /// </summary>
+        /// <param name="影片ID"></param>
+        /// <returns></returns>
+        public async Task<int> AddLike(Guid Id,Guid MovieId)
+        {
+            //判断当前用户是否点过赞  
+
+            var Exists = await this.UserLikeMovieService.Exists(Id,MovieId);
+            if (Exists)
+                return -2;
+
+            var CrateInfo =await this.UserLikeMovieService.CreateUserLikeMovie(Id,MovieId);
+            //查询当前影片喜欢数量
+            var Single = await this.Server.GetSingle(Id).ConfigureAwait(false);
+            Single.Likes += 1;
+            //修改
+            await this.Server.EditAsync(Single);
+
+            return Single.Likes;
+        }
+
+        /// <summary>
+        /// 不喜欢
+        /// </summary>
+        /// <param name="影片ID"></param>
+        /// <returns></returns>
+        public async Task<int> AddDisLike(Guid Id,Guid MovieId)
+        {
+            var Exists = await this.UserLikeMovieService.Exists(Id, MovieId);
+            if (Exists)
+                return -1;
+
+            var CrateInfo = await this.UserLikeMovieService.CreateUserLikeMovie(Id, MovieId);
+            //查询当前影片喜欢数量
+            var Single = await this.Server.GetSingle(Id).ConfigureAwait(false);
+            Single.DisLikes += 1;
+            //修改
+            await this.Server.EditAsync(Single);
+
+            return Single.Likes;
         }
     }
 }

@@ -16,15 +16,15 @@ namespace JoreNoeVideo.DomainServices.TimerServices
     /// </summary>
     public class TimerAddCarouse : IJob
     {
-        public Task Execute(IJobExecutionContext context)
+        public async Task Execute(IJobExecutionContext context)
         {
-            return Task.Run(() =>
+            await Task.Run(async () =>
             {
                 var HttpRequestDomain = RelitClass.HttpRequestDomain;
                 var jobData = context.JobDetail.JobDataMap;//获取Job中的参数
                 string Url = jobData.GetString("Url");
                 string Message = "";
-                var DocumentHtml = HttpRequestDomain.HttpRequest(Url);
+                var DocumentHtml = await HttpRequestDomain.HttpRequest(Url);
                 HtmlDocument html = new HtmlDocument();
                 html.LoadHtml(DocumentHtml);
                 var DataNode = html.DocumentNode.SelectSingleNode("//div[@class='box-model-cont fn-clear']");
@@ -67,7 +67,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 }
                 //写入日志
                 LogStreamWrite.WriteLineLog(Message);
-            });
+            }).ConfigureAwait(false);
         }
     }
 }

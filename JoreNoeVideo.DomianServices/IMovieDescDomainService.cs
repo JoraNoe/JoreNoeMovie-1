@@ -44,5 +44,7 @@ namespace JoreNoeVideo.DomainServices
         /// <param name="PageSize"></param>
         /// <returns></returns>
         Task<IList<MovieDesc>> Pagin(int PageNum, int PageSize);
+
+
     }
 }

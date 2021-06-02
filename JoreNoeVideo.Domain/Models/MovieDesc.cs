@@ -41,10 +41,14 @@ namespace JoreNoeVideo.Domain.Models
         /// <summary>
         /// 影片集数
         /// </summary>
-        public List<MovieCollections> MovieCollections { get; set; }
+        public virtual List<MovieCollections> MovieCollections { get; set; }
         /// <summary>
         /// 描述
         /// </summary>
         public string Describe { get; set; }
+        /// <summary>
+        /// 影片ID
+        /// </summary>
+        public string MovieId { get; set; }
     }
 }

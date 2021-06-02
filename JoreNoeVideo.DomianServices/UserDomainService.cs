@@ -84,14 +84,18 @@ namespace JoreNoeVideo.DomianServices
                 return Response;
             });
         }
-
+        /// <summary>
+        /// 根据OpenID查询单个信息
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public async Task<User> FindUserByUserOpenId(string Id)
         {
             if (string.IsNullOrEmpty(Id))
                 throw new ArgumentNullException(nameof(Id));
 
             var Result = await this.Server.FindAsync(d=>d.UserId == Id);
-            return Result.First();
+            return Result.FirstOrDefault();
         }
     }
 }
