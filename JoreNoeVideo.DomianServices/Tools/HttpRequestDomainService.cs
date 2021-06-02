@@ -11,7 +11,7 @@ namespace JoreNoeVideo.DomainServices
     /// <summary>
     /// 请求
     /// </summary>
-    public class HttpRequestDomianService : IHttpRequestDomainService
+    public class HttpRequestDomainService : IHttpRequestDomainService
     {
         /// <summary>
         /// 发送请求

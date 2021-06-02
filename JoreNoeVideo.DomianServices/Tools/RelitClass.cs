@@ -11,6 +11,6 @@ namespace JoreNoeVideo.DomainServices.Tools
     /// </summary>
     public static class RelitClass
     {
-        public static IHttpRequestDomainService HttpRequestDomain { get; set; } = new HttpRequestDomianService();
+        public static IHttpRequestDomainService HttpRequestDomain { get; set; } = new HttpRequestDomainService();
     }
 }
