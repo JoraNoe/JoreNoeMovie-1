@@ -27,9 +27,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPost("CreateFilmOpera")]
-        public async Task<ActionResult<APIReturnInFo<FilmOpera>>> CreateFilmOpera(FilmOpera model)
+        public async Task<ActionResult<APIReturnInfo<FilmOpera>>> CreateFilmOpera(FilmOpera model)
         {
-            return APIReturnInFo<FilmOpera>.Success(await this.filmOperaDomainservice.CreateFilmOpera(model));
+            return APIReturnInfo<FilmOpera>.Success(await this.filmOperaDomainservice.CreateFilmOpera(model));
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPut("EditFilmOpera")]
-        public async Task<ActionResult<APIReturnInFo<FilmOpera>>> EditFilmOpera(FilmOpera model)
+        public async Task<ActionResult<APIReturnInfo<FilmOpera>>> EditFilmOpera(FilmOpera model)
         {
-            return APIReturnInFo<FilmOpera>.Success(await this.filmOperaDomainservice.EditFilmOpera(model));
+            return APIReturnInfo<FilmOpera>.Success(await this.filmOperaDomainservice.EditFilmOpera(model));
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpDelete("{Id}/RemovedFilmOpera")]
-        public async Task<ActionResult<APIReturnInFo<FilmOpera>>> RemovedFilmOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<FilmOpera>>> RemovedFilmOpera(Guid Id)
         {
-            return APIReturnInFo<FilmOpera>.Success(await this.filmOperaDomainservice.RemovedFilmOpera(Id));
+            return APIReturnInfo<FilmOpera>.Success(await this.filmOperaDomainservice.RemovedFilmOpera(Id));
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("{Id}/SingleFilmOpera")]
-        public async Task<ActionResult<APIReturnInFo<FilmOpera>>> SingleFilmOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<FilmOpera>>> SingleFilmOpera(Guid Id)
         {
-            return APIReturnInFo<FilmOpera>.Success(await this.filmOperaDomainservice.SingleFilmOpera(Id));
+            return APIReturnInfo<FilmOpera>.Success(await this.filmOperaDomainservice.SingleFilmOpera(Id));
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("AllFilmOpera")]
-        public async Task<ActionResult<APIReturnInFo<IList<FilmOpera>>>> AllFilmOpera()
+        public async Task<ActionResult<APIReturnInfo<IList<FilmOpera>>>> AllFilmOpera()
         {
-            return APIReturnInFo<IList<FilmOpera>>.Success(await this.filmOperaDomainservice.AllFilmOpera());
+            return APIReturnInfo<IList<FilmOpera>>.Success(await this.filmOperaDomainservice.AllFilmOpera());
         }
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInFo<IList<FilmOpera>>>> Pagin(int PageNum, int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<FilmOpera>>>> Pagin(int PageNum, int PageSize)
         {
-            return APIReturnInFo<IList<FilmOpera>>.Success(await this.filmOperaDomainservice.Pagin(PageNum,PageSize));
+            return APIReturnInfo<IList<FilmOpera>>.Success(await this.filmOperaDomainservice.Pagin(PageNum,PageSize));
         }
     }
 }

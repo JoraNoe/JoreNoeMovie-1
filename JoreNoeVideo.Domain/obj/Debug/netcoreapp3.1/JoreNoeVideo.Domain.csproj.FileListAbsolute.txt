@@ -51,3 +51,4 @@ C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.csproj.CoreCompileInputs.cache
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.dll
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.pdb
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Domain\obj\Debug\netcoreapp3.1\JoreNoeVideo.Domain.csprojAssemblyReference.cache

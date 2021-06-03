@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace JoreNoeVideo.DomainServices
 {
@@ -44,6 +45,8 @@ namespace JoreNoeVideo.DomainServices
             return await this.server.EditAsync(model).ConfigureAwait(false);
         }
 
+
+
         /// <summary>
         /// 分页
         /// </summary>
@@ -74,7 +77,16 @@ namespace JoreNoeVideo.DomainServices
         {
             return await this.server.GetSingle(Id).ConfigureAwait(false);
         }
+        /// <summary>
+        /// 根据MovieId获取详情
+        /// </summary>
+        /// <param name="MovieId"></param>
+        /// <returns></returns>
+        public async Task<MovieDesc> MovieDescByMovieId(Guid MovieId)
+        {
+            var SingleMovieDesc = await this.server.FindAsync(d=>d.MovieId == MovieId.ToString()).ConfigureAwait(false);
 
-
+            return SingleMovieDesc.FirstOrDefault();
+        }
     }
 }

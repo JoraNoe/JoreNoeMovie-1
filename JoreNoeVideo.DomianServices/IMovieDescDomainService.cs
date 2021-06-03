@@ -45,6 +45,11 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         Task<IList<MovieDesc>> Pagin(int PageNum, int PageSize);
 
-
+        /// <summary>
+        /// 根据MovieId获取详细信息
+        /// </summary>
+        /// <param name="MovieId"></param>
+        /// <returns></returns>
+        Task<MovieDesc> MovieDescByMovieId(Guid MovieId);
     }
 }

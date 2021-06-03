@@ -27,9 +27,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPost("CreateMainlandOpera")]
-        public async Task<ActionResult<APIReturnInFo<MainlandOpera>>> CreateMainlandOpera(MainlandOpera model)
+        public async Task<ActionResult<APIReturnInfo<MainlandOpera>>> CreateMainlandOpera(MainlandOpera model)
         {
-            return APIReturnInFo<MainlandOpera>.Success(await this.mainlandOperaDomainService.CreateMainlandOpera(model));
+            return APIReturnInfo<MainlandOpera>.Success(await this.mainlandOperaDomainService.CreateMainlandOpera(model));
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPut("EditMainlandOpera")]
-        public async Task<ActionResult<APIReturnInFo<MainlandOpera>>> EditMainlandOpera(MainlandOpera model)
+        public async Task<ActionResult<APIReturnInfo<MainlandOpera>>> EditMainlandOpera(MainlandOpera model)
         {
-            return APIReturnInFo<MainlandOpera>.Success(await this.mainlandOperaDomainService.EditMainlandOpera(model));
+            return APIReturnInfo<MainlandOpera>.Success(await this.mainlandOperaDomainService.EditMainlandOpera(model));
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpDelete("{Id}/RemovedMainlandOpera")]
-        public async Task<ActionResult<APIReturnInFo<MainlandOpera>>> RemovedMainlandOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<MainlandOpera>>> RemovedMainlandOpera(Guid Id)
         {
-            return APIReturnInFo<MainlandOpera>.Success(await this.mainlandOperaDomainService.RemovedMainlandOpera(Id));
+            return APIReturnInfo<MainlandOpera>.Success(await this.mainlandOperaDomainService.RemovedMainlandOpera(Id));
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("{Id}/SingleMainlandOpera")]
-        public async Task<ActionResult<APIReturnInFo<MainlandOpera>>> SingleMainlandOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<MainlandOpera>>> SingleMainlandOpera(Guid Id)
         {
-            return APIReturnInFo<MainlandOpera>.Success(await this.mainlandOperaDomainService.SingleMainlandOpera(Id));
+            return APIReturnInfo<MainlandOpera>.Success(await this.mainlandOperaDomainService.SingleMainlandOpera(Id));
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("AllMainlandOpera")]
-        public async Task<ActionResult<APIReturnInFo<IList<MainlandOpera>>>> AllMainlandOpera()
+        public async Task<ActionResult<APIReturnInfo<IList<MainlandOpera>>>> AllMainlandOpera()
         {
-            return APIReturnInFo<IList<MainlandOpera>>.Success(await this.mainlandOperaDomainService.AllMainlandOpera());
+            return APIReturnInfo<IList<MainlandOpera>>.Success(await this.mainlandOperaDomainService.AllMainlandOpera());
         }
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInFo<IList<MainlandOpera>>>> Pagin(int PageNum, int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<MainlandOpera>>>> Pagin(int PageNum, int PageSize)
         {
-            return APIReturnInFo<IList<MainlandOpera>>.Success(await this.mainlandOperaDomainService.Pagin(PageNum, PageSize));
+            return APIReturnInfo<IList<MainlandOpera>>.Success(await this.mainlandOperaDomainService.Pagin(PageNum, PageSize));
         }
     }
 }

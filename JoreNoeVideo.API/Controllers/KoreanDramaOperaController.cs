@@ -27,9 +27,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPost("CreateKoreanDramaOpera")]
-        public async Task<ActionResult<APIReturnInFo<KoreanDramaOpera>>> CreateKoreanDramaOpera(KoreanDramaOpera model)
+        public async Task<ActionResult<APIReturnInfo<KoreanDramaOpera>>> CreateKoreanDramaOpera(KoreanDramaOpera model)
         {
-            return APIReturnInFo<KoreanDramaOpera>.Success(await this.koreanDramaOperaDomainService.CreateKoreanDramaOpera(model));
+            return APIReturnInfo<KoreanDramaOpera>.Success(await this.koreanDramaOperaDomainService.CreateKoreanDramaOpera(model));
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPut("EditKoreanDramaOpera")]
-        public async Task<ActionResult<APIReturnInFo<KoreanDramaOpera>>> EditKoreanDramaOpera(KoreanDramaOpera model)
+        public async Task<ActionResult<APIReturnInfo<KoreanDramaOpera>>> EditKoreanDramaOpera(KoreanDramaOpera model)
         {
-            return APIReturnInFo<KoreanDramaOpera>.Success(await this.koreanDramaOperaDomainService.EditKoreanDramaOpera(model));
+            return APIReturnInfo<KoreanDramaOpera>.Success(await this.koreanDramaOperaDomainService.EditKoreanDramaOpera(model));
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpDelete("{Id}/RemovedKoreanDramaOpera")]
-        public async Task<ActionResult<APIReturnInFo<KoreanDramaOpera>>> RemovedKoreanDramaOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<KoreanDramaOpera>>> RemovedKoreanDramaOpera(Guid Id)
         {
-            return APIReturnInFo<KoreanDramaOpera>.Success(await this.koreanDramaOperaDomainService.RemovedKoreanDramaOpera(Id));
+            return APIReturnInfo<KoreanDramaOpera>.Success(await this.koreanDramaOperaDomainService.RemovedKoreanDramaOpera(Id));
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("{Id}/SingleKoreanDramaOpera")]
-        public async Task<ActionResult<APIReturnInFo<KoreanDramaOpera>>> SingleKoreanDramaOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<KoreanDramaOpera>>> SingleKoreanDramaOpera(Guid Id)
         {
-            return APIReturnInFo<KoreanDramaOpera>.Success(await this.koreanDramaOperaDomainService.SingleKoreanDramaOpera(Id));
+            return APIReturnInfo<KoreanDramaOpera>.Success(await this.koreanDramaOperaDomainService.SingleKoreanDramaOpera(Id));
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("AllKoreanDramaOpera")]
-        public async Task<ActionResult<APIReturnInFo<IList<KoreanDramaOpera>>>> AllKoreanDramaOpera()
+        public async Task<ActionResult<APIReturnInfo<IList<KoreanDramaOpera>>>> AllKoreanDramaOpera()
         {
-            return APIReturnInFo<IList<KoreanDramaOpera>>.Success(await this.koreanDramaOperaDomainService.AllKoreanDramaOpera());
+            return APIReturnInfo<IList<KoreanDramaOpera>>.Success(await this.koreanDramaOperaDomainService.AllKoreanDramaOpera());
         }
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInFo<IList<KoreanDramaOpera>>>> Pagin(int PageNum, int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<KoreanDramaOpera>>>> Pagin(int PageNum, int PageSize)
         {
-            return APIReturnInFo<IList<KoreanDramaOpera>>.Success(await this.koreanDramaOperaDomainService.Pagin(PageNum, PageSize));
+            return APIReturnInfo<IList<KoreanDramaOpera>>.Success(await this.koreanDramaOperaDomainService.Pagin(PageNum, PageSize));
         }
     }
 }

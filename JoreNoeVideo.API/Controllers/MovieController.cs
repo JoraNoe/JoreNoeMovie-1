@@ -50,7 +50,7 @@ namespace JoreNoeVideo.API.Controllers
         [HttpPut("{MovieId}/AddLike")]
         public async Task<ActionResult<APIReturnInFo<int>>> AddLike(string MovieId)
         {
-            return APIReturnInFo<int>.Success(await this.MovieDomainservice.AddLike(Guid.Parse(UserInfo.Id), Guid.Parse(MovieId)));
+            return APIReturnInFo<int>.Success(await this.MovieDomainservice.AddLike(Guid.Parse(this.UserId()), Guid.Parse(MovieId)));
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace JoreNoeVideo.API.Controllers
         [HttpPut("{MovieId}/AddDisLike")]
         public async Task<ActionResult<APIReturnInFo<int>>> AddDisLike(string MovieId)
         {
-            return APIReturnInFo<int>.Success(await this.MovieDomainservice.AddDisLike(Guid.Parse(UserInfo.Id), Guid.Parse(MovieId)));
+            return APIReturnInFo<int>.Success(await this.MovieDomainservice.AddDisLike(Guid.Parse(this.UserId()), Guid.Parse(MovieId)));
         }
 
     }

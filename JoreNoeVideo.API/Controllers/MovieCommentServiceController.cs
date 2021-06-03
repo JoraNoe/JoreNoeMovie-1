@@ -1,4 +1,5 @@
-﻿using JoreNoeVideo.CommonInterFaces;
+﻿using JoreNoeVideo.API.Filter;
+using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain;
 using JoreNoeVideo.DomainServices;
 using Microsoft.AspNetCore.Http;
@@ -26,9 +27,10 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost("AddMovieComment")]
-        public async Task<ActionResult<APIReturnInFo<MovieComment>>> AddMovieComment(MovieComment model)
+        public async Task<ActionResult<APIReturnInfo<MovieComment>>> AddMovieComment(MovieComment model)
         {
-            return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.AddMovieComment(model));
+            model.UserId = Guid.Parse(this.UserId());
+            return APIReturnInfo<MovieComment>.Success(await this.MovieCommentDomainService.AddMovieComment(model));
         }
 
         /// <summary>
@@ -37,9 +39,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPut("EditMovieComment")]
-        public async Task<ActionResult<APIReturnInFo<MovieComment>>> EditMovieComment(MovieComment model)
+        public async Task<ActionResult<APIReturnInfo<MovieComment>>> EditMovieComment(MovieComment model)
         {
-            return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.EditMovieComment(model));
+            return APIReturnInfo<MovieComment>.Success(await this.MovieCommentDomainService.EditMovieComment(model));
         }
 
         /// <summary>
@@ -48,9 +50,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpDelete("{Id}/RemovedMovieComment")]
-        public async Task<ActionResult<APIReturnInFo<MovieComment>>> RemovedMovieComment(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<MovieComment>>> RemovedMovieComment(Guid Id)
         {
-            return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.RemovedMovieComment(Id));
+            return APIReturnInfo<MovieComment>.Success(await this.MovieCommentDomainService.RemovedMovieComment(Id));
         }
 
         /// <summary>
@@ -59,9 +61,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpGet("{Id}/SingleMovieComment")]
-        public async Task<ActionResult<APIReturnInFo<MovieComment>>> SingleMovieComment(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<MovieComment>>> SingleMovieComment(Guid Id)
         {
-            return APIReturnInFo<MovieComment>.Success(await this.MovieCommentDomainService.SingleMovieComment(Id));
+            return APIReturnInfo<MovieComment>.Success(await this.MovieCommentDomainService.SingleMovieComment(Id));
         }
 
         /// <summary>
@@ -69,9 +71,9 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("AllMovieComment")]
-        public async Task<ActionResult<APIReturnInFo<IList<MovieComment>>>> AllMovieComment()
+        public async Task<ActionResult<APIReturnInfo<IList<MovieComment>>>> AllMovieComment()
         {
-            return APIReturnInFo<IList<MovieComment>>.Success(await this.MovieCommentDomainService.AllMovieComment());
+            return APIReturnInfo<IList<MovieComment>>.Success(await this.MovieCommentDomainService.AllMovieComment());
         }
 
         /// <summary>
@@ -81,9 +83,21 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="PageSize"></param>
         /// <returns></returns>
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInFo<IList<MovieComment>>>> Pagin(int PageNum, int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<MovieComment>>>> Pagin(int PageNum, int PageSize)
         {
-            return APIReturnInFo<IList<MovieComment>>.Success(await this.MovieCommentDomainService.Pagin(PageNum,PageSize));
+            return APIReturnInfo<IList<MovieComment>>.Success(await this.MovieCommentDomainService.Pagin(PageNum, PageSize));
         }
+
+        /// <summary>
+        /// 根据MovieId查询评论
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        [HttpGet("{Id}")]
+        public async Task<APIReturnInfo<IList<MovieComment>>> FindMovieCommentByMovieId(string Id)
+        {
+            return APIReturnInfo<IList<MovieComment>>.Success(await this.MovieCommentDomainService.FindMovieCommentByMovieId(Guid.Parse(Id)));
+        }
+
     }
 }

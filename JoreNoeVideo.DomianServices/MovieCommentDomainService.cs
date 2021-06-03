@@ -74,5 +74,15 @@ namespace JoreNoeVideo.DomainServices
         {
             return await this.server.GetSingle(Id).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// 根据MoveId 查询 评论
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public async Task<IList<MovieComment>> FindMovieCommentByMovieId(Guid Id)
+        {
+            return await this.server.FindAsync(d => d.MovieId == Id).ConfigureAwait(false);
+        }
     }
 }

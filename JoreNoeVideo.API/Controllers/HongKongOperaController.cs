@@ -27,9 +27,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPost("CreateHongKongOpera")]
-        public async Task<ActionResult<APIReturnInFo<HongKongOpera>>> CreateHongKongOpera(HongKongOpera model)
+        public async Task<ActionResult<APIReturnInfo<HongKongOpera>>> CreateHongKongOpera(HongKongOpera model)
         {
-            return APIReturnInFo<HongKongOpera>.Success(await this.hongKongOperaDomainService.CreateHongKongOpera(model));
+            return APIReturnInfo<HongKongOpera>.Success(await this.hongKongOperaDomainService.CreateHongKongOpera(model));
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPut("EditHongKongOpera")]
-        public async Task<ActionResult<APIReturnInFo<HongKongOpera>>> EditHongKongOpera(HongKongOpera model)
+        public async Task<ActionResult<APIReturnInfo<HongKongOpera>>> EditHongKongOpera(HongKongOpera model)
         {
-            return APIReturnInFo<HongKongOpera>.Success(await this.hongKongOperaDomainService.EditHongKongOpera(model));
+            return APIReturnInfo<HongKongOpera>.Success(await this.hongKongOperaDomainService.EditHongKongOpera(model));
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpDelete("{Id}/RemovedHongKongOpera")]
-        public async Task<ActionResult<APIReturnInFo<HongKongOpera>>> RemovedHongKongOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<HongKongOpera>>> RemovedHongKongOpera(Guid Id)
         {
-            return APIReturnInFo<HongKongOpera>.Success(await this.hongKongOperaDomainService.RemovedHongKongOpera(Id));
+            return APIReturnInfo<HongKongOpera>.Success(await this.hongKongOperaDomainService.RemovedHongKongOpera(Id));
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("{Id}/SingleHongKongOpera")]
-        public async Task<ActionResult<APIReturnInFo<HongKongOpera>>> SingleHongKongOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<HongKongOpera>>> SingleHongKongOpera(Guid Id)
         {
-            return APIReturnInFo<HongKongOpera>.Success(await this.hongKongOperaDomainService.SingleHongKongOpera(Id));
+            return APIReturnInfo<HongKongOpera>.Success(await this.hongKongOperaDomainService.SingleHongKongOpera(Id));
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("AllHongKongOpera")]
-        public async Task<ActionResult<APIReturnInFo<IList<HongKongOpera>>>> AllHongKongOpera()
+        public async Task<ActionResult<APIReturnInfo<IList<HongKongOpera>>>> AllHongKongOpera()
         {
-            return APIReturnInFo<IList<HongKongOpera>>.Success(await this.hongKongOperaDomainService.AllHongKongOpera());
+            return APIReturnInfo<IList<HongKongOpera>>.Success(await this.hongKongOperaDomainService.AllHongKongOpera());
         }
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInFo<IList<HongKongOpera>>>> Pagin(int PageNum, int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<HongKongOpera>>>> Pagin(int PageNum, int PageSize)
         {
-            return APIReturnInFo<IList<HongKongOpera>>.Success(await this.hongKongOperaDomainService.Pagin(PageNum, PageSize));
+            return APIReturnInfo<IList<HongKongOpera>>.Success(await this.hongKongOperaDomainService.Pagin(PageNum, PageSize));
         }
     }
 }

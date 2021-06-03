@@ -1,4 +1,5 @@
 ﻿using JoreNoeVideo.Abstractions.Models;
+using JoreNoeVideo.API.Filter;
 using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.DomainServices;
@@ -28,9 +29,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPost("AddUserWatchHistory")]
-        public async Task<ActionResult<APIReturnInFo<UserWatchHistory>>> AddUserWatchHistory(UserWatchHistory model)
+        public async Task<ActionResult<APIReturnInfo<UserWatchHistory>>> AddUserWatchHistory(UserWatchHistory model)
         {
-            return APIReturnInFo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.AddUserWatchHistory(model));
+            return APIReturnInfo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.AddUserWatchHistory(model));
         }
 
         /// <summary>
@@ -40,9 +41,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpDelete("{Id}/RemovedUserWatchHistory")]
-        public async Task<ActionResult<APIReturnInFo<UserWatchHistory>>> RemovedUserWatchHistory(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<UserWatchHistory>>> RemovedUserWatchHistory(Guid Id)
         {
-            return APIReturnInFo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.RemovedUserWatchHistory(Id));
+            return APIReturnInfo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.RemovedUserWatchHistory(Id));
         }
 
         /// <summary>
@@ -52,9 +53,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPut("EditUserWatchHistory")]
-        public async Task<ActionResult<APIReturnInFo<UserWatchHistory>>> EditUserWatchHistory(UserWatchHistory model)
+        public async Task<ActionResult<APIReturnInfo<UserWatchHistory>>> EditUserWatchHistory(UserWatchHistory model)
         {
-            return APIReturnInFo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.EditUserWatchHistory(model));
+            return APIReturnInfo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.EditUserWatchHistory(model));
         }
 
         /// <summary>
@@ -64,9 +65,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("{Id}/SingleUserWatchHistory")]
-        public async Task<ActionResult<APIReturnInFo<UserWatchHistory>>> SingleUserWatchHistory(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<UserWatchHistory>>> SingleUserWatchHistory(Guid Id)
         {
-            return APIReturnInFo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.SingleUserWatchHistory(Id));
+            return APIReturnInfo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.SingleUserWatchHistory(Id));
         }
 
         /// <summary>
@@ -75,20 +76,19 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("AllUserWatchHistory")]
-        public async Task<ActionResult<APIReturnInFo<IList<UserWatchHistory>>>> AllUserWatchHistory()
+        public async Task<ActionResult<APIReturnInfo<IList<UserWatchHistory>>>> AllUserWatchHistory()
         {
-            return APIReturnInFo<IList<UserWatchHistory>>.Success(await this.UserWatchHistoryDomainService.AllUserWatchHistory());
+            return APIReturnInfo<IList<UserWatchHistory>>.Success(await this.UserWatchHistoryDomainService.AllUserWatchHistory());
         }
 
         /// <summary>
         /// 根据用户Id查询观看历史记录
         /// </summary>
-        /// <param name="UserId"></param>
         /// <returns></returns>
-        [HttpGet("FindWathcHistoryByUserId/{UserId}")]
-        public async Task<ActionResult<APIReturnInFo<IList<UserWatchHistoryValue>>>> FindWathcHistoryByUserId(string UserId)
+        [HttpGet("FindWathcHistory")]
+        public async Task<ActionResult<APIReturnInfo<IList<UserWatchHistoryValue>>>> FindWathcHistory()
         {
-            return APIReturnInFo<IList<UserWatchHistoryValue>>.Success(await this.UserWatchHistoryDomainService.FindWatchHistoryByUserId(UserId));
+            return APIReturnInfo<IList<UserWatchHistoryValue>>.Success(await this.UserWatchHistoryDomainService.FindWatchHistoryByUserId(this.UserId()));
         }
 
 
@@ -100,9 +100,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInFo<IList<UserWatchHistory>>>> Pagin(int PageNum, int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<UserWatchHistory>>>> Pagin(int PageNum, int PageSize)
         {
-            return APIReturnInFo<IList<UserWatchHistory>>.Success(await this.UserWatchHistoryDomainService.Pagin(PageNum, PageSize));
+            return APIReturnInfo<IList<UserWatchHistory>>.Success(await this.UserWatchHistoryDomainService.Pagin(PageNum, PageSize));
         }
 
 

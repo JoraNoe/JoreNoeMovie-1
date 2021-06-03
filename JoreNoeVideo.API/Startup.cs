@@ -18,6 +18,7 @@ using Quartz.Impl;
 using JoreNoeVideo.DomainServices.Tools;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using JoreNoeVideo.API.Filter;
 
 namespace JoreNoeVideo
 {
@@ -37,10 +38,12 @@ namespace JoreNoeVideo
             //允许跨域
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddCors(options => options.AddPolicy("AllowCors", builder => builder.AllowAnyOrigin().AllowAnyMethod()));
+            //注册全局过滤器
+            services.AddControllersWithViews(options=> {
+                options.Filters.Add<UserAuthentication>();
+            });
             //添加Swagger
             this.AddSwagger(services);
-
-
             //定时
             this.EnableQuartz();
         }
@@ -76,6 +79,7 @@ namespace JoreNoeVideo
             {
                 endpoints.MapControllers();
             });
+            
             app.UseFileServer(new FileServerOptions
             {
                 FileProvider = new PhysicalFileProvider(

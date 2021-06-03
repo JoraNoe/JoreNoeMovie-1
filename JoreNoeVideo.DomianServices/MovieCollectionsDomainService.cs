@@ -44,6 +44,7 @@ namespace JoreNoeVideo.DomainServices
             return await this.server.EditAsync(model).ConfigureAwait(false);
         }
 
+
         /// <summary>
         /// 分页
         /// </summary>
@@ -73,6 +74,16 @@ namespace JoreNoeVideo.DomainServices
         public async Task<MovieCollections> SingleMovieCollections(Guid Id)
         {
             return await this.server.GetSingle(Id).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// 根据视频ID查询当前视频的集数
+        /// </summary>
+        /// <param name="MovieId"></param>
+        /// <returns></returns>
+        public async Task<IList<MovieCollections>> FindCollectionByMovieId(Guid MovieId)
+        {
+            return await this.server.FindAsync(d=>d.MovieId == MovieId.ToString()).ConfigureAwait(false);
         }
     }
 }
