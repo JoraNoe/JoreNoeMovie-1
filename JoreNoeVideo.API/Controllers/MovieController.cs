@@ -29,18 +29,18 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="Model"></param>
         /// <returns></returns>
         [HttpPost("AddUser")]
-        public async Task<ActionResult<APIReturnInFo<Movie>>> AddUser([FromBody] Movie Model)
+        public async Task<ActionResult<APIReturnInfo<Movie>>> AddUser([FromBody] Movie Model)
         {
-            return APIReturnInFo<Movie>.Success(await this.MovieDomainservice.AddMovie(Model));
+            return APIReturnInfo<Movie>.Success(await this.MovieDomainservice.AddMovie(Model));
         }
         /// <summary>
         /// 查询 index 视频
         /// </summary>
         /// <returns></returns>
         [HttpGet("")]
-        public async Task<ActionResult<APIReturnInFo<IList<Movie>>>> Movie()
+        public async Task<ActionResult<APIReturnInfo<IList<Movie>>>> Movie()
         {
-            return APIReturnInFo<IList<Movie>>.Success(await this.MovieDomainservice.GetIndexMovie());
+            return APIReturnInfo<IList<Movie>>.Success(await this.MovieDomainservice.GetIndexMovie());
         }
 
         /// <summary>
@@ -48,9 +48,9 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPut("{MovieId}/AddLike")]
-        public async Task<ActionResult<APIReturnInFo<int>>> AddLike(string MovieId)
+        public async Task<ActionResult<APIReturnInfo<int>>> AddLike(string MovieId)
         {
-            return APIReturnInFo<int>.Success(await this.MovieDomainservice.AddLike(Guid.Parse(this.UserId()), Guid.Parse(MovieId)));
+            return APIReturnInfo<int>.Success(await this.MovieDomainservice.AddLike(Guid.Parse(this.UserId()), Guid.Parse(MovieId)));
         }
 
         /// <summary>
@@ -58,9 +58,9 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPut("{MovieId}/AddDisLike")]
-        public async Task<ActionResult<APIReturnInFo<int>>> AddDisLike(string MovieId)
+        public async Task<ActionResult<APIReturnInfo<int>>> AddDisLike(string MovieId)
         {
-            return APIReturnInFo<int>.Success(await this.MovieDomainservice.AddDisLike(Guid.Parse(this.UserId()), Guid.Parse(MovieId)));
+            return APIReturnInfo<int>.Success(await this.MovieDomainservice.AddDisLike(Guid.Parse(this.UserId()), Guid.Parse(MovieId)));
         }
 
     }

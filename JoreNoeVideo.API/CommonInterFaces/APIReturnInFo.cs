@@ -9,16 +9,16 @@ namespace JoreNoeVideo.CommonInterFaces
     /// Api返回信息
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class APIReturnInFo<T>
+    public class APIReturnInfo<T>
     {
-        public static APIReturnInFo<T> Success(T Data)
+        public static APIReturnInfo<T> Success(T Data)
         {
-            return new APIReturnInFo<T> { Data = Data  };
+            return new APIReturnInfo<T> { Data = Data  };
         }
 
-        public static APIReturnInFo<T> Error(string Message)
+        public static APIReturnInfo<T> Error(string Message)
         {
-            return new APIReturnInFo<T> { Data = default(T), Message = Message, Status = false };
+            return new APIReturnInfo<T> { Data = default(T), Message = Message, Status = false };
 
         }
 

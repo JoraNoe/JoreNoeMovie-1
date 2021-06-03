@@ -27,9 +27,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPost("CreateAnimationOpera")]
-        public async Task<ActionResult<APIReturnInfoo<AnimationOpera>>> CreateAnimationOpera(AnimationOpera model)
+        public async Task<ActionResult<APIReturnInfo<AnimationOpera>>> CreateAnimationOpera(AnimationOpera model)
         {
-            return APIReturnInfoo<AnimationOpera>.Success(await this.animationOperaDomainService.CreateAnimationOpera(model));
+            return APIReturnInfo<AnimationOpera>.Success(await this.animationOperaDomainService.CreateAnimationOpera(model));
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPut("EditAnimationOpera")]
-        public async Task<ActionResult<APIReturnInfoo<AnimationOpera>>> EditAnimationOpera(AnimationOpera model)
+        public async Task<ActionResult<APIReturnInfo<AnimationOpera>>> EditAnimationOpera(AnimationOpera model)
         {
-            return APIReturnInfoo<AnimationOpera>.Success(await this.animationOperaDomainService.EditAnimationOpera(model));
+            return APIReturnInfo<AnimationOpera>.Success(await this.animationOperaDomainService.EditAnimationOpera(model));
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpDelete("{Id}/RemovedAnimationOpera")]
-        public async Task<ActionResult<APIReturnInfoo<AnimationOpera>>> RemovedAnimationOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<AnimationOpera>>> RemovedAnimationOpera(Guid Id)
         {
-            return APIReturnInfoo<AnimationOpera>.Success(await this.animationOperaDomainService.RemovedAnimationOpera(Id));
+            return APIReturnInfo<AnimationOpera>.Success(await this.animationOperaDomainService.RemovedAnimationOpera(Id));
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("{Id}/SingleAnimationOpera")]
-        public async Task<ActionResult<APIReturnInfoo<AnimationOpera>>> SingleAnimationOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<AnimationOpera>>> SingleAnimationOpera(Guid Id)
         {
-            return APIReturnInfoo<AnimationOpera>.Success(await this.animationOperaDomainService.SingleAnimationOpera(Id));
+            return APIReturnInfo<AnimationOpera>.Success(await this.animationOperaDomainService.SingleAnimationOpera(Id));
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("AllAnimationOpera")]
-        public async Task<ActionResult<APIReturnInfoo<IList<AnimationOpera>>>> AllAnimationOpera()
+        public async Task<ActionResult<APIReturnInfo<IList<AnimationOpera>>>> AllAnimationOpera()
         {
-            return APIReturnInfoo<IList<AnimationOpera>>.Success(await this.animationOperaDomainService.AllAnimationOpera());
+            return APIReturnInfo<IList<AnimationOpera>>.Success(await this.animationOperaDomainService.AllAnimationOpera());
         }
 
         /// <summary>
@@ -85,9 +85,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInfoo<IList<AnimationOpera>>>> Pagin(int PageNum,int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<AnimationOpera>>>> Pagin(int PageNum,int PageSize)
         {
-            return APIReturnInfoo<IList<AnimationOpera>>.Success(await this.animationOperaDomainService.Pagein(PageNum,PageSize));
+            return APIReturnInfo<IList<AnimationOpera>>.Success(await this.animationOperaDomainService.Pagein(PageNum,PageSize));
         }
     }
 }

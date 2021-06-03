@@ -27,9 +27,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpDelete("{Id}/RemovedNewestMovie")]
-        public async Task<ActionResult<APIReturnInFo<NewestMovie>>> RemovedNewestMovie(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<NewestMovie>>> RemovedNewestMovie(Guid Id)
         {
-            return APIReturnInFo<NewestMovie>.Success(await this.NewestMovieDomainService.RemovedNewestMovie(Id));
+            return APIReturnInfo<NewestMovie>.Success(await this.NewestMovieDomainService.RemovedNewestMovie(Id));
         }
 
         /// <summary>
@@ -38,9 +38,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPut("EditNewestMovie")]
-        public async Task<ActionResult<APIReturnInFo<NewestMovie>>> EditNewestMovie(NewestMovie model)
+        public async Task<ActionResult<APIReturnInfo<NewestMovie>>> EditNewestMovie(NewestMovie model)
         {
-            return APIReturnInFo<NewestMovie>.Success(await this.NewestMovieDomainService.EditNewestMovie(model));
+            return APIReturnInfo<NewestMovie>.Success(await this.NewestMovieDomainService.EditNewestMovie(model));
         }
 
         /// <summary>
@@ -49,9 +49,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpGet("{Id}/SingleNewestMovie")]
-        public async Task<ActionResult<APIReturnInFo<NewestMovie>>> SingleNewestMovie(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<NewestMovie>>> SingleNewestMovie(Guid Id)
         {
-            return APIReturnInFo<NewestMovie>.Success(await this.NewestMovieDomainService.SingleNewestMovie(Id));
+            return APIReturnInfo<NewestMovie>.Success(await this.NewestMovieDomainService.SingleNewestMovie(Id));
         }
 
         /// <summary>
@@ -61,9 +61,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="PageSize"></param>
         /// <returns></returns>
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInFo<IList<NewestMovie>>>> Pagin(int PageNum, int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<NewestMovie>>>> Pagin(int PageNum, int PageSize)
         {
-            return APIReturnInFo<IList<NewestMovie>>.Success(await this.NewestMovieDomainService.Pagin(PageNum,PageSize));
+            return APIReturnInfo<IList<NewestMovie>>.Success(await this.NewestMovieDomainService.Pagin(PageNum,PageSize));
         }
     }
 }

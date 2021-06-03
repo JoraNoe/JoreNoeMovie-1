@@ -27,9 +27,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPost("CreateNotice")]
-        public async Task<ActionResult<APIReturnInfoo<Notice>>> CreateNotice(Notice model)
+        public async Task<ActionResult<APIReturnInfo<Notice>>> CreateNotice(Notice model)
         {
-            return APIReturnInfoo<Notice>.Success(await this.noticeDomainService.CreateNotice(model));
+            return APIReturnInfo<Notice>.Success(await this.noticeDomainService.CreateNotice(model));
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPut("EditNotice")]
-        public async Task<ActionResult<APIReturnInfoo<Notice>>> EditNotice(Notice model)
+        public async Task<ActionResult<APIReturnInfo<Notice>>> EditNotice(Notice model)
         {
-            return APIReturnInfoo<Notice>.Success(await this.noticeDomainService.EditNotice(model));
+            return APIReturnInfo<Notice>.Success(await this.noticeDomainService.EditNotice(model));
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpDelete("{Id}/RemovedNotice")]
-        public async Task<ActionResult<APIReturnInfoo<Notice>>> RemovedNotice(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<Notice>>> RemovedNotice(Guid Id)
         {
-            return APIReturnInfoo<Notice>.Success(await this.noticeDomainService.RemovedNotice(Id));
+            return APIReturnInfo<Notice>.Success(await this.noticeDomainService.RemovedNotice(Id));
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("{Id}/SingleNotice")]
-        public async Task<ActionResult<APIReturnInfoo<Notice>>> SingleNotice(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<Notice>>> SingleNotice(Guid Id)
         {
-            return APIReturnInfoo<Notice>.Success(await this.noticeDomainService.SingleNotice(Id));
+            return APIReturnInfo<Notice>.Success(await this.noticeDomainService.SingleNotice(Id));
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("AllNotice")]
-        public async Task<ActionResult<APIReturnInfoo<IList<Notice>>>> AllNotice()
+        public async Task<ActionResult<APIReturnInfo<IList<Notice>>>> AllNotice()
         {
-            return APIReturnInfoo<IList<Notice>>.Success(await this.noticeDomainService.AllNotice());
+            return APIReturnInfo<IList<Notice>>.Success(await this.noticeDomainService.AllNotice());
         }
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInfoo<IList<Notice>>>> Pagin(int PageNum, int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<Notice>>>> Pagin(int PageNum, int PageSize)
         {
-            return APIReturnInfoo<IList<Notice>>.Success(await this.noticeDomainService.Pagin(PageNum, PageSize));
+            return APIReturnInfo<IList<Notice>>.Success(await this.noticeDomainService.Pagin(PageNum, PageSize));
         }
     }
 }

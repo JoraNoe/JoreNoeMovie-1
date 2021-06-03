@@ -27,9 +27,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPost("CreateAmericanOpera")]
-        public async Task<ActionResult<APIReturnInFo<AmericanOpera>>> CreateAmericanOpera(AmericanOpera model)
+        public async Task<ActionResult<APIReturnInfo<AmericanOpera>>> CreateAmericanOpera(AmericanOpera model)
         {
-            return APIReturnInFo<AmericanOpera>.Success(await this.americanOperaDomainService.CreateAmericanOpera(model));
+            return APIReturnInfo<AmericanOpera>.Success(await this.americanOperaDomainService.CreateAmericanOpera(model));
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpDelete("{Id}/RemovedAmericanOpera")]
-        public async Task<ActionResult<APIReturnInFo<AmericanOpera>>> RemovedAmericanOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<AmericanOpera>>> RemovedAmericanOpera(Guid Id)
         {
-            return APIReturnInFo<AmericanOpera>.Success(await this.americanOperaDomainService.RemovedAmericanOpera(Id));
+            return APIReturnInfo<AmericanOpera>.Success(await this.americanOperaDomainService.RemovedAmericanOpera(Id));
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpPut("EditAmericanOpera")]
-        public async Task<ActionResult<APIReturnInFo<AmericanOpera>>> EditAmericanOpera(AmericanOpera model)
+        public async Task<ActionResult<APIReturnInfo<AmericanOpera>>> EditAmericanOpera(AmericanOpera model)
         {
-            return APIReturnInFo<AmericanOpera>.Success(await this.americanOperaDomainService.EditAmericanOpera(model));
+            return APIReturnInfo<AmericanOpera>.Success(await this.americanOperaDomainService.EditAmericanOpera(model));
         }
         
         /// <summary>
@@ -62,9 +62,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("AllAmericanOpera")]
-        public async Task<ActionResult<APIReturnInFo<IList<AmericanOpera>>>> AllAmericanOpera()
+        public async Task<ActionResult<APIReturnInfo<IList<AmericanOpera>>>> AllAmericanOpera()
         {
-            return APIReturnInFo<IList<AmericanOpera>>.Success(await this.americanOperaDomainService.AllAmericanOpera());
+            return APIReturnInfo<IList<AmericanOpera>>.Success(await this.americanOperaDomainService.AllAmericanOpera());
         }
 
         /// <summary>
@@ -75,9 +75,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInFo<IList<AmericanOpera>>>> Pagin(int PageNum,int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<AmericanOpera>>>> Pagin(int PageNum,int PageSize)
         {
-            return APIReturnInFo<IList<AmericanOpera>>.Success(await this.americanOperaDomainService.Pagin(PageNum,PageSize));
+            return APIReturnInfo<IList<AmericanOpera>>.Success(await this.americanOperaDomainService.Pagin(PageNum,PageSize));
         }
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <returns></returns>
         /// 
         [HttpGet("{Id}/SingleAmericanOpera")]
-        public async Task<ActionResult<APIReturnInFo<AmericanOpera>>> SingleAmericanOpera(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<AmericanOpera>>> SingleAmericanOpera(Guid Id)
         {
-            return APIReturnInFo<AmericanOpera>.Success(await this.americanOperaDomainService.SingleAmericanOpera(Id));
+            return APIReturnInfo<AmericanOpera>.Success(await this.americanOperaDomainService.SingleAmericanOpera(Id));
         }
     }
 }

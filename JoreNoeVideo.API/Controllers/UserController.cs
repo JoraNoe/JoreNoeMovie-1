@@ -28,9 +28,9 @@ namespace JoreNoeVideo.Controllers
         /// <param name="Model"></param>
         /// <returns></returns>
         [HttpPost("AddUser")]
-        public async Task<ActionResult<APIReturnInFo<User>>> AddUser([FromBody] User Model)
+        public async Task<ActionResult<APIReturnInfo<User>>> AddUser([FromBody] User Model)
         {
-            return APIReturnInFo<User>.Success(await this.userDomainService.AddUser(Model));
+            return APIReturnInfo<User>.Success(await this.userDomainService.AddUser(Model));
         }
         /// <summary>
         /// 修改数据
@@ -38,9 +38,9 @@ namespace JoreNoeVideo.Controllers
         /// <param name="Model"></param>
         /// <returns></returns>
         [HttpPut("EditUser")]
-        public async Task<ActionResult<APIReturnInFo<User>>> EditUser([FromBody] User Model)
+        public async Task<ActionResult<APIReturnInfo<User>>> EditUser([FromBody] User Model)
         {
-            return APIReturnInFo<User>.Success(await this.userDomainService.EditUser(Model));
+            return APIReturnInfo<User>.Success(await this.userDomainService.EditUser(Model));
         }
         /// <summary>
         /// 根据Id查询单条数据
@@ -48,9 +48,9 @@ namespace JoreNoeVideo.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpGet("SingleUser/{Id}")]
-        public async Task<ActionResult<APIReturnInFo<User>>> AddUser(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<User>>> AddUser(Guid Id)
         {
-            return APIReturnInFo<User>.Success(await this.userDomainService.SingleUser(Id));
+            return APIReturnInfo<User>.Success(await this.userDomainService.SingleUser(Id));
         }
         /// <summary>
         /// 根据Id删除用户
@@ -58,9 +58,9 @@ namespace JoreNoeVideo.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpDelete("{Id}/DeleteUser")]
-        public async Task<ActionResult<APIReturnInFo<User>>> Delete(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<User>>> Delete(Guid Id)
         {
-            return APIReturnInFo<User>.Success(await this.userDomainService.RemoveUser(Id));
+            return APIReturnInfo<User>.Success(await this.userDomainService.RemoveUser(Id));
         }
 
         /// <summary>
@@ -69,9 +69,9 @@ namespace JoreNoeVideo.Controllers
         /// <param name="Code"></param>
         /// <returns></returns>
         [HttpGet("Authorization/{Code}")]
-        public async Task<ActionResult<APIReturnInFo<string>>> Authorization(string Code)
+        public async Task<ActionResult<APIReturnInfo<string>>> Authorization(string Code)
         {
-            return APIReturnInFo<string>.Success(await this.userDomainService.Authorization(Code));
+            return APIReturnInfo<string>.Success(await this.userDomainService.Authorization(Code));
         }
     }
 }
