@@ -9,7 +9,6 @@ namespace JoreNoeVideo.API.Filter
 {
     public static class UserInfo
     {
-        public static string Id { get; set; }
         /// <summary>
         /// 获取用户Id
         /// </summary>

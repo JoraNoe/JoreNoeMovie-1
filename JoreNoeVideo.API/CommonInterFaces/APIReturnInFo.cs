@@ -21,10 +21,21 @@ namespace JoreNoeVideo.CommonInterFaces
             return new APIReturnInfo<T> { Data = default, Message = Message, Status = false };
 
         }
-
+        /// <summary>
+        /// 状态
+        /// </summary>
         public bool State { get; set; } = true;
+        /// <summary>
+        /// 数据
+        /// </summary>
         public T Data { get; set; }
+        /// <summary>
+        /// 消息
+        /// </summary>
         public string Message { get; set; }
+        /// <summary>
+        /// 请求状态
+        /// </summary>
         public bool Status { get; set; } = true;
     }
 }

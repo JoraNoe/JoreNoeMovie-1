@@ -32,8 +32,7 @@ namespace JoreNoeVideo.API.Filter
 
             if (CurrentUserInfo == null)
                 throw new ArgumentNullException("当前用户数据为空");
-           
-            UserInfo.Id = CurrentUserInfo.Id.ToString();
+
         }
     }
 }
