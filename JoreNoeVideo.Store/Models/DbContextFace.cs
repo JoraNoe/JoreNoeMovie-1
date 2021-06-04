@@ -191,5 +191,15 @@ namespace JoreNoeVideo.Store
             return this.Db.Set<T>().Where(Func).ToList();
             
         }
+        /// <summary>
+        /// 查询是否存在 同步
+        /// </summary>
+        /// <param name="Func"></param>
+        /// <returns></returns>
+        public bool Exist(Func<T, bool> Func)
+        {
+            var ExistsResult =  this.Db.Set<T>().Where(Func).FirstOrDefault();
+            return ExistsResult == null ? false : true;
+        }
     }
 }

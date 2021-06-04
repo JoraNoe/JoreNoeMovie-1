@@ -64,6 +64,7 @@ namespace JoreNoeVideo.Store
         /// <param name="PageSize"></param>
         /// <returns></returns>
         Task<IList<T>> Page(int PageNum = 0, int PageSize = 10);
+
         #endregion
         #region 同步 数据
         /// <summary>
@@ -103,6 +104,8 @@ namespace JoreNoeVideo.Store
         /// <param name="Id"></param>
         /// <returns></returns>
         T Delete(Guid Id);
+
+        bool Exist(Func<T, bool> Func);
         #endregion
 
 

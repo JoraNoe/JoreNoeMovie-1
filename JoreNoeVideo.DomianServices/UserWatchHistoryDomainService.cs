@@ -27,10 +27,7 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<UserWatchHistory> AddUserWatchHistory(UserWatchHistory model)
         {
-            //判断是否存在
-            var Exists = this.server.Find(d=>d.UserId == model.UserId && d.MovieId == model.MovieId);
-
-            if (Exists == null || Exists.Count == 0)
+            if (!this.server.Exist(d => d.MovieId == model.MovieId && d.UserId == model.UserId))
                 return await this.server.AddAsync(model).ConfigureAwait(false);
             else
                 return null;
@@ -61,13 +58,14 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<IList<UserWatchHistoryValue>> FindWatchHistoryByUserId(string UseId)
         {
-            var Result = await this.server.FindAsync(d=>d.UserId == UseId);
+            var Result = await this.server.FindAsync(d => d.UserId == UseId);
             var MoviesIdsArray = Result.Select(d => d.MovieId);
             //查询 - 电影内容
             var MovieList = await MoviceDomainService.FindByMovieIdsMovie(MoviesIdsArray.ToArray());
-            
-            var ConvertValueResult = Result.Select(d => new UserWatchHistoryValue {
-                Movie = MovieList.FirstOrDefault(d=>MoviesIdsArray.Contains(d.Id)),
+
+            var ConvertValueResult = Result.Select(d => new UserWatchHistoryValue
+            {
+                Movie = MovieList.FirstOrDefault(d => MoviesIdsArray.Contains(d.Id)),
                 MovieId = d.MovieId,
                 MovieLink = d.MovieLink,
                 MovieName = d.MovieName,

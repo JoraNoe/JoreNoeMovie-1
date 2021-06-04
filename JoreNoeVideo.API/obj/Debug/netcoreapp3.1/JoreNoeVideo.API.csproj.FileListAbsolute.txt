@@ -610,7 +610,6 @@ C:\Jore\JoreNoeMovie-1\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\JoreNoeVideo.API
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Autofac.dll
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Autofac.Configuration.dll
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
-C:\Jore\JoreNoeMovie-1\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Dapper.dll
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
