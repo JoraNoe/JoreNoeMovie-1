@@ -37,7 +37,7 @@ namespace JoreNoeVideo.API.Controllers
         /// 查询 index 视频
         /// </summary>
         /// <returns></returns>
-        [HttpGet("")]
+        [HttpGet("IndexMovie")]
         public async Task<ActionResult<APIReturnInfo<IList<Movie>>>> Movie()
         {
             return APIReturnInfo<IList<Movie>>.Success(await this.MovieDomainservice.GetIndexMovie());

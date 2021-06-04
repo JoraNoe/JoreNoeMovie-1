@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JoreNoeVideo.API.Filter;
 using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.DomianServices;
@@ -22,6 +23,7 @@ namespace JoreNoeVideo.Controllers
             this.userDomainService = UserDomainService;
         }
         private readonly IUserDomainService userDomainService;
+
         /// <summary>
         /// 添加数据
         /// </summary>
@@ -45,12 +47,11 @@ namespace JoreNoeVideo.Controllers
         /// <summary>
         /// 根据Id查询单条数据
         /// </summary>
-        /// <param name="Id"></param>
         /// <returns></returns>
-        [HttpGet("SingleUser/{Id}")]
-        public async Task<ActionResult<APIReturnInfo<User>>> AddUser(Guid Id)
+        [HttpGet("SingleUser")]
+        public async Task<ActionResult<APIReturnInfo<User>>> AddUser()
         {
-            return APIReturnInfo<User>.Success(await this.userDomainService.SingleUser(Id));
+            return APIReturnInfo<User>.Success(await this.userDomainService.SingleUser(Guid.Parse(this.UserId())));
         }
         /// <summary>
         /// 根据Id删除用户

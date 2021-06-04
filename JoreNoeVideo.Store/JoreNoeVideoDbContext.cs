@@ -10,18 +10,18 @@ using JoreNoeVideo.Domain;
 
 namespace JoreNoeVideo.Store
 {
-    public class JoreNoeVideoDbContext:DbContext
+    public class JoreNoeVideoDbContext : DbContext
     {
         public JoreNoeVideoDbContext()
         {
             //如果要访问的数据库存在，则不做操作，如果不存在，会自动创建所有数据表和模式
             //Database.EnsureCreated();
-           
+
         }
         /// <summary>
         /// 配置
         /// </summary>
-        private IConfiguration Configuration;
+        private IConfiguration Configuration { set; get; }
         /// <summary>
         /// 用户
         /// </summary>
@@ -103,7 +103,11 @@ namespace JoreNoeVideo.Store
             //IConfiguration congifuration = new ConfigurationBuilder();
 
             //optionsBuilder.UseSqlServer(this.Configuration.GetConnectionString("NotificationDBContext"));
-            optionsBuilder.UseSqlServer("Server=.;Database=JoreNoeDbContext;Uid=sa;Password=sa");
+
+            if (!string.IsNullOrEmpty(this.Configuration.GetConnectionString("connectionString")))
+                optionsBuilder.UseSqlServer(this.Configuration.GetConnectionString("connectionString"));
+            else
+                optionsBuilder.UseSqlServer("Server=.;Database=JoreNoeDbContext;Uid=sa;Password=sa");
             base.OnConfiguring(optionsBuilder);
         }
     }

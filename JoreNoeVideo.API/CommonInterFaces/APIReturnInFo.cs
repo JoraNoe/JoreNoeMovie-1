@@ -18,7 +18,7 @@ namespace JoreNoeVideo.CommonInterFaces
 
         public static APIReturnInfo<T> Error(string Message)
         {
-            return new APIReturnInfo<T> { Data = default(T), Message = Message, Status = false };
+            return new APIReturnInfo<T> { Data = default, Message = Message, Status = false };
 
         }
 

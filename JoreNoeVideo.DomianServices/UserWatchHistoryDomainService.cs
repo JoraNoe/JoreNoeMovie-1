@@ -27,7 +27,13 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<UserWatchHistory> AddUserWatchHistory(UserWatchHistory model)
         {
-            return await this.server.AddAsync(model).ConfigureAwait(false);
+            //判断是否存在
+            var Exists = this.server.Find(d=>d.UserId == model.UserId && d.MovieId == model.MovieId);
+
+            if (Exists == null || Exists.Count == 0)
+                return await this.server.AddAsync(model).ConfigureAwait(false);
+            else
+                return null;
         }
 
         /// <summary>

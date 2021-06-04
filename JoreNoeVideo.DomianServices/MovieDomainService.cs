@@ -5,17 +5,25 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace JoreNoeVideo.DomainServices
 {
     public class MovieDomainService : IMoviceDomainService
     {
         public MovieDomainService(IDbContextFace<Movie> Server,
+            IHttpRequestDomainService HttpRequestDomainService,
+            IConfiguration Configuration,
             IUserLikeMovieDomainService UserLikeMovieService)
         {
             this.Server = Server;
+            this.Configuration = Configuration;
             this.UserLikeMovieService = UserLikeMovieService;
+            this.HttpRequestDomainService = HttpRequestDomainService;
         }
+        private readonly IConfiguration Configuration;
+        private readonly IHttpRequestDomainService HttpRequestDomainService;
         private readonly IUserLikeMovieDomainService UserLikeMovieService;
         private readonly IDbContextFace<Movie> Server;
         /// <summary>
@@ -104,15 +112,14 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="影片ID"></param>
         /// <returns></returns>
-        public async Task<int> AddLike(Guid Id,Guid MovieId)
+        public async Task<int> AddLike(Guid Id, Guid MovieId)
         {
             //判断当前用户是否点过赞  
 
-            var Exists = await this.UserLikeMovieService.Exists(Id,MovieId);
+            var Exists = await this.UserLikeMovieService.Exists(Id, MovieId);
             if (Exists)
                 return -2;
-
-            var CrateInfo =await this.UserLikeMovieService.CreateUserLikeMovie(Id,MovieId);
+            _ = await UserLikeMovieService.CreateUserLikeMovie(Id, MovieId);
             //查询当前影片喜欢数量
             var Single = await this.Server.GetSingle(Id).ConfigureAwait(false);
             Single.Likes += 1;
@@ -127,13 +134,12 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="影片ID"></param>
         /// <returns></returns>
-        public async Task<int> AddDisLike(Guid Id,Guid MovieId)
+        public async Task<int> AddDisLike(Guid Id, Guid MovieId)
         {
             var Exists = await this.UserLikeMovieService.Exists(Id, MovieId);
             if (Exists)
                 return -1;
-
-            var CrateInfo = await this.UserLikeMovieService.CreateUserLikeMovie(Id, MovieId);
+            _ = await UserLikeMovieService.CreateUserLikeMovie(Id, MovieId);
             //查询当前影片喜欢数量
             var Single = await this.Server.GetSingle(Id).ConfigureAwait(false);
             Single.DisLikes += 1;
@@ -141,6 +147,27 @@ namespace JoreNoeVideo.DomainServices
             await this.Server.EditAsync(Single);
 
             return Single.Likes;
+        }
+
+        /// <summary>
+        /// 搜索
+        /// </summary>
+        /// <param name="SearchMovieName"></param>
+        /// <returns></returns>
+        public async Task<IList<Movie>> SearchMovie(string SearchMovieName)
+        {
+            var DbResult = await this.Server.FindAsync(d => d.MovieName.Contains(SearchMovieName));
+            if (DbResult == null || DbResult.Count == 0)
+            {
+                //请求外界  
+                var RequestHTML = await this.HttpRequestDomainService.HttpRequest(this.Configuration.GetSection("MovieUrls")["SearchUrl"].ToString());
+                //拆解 HTML  获取数据 -- 未完
+                return null;
+            }
+            else
+            {
+                return DbResult;
+            }
         }
     }
 }

@@ -31,6 +31,8 @@ namespace JoreNoeVideo.API.Controllers
         [HttpPost("AddUserWatchHistory")]
         public async Task<ActionResult<APIReturnInfo<UserWatchHistory>>> AddUserWatchHistory(UserWatchHistory model)
         {
+            model.UserId = this.UserId();
+
             return APIReturnInfo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.AddUserWatchHistory(model));
         }
 
