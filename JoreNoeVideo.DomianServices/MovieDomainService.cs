@@ -22,9 +22,21 @@ namespace JoreNoeVideo.DomainServices
             this.UserLikeMovieService = UserLikeMovieService;
             this.HttpRequestDomainService = HttpRequestDomainService;
         }
+        /// <summary>
+        /// 配置文件
+        /// </summary>
         private readonly IConfiguration Configuration;
+        /// <summary>
+        /// HTTP请求
+        /// </summary>
         private readonly IHttpRequestDomainService HttpRequestDomainService;
+        /// <summary>
+        /// 用户喜欢
+        /// </summary>
         private readonly IUserLikeMovieDomainService UserLikeMovieService;
+        /// <summary>
+        /// DB服务
+        /// </summary>
         private readonly IDbContextFace<Movie> Server;
         /// <summary>
         /// 添加数据
@@ -99,7 +111,6 @@ namespace JoreNoeVideo.DomainServices
             var Result = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX);
             return Result;
         }
-
 
         /// <summary>
         /// 喜欢
