@@ -13,7 +13,12 @@ namespace JoreNoeVideo.CommonInterFaces
     {
         public static APIReturnInfo<T> Success(T Data)
         {
-            return new APIReturnInfo<T> { Data = Data  };
+            return new APIReturnInfo<T> { Data = Data };
+        }
+
+        public static APIReturnInfo<T> Success(string Message)
+        {
+            return new APIReturnInfo<T> { Message = Message };
         }
 
         public static APIReturnInfo<T> Error(string Message)
