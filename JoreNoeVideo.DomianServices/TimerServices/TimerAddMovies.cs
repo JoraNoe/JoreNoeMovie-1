@@ -38,7 +38,8 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                     {
                         InsertData.Add(new Movie
                         {
-                            MovieName = itemSon.ChildNodes[1].ChildNodes[0].InnerText + ConstVariables.CONST_INDEXNAME,
+                            MovieName = itemSon.ChildNodes[1].ChildNodes[0].InnerText,
+                            MovieCategory = Movie.MOVIE_CATEGORY_INDEX,
                             MovieDesc = itemSon.ChildNodes[1].ChildNodes[1].InnerText,
                             MovieImgUrl = itemSon.ChildNodes[0].ChildNodes[0].Attributes["src"].Value.ToString(),
                             MovieLink = Url + itemSon.Attributes["href"].Value.ToString(),
