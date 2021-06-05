@@ -372,3 +372,10 @@ namespace JoreNoeVideo.DomainServices.TimerServices
         }
     }
 }
+
+
+
+
+
+
+//"movieName":"奇幻沼泽第二季","movieImgUrl":"https://img.52swat.cn/upload/vod/20200815-1/6a12f7d1ecf46d82b18deb183cd3446b.jpg","movieLink":"https://www.ekmov.com//ek/xiangqing/99955.html","movieDesc":"布兰达·宋,贾斯汀·费尔宾格,比尔·法玛尔,阿曼达·莱顿,詹姆斯·帕特里克·斯图阿特,斯蒂芬·鲁特,特罗伊·贝克","movieDesction":null,"movieTitle":"更新至18集","likes":0,"disLikes":0,"movieCategory":"Index","id":"0df6d4b7-8744-4c00-bccf-0877e2717032","isDelete":false,"createTime":"2021-06-05T20:52:50.3042491"

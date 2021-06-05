@@ -12,10 +12,10 @@ namespace JoreNoeVideo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MovieDescServiceController : ControllerBase
+    public class MovieDescController : ControllerBase
     {
         private readonly IMovieDescDomainService MovieDescDomainService;
-        public MovieDescServiceController(IMovieDescDomainService MovieDescDomainService)
+        public MovieDescController(IMovieDescDomainService MovieDescDomainService)
         {
             this.MovieDescDomainService = MovieDescDomainService;
         }
@@ -94,7 +94,7 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <param name="MovieId"></param>
         /// <returns></returns>
-        [HttpGet("{Id}")]
+        [HttpGet("{MovieId}")]
         public async Task<APIReturnInfo<MovieDesc>> MovieDescByMovieId(string MovieId)
         {
             return APIReturnInfo<MovieDesc>.Success(await this.MovieDescDomainService.MovieDescByMovieId(Guid.Parse(MovieId)));

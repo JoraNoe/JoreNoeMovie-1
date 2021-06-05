@@ -510,7 +510,6 @@ D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.API\bin\Debug\netc
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Autofac.dll
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Autofac.Configuration.dll
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
-D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Dapper.dll
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo.API\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll

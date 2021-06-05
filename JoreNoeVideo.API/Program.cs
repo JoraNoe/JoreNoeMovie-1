@@ -28,7 +28,7 @@ namespace JoreNoeVideo
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://*:8022");
+                    webBuilder.UseUrls("http://*:80");
                 });
 
     }
