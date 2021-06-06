@@ -67,7 +67,7 @@ namespace JoreNoeVideo.Store
         /// <returns></returns>
         public async Task<IList<T>> AllAsync()
         {
-            var Result = await this.Db.Set<T>().AsNoTracking().Where(d => true && !d.IsDelete).ToListAsync();
+            var Result = await this.Db.Set<T>().Where(d =>!d.IsDelete).ToListAsync();
             return Result;
         }
         /// <summary>

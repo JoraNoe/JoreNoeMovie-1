@@ -21,7 +21,8 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<IList<Notice>> AllNotice()
         {
-            return await this.server.AllAsync().ConfigureAwait(false);
+            var Result = await this.server.AllAsync().ConfigureAwait(false);
+            return Result;
         }
 
         /// <summary>
