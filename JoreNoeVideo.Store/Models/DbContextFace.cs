@@ -175,7 +175,7 @@ namespace JoreNoeVideo.Store
         /// <returns></returns>
         public async Task<IList<T>> FindAsync(Func<T, bool> Func)
         {
-            var Result = this.Db.Set<T>().Where(Func);
+            var Result = this.Db.Set<T>().AsNoTracking().Where(Func);
             return await Task.Run(() =>
             {
                 return Result.ToList();

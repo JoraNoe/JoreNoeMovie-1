@@ -1,13 +1,11 @@
-﻿using System;
+﻿using JoreNoeVideo.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace JoreNoeVideo.Domain.Models
+namespace JoreNoeVideo.Abstractions.Values
 {
-    /// <summary>
-    /// 影片集数
-    /// </summary>
-    public class MovieCollections:BaseModel
+    public class MovieCollectionValue
     {
         /// <summary>
         /// 名称
@@ -27,5 +25,13 @@ namespace JoreNoeVideo.Domain.Models
         /// 播放地址
         /// </summary>
         public string PlayerLink { get; set; }
+        /// <summary>
+        /// 播放类型
+        /// </summary>
+        public int ModelType { get; set; }
+
+        public Guid Id { get; set; }
+
+        public int Index { get; set; }
     }
 }

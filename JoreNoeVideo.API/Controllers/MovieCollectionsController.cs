@@ -1,4 +1,5 @@
-﻿using JoreNoeVideo.CommonInterFaces;
+﻿using JoreNoeVideo.Abstractions.Values;
+using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.DomainServices;
 using Microsoft.AspNetCore.Http;
@@ -12,10 +13,10 @@ namespace JoreNoeVideo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MovieCollectionsDomainServiceController : ControllerBase
+    public class MovieCollectionsController : ControllerBase
     {
         private readonly IMovieCollectionsDomainService MovieCollectionsDomainService;
-        public MovieCollectionsDomainServiceController(IMovieCollectionsDomainService MovieCollectionsDomainService)
+        public MovieCollectionsController(IMovieCollectionsDomainService MovieCollectionsDomainService)
         {
             this.MovieCollectionsDomainService = MovieCollectionsDomainService;
         }
@@ -26,9 +27,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost("AddMovieCollectionsDomain")]
-        public async Task<ActionResult<APIReturnInfo<MovieCollections>>> AddMovieCollectionsDomain(MovieCollections model)
+        public async Task<ActionResult<APIReturnInfo<Domain.Models.MovieCollections>>> AddMovieCollectionsDomain(Domain.Models.MovieCollections model)
         {
-            return APIReturnInfo<MovieCollections>.Success(await this.MovieCollectionsDomainService.AddMovieCollections(model));
+            return APIReturnInfo<Domain.Models.MovieCollections>.Success(await this.MovieCollectionsDomainService.AddMovieCollections(model));
         }
 
         /// <summary>
@@ -37,9 +38,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpDelete("{Id}/RemovedMovieCollectionsDomain")]
-        public async Task<ActionResult<APIReturnInfo<MovieCollections>>> RemovedMovieCollectionsDomain(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<Domain.Models.MovieCollections>>> RemovedMovieCollectionsDomain(Guid Id)
         {
-            return APIReturnInfo<MovieCollections>.Success(await this.MovieCollectionsDomainService.RemovedMovieCollections(Id));
+            return APIReturnInfo<Domain.Models.MovieCollections>.Success(await this.MovieCollectionsDomainService.RemovedMovieCollections(Id));
         }
 
         /// <summary>
@@ -48,9 +49,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPut("EditMovieCollectionsDomain")]
-        public async Task<ActionResult<APIReturnInfo<MovieCollections>>> EditMovieCollectionsDomain(MovieCollections model)
+        public async Task<ActionResult<APIReturnInfo<Domain.Models.MovieCollections>>> EditMovieCollectionsDomain(Domain.Models.MovieCollections model)
         {
-            return APIReturnInfo<MovieCollections>.Success(await this.MovieCollectionsDomainService.EditMovieCollections(model));
+            return APIReturnInfo<Domain.Models.MovieCollections>.Success(await this.MovieCollectionsDomainService.EditMovieCollections(model));
         }
 
         /// <summary>
@@ -58,9 +59,9 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("AllMovieCollectionsDomain")]
-        public async Task<ActionResult<APIReturnInfo<IList<MovieCollections>>>> AllMovieCollectionsDomain()
+        public async Task<ActionResult<APIReturnInfo<IList<Domain.Models.MovieCollections>>>> AllMovieCollectionsDomain()
         {
-            return APIReturnInfo<IList<MovieCollections>>.Success(await this.MovieCollectionsDomainService.AllMovieCollections());
+            return APIReturnInfo<IList<Domain.Models.MovieCollections>>.Success(await this.MovieCollectionsDomainService.AllMovieCollections());
         }
 
         /// <summary>
@@ -69,9 +70,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpGet("SingleMovieCollectionsDomain")]
-        public async Task<ActionResult<APIReturnInfo<MovieCollections>>> SingleMovieCollectionsDomain(Guid Id)
+        public async Task<ActionResult<APIReturnInfo<Domain.Models.MovieCollections>>> SingleMovieCollectionsDomain(Guid Id)
         {
-            return APIReturnInfo<MovieCollections>.Success(await this.MovieCollectionsDomainService.SingleMovieCollections(Id));
+            return APIReturnInfo<Domain.Models.MovieCollections>.Success(await this.MovieCollectionsDomainService.SingleMovieCollections(Id));
         }
 
         /// <summary>
@@ -81,9 +82,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="PageSize"></param>
         /// <returns></returns>
         [HttpGet("Pagin")]
-        public async Task<ActionResult<APIReturnInfo<IList<MovieCollections>>>> Pagin(int PageNum,int PageSize)
+        public async Task<ActionResult<APIReturnInfo<IList<Domain.Models.MovieCollections>>>> Pagin(int PageNum,int PageSize)
         {
-            return APIReturnInfo<IList<MovieCollections>>.Success(await this.MovieCollectionsDomainService.Pagin(PageNum,PageSize));
+            return APIReturnInfo<IList<Domain.Models.MovieCollections>>.Success(await this.MovieCollectionsDomainService.Pagin(PageNum, PageSize));
         }
 
         /// <summary>
@@ -92,9 +93,21 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="MovieId"></param>
         /// <returns></returns>
         [HttpGet("{MovieId}")]
-        public async Task<APIReturnInfo<IList<MovieCollections>>> FindCollectionByMovieId(string MovieId)
+        public async Task<APIReturnInfo<IList<Abstractions.Values.MovieCollectionValue>>> FindCollectionByMovieId(string MovieId)
         {
-            return APIReturnInfo<IList<MovieCollections>>.Success(await this.MovieCollectionsDomainService.FindCollectionByMovieId(Guid.Parse(MovieId)));
+            return APIReturnInfo<IList<Abstractions.Values.MovieCollectionValue>>.Success(await this.MovieCollectionsDomainService.FindCollectionByMovieId(Guid.Parse(MovieId)));
+        }
+
+        /// <summary>
+        /// 查询视频播放地址
+        /// </summary>
+        /// <param name="CollectionId"></param>
+        /// <param name="Path"></param>
+        /// <returns></returns>
+        [HttpGet("Single/{CollectionId}")]
+        public async Task<APIReturnInfo<Domain.Models.MovieCollections>> SinglePlayerAddress(Guid CollectionId, string Path)
+        {
+            return APIReturnInfo<Domain.Models.MovieCollections>.Success(await this.MovieCollectionsDomainService.SinglePlayerAddress(CollectionId, Path).ConfigureAwait(false));
         }
 
     }

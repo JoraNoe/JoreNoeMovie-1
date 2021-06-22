@@ -38,7 +38,7 @@ namespace JoreNoeVideo
             }
 
 
-            //爬取 最新视频
+            //爬取 最新视频 首页视频
             {
                 IScheduler scheduler;
                 ISchedulerFactory factory = new StdSchedulerFactory();

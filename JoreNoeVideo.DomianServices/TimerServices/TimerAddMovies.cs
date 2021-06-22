@@ -78,6 +78,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
 
                     //读取影片集数 
                     var Collections = DectionDocument.DocumentNode.SelectNodes("//div[@class='lv-bf-list']//a");
+
                     InsertData[i].MovieDesction.MovieCollections = new List<MovieCollections>();
                     foreach (var item in Collections)
                     {
@@ -85,7 +86,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                         {
                             ColletionName = this.JudgeMovieDefinition(item.Attributes["title"].Value.ToString()),
                             Link = Url + item.Attributes["href"].Value.ToString(),
-                            MovieId = InsertData[i].Id.ToString(),
+                            MovieId = InsertData[i].Id.ToString()
                         });
                     }
                 }
