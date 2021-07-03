@@ -19,6 +19,7 @@ namespace JoreNoeVideo.API.Controllers
         public MovieCollectionsController(IMovieCollectionsDomainService MovieCollectionsDomainService)
         {
             this.MovieCollectionsDomainService = MovieCollectionsDomainService;
+            //easybcd
         }
 
         /// <summary>
