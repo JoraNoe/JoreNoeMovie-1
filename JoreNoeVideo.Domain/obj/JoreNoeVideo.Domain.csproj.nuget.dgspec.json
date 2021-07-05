@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {}
+    "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+    "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
+        "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
         "projectName": "JoreNoeVideo.Domain",
-        "projectPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
+        "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\GitHub\\JoreNoeMovie-Re\\JoreNoeMovie\\JoreNoeVideo.Domain\\obj\\",
+        "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -25,7 +25,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "http://idleret.synology.me:32769/repository/nuget-hosted/": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/api/v2/\nnuget": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -55,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
