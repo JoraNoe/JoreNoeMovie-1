@@ -126,7 +126,7 @@ namespace JoreNoeVideo.DomainServices
                 return -2;
             _ = await UserLikeMovieService.CreateUserLikeMovie(Id, MovieId);
             //查询当前影片喜欢数量
-            var Single = await this.Server.GetSingle(Id).ConfigureAwait(false);
+            var Single = await this.Server.GetSingle(MovieId).ConfigureAwait(false);
             Single.Likes += 1;
             //修改
             await this.Server.EditAsync(Single);

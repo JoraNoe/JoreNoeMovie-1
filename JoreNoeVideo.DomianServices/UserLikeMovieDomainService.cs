@@ -24,7 +24,8 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<UserLikeMovie> CreateUserLikeMovie(Guid UserId, Guid MovieId)
         {
-            var Result = await this.server.AddAsync(new UserLikeMovie {
+            var Result = await this.server.AddAsync(new UserLikeMovie
+            {
                 MovieId = MovieId,
                 UserId = UserId
             }).ConfigureAwait(false);
@@ -39,9 +40,9 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<bool> Exists(Guid UserId, Guid MovieId)
         {
-            var Find = await this.server.FindAsync(d=>d.UserId == UserId && d.MovieId == MovieId).ConfigureAwait(false);
+            var Find = await this.server.FindAsync(d => d.UserId == UserId && d.MovieId == MovieId).ConfigureAwait(false);
 
-            return Find == null;
+            return Find.Count == 0 ? false : true;
         }
     }
 }
