@@ -19,6 +19,7 @@ using JoreNoeVideo.DomainServices.Tools;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 using JoreNoeVideo.API.Filter;
+using JoreNoeVideo.Cache;
 
 namespace JoreNoeVideo
 {
@@ -33,7 +34,8 @@ namespace JoreNoeVideo
 
 
         public void ConfigureServices(IServiceCollection services)
-        { 
+        {
+           
             services.AddControllers();
             //允许跨域
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
@@ -42,10 +44,13 @@ namespace JoreNoeVideo
             services.AddControllersWithViews(options=> {
                 options.Filters.Add<UserAuthentication>();
             });
+            //注入cache 
+            services.AddSingleton<IRedisCache, RedisCache>();
             //添加Swagger
             this.AddSwagger(services);
             //定时
             this.EnableQuartz();
+            
         }
 
         /// <summary>

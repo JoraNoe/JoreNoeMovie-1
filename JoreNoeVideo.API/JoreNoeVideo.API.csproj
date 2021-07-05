@@ -35,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JoreNoeVideo.Cache\JoreNoeVideo.Cache.csproj" />
     <ProjectReference Include="..\JoreNoeVideo.Domain\JoreNoeVideo.Domain.csproj" />
     <ProjectReference Include="..\JoreNoeVideo.DomianServices\JoreNoeVideo.DomainServices.csproj" />
   </ItemGroup>
@@ -48,5 +49,7 @@
   <ItemGroup>
     <Folder Include="SystemIcon\" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://json.schemastore.org/bitrise.json" /></VisualStudio></ProjectExtensions>
 
 </Project>
