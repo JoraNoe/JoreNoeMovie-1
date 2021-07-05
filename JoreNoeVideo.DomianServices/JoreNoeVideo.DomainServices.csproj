@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JoreNoeVideo.Cache\JoreNoeVideo.Cache.csproj" />
     <ProjectReference Include="..\JoreNoeVideo.Store\JoreNoeVideo.Store.csproj" />
     <ProjectReference Include="..\JoreNoeVideo.Abstractions\JoreNoeVideo.Abstractions.csproj" />
     <ProjectReference Include="..\JoreNoeVideo.Domain\JoreNoeVideo.Domain.csproj" />
