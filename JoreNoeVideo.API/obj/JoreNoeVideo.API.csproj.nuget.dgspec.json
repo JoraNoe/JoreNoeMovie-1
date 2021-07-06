@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj": {}
+    "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj": {}
   },
   "projects": {
-    "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj": {
+    "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj",
         "projectName": "JoreNoeVideo.Abstractions",
-        "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://idleret.synology.me:32769/repository/nuget-hosted/": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/\nnuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
-                "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
+              "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
               }
             }
           }
@@ -46,6 +46,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -61,24 +62,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj": {
+    "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj",
         "projectName": "JoreNoeVideo.API",
-        "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.API\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,21 +88,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://idleret.synology.me:32769/repository/nuget-hosted/": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/\nnuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj": {
-                "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj"
+              "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
               },
-              "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
-                "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
-              },
-              "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
-                "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj"
+              "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj"
               }
             }
           }
@@ -113,6 +111,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Autofac": {
               "target": "Package",
@@ -174,92 +173,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj": {
+    "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj",
-        "projectName": "JoreNoeVideo.Cache",
-        "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://idleret.synology.me:32769/repository/nuget-hosted/": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/\nnuget": {}
-        },
-        "frameworks": {
-          "netstandard2.0": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.0": {
-          "dependencies": {
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
-            "StackExchange.Redis": {
-              "target": "Package",
-              "version": "[2.2.62, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
         "projectName": "JoreNoeVideo.Domain",
-        "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -267,12 +199,11 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://idleret.synology.me:32769/repository/nuget-hosted/": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/\nnuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -284,6 +215,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -299,24 +231,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
+    "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
         "projectName": "JoreNoeVideo.DomainServices",
-        "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -324,24 +257,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://idleret.synology.me:32769/repository/nuget-hosted/": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/\nnuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj": {
-                "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj"
+              "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Abstractions\\JoreNoeVideo.Abstractions.csproj"
               },
-              "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj": {
-                "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj"
+              "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
               },
-              "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
-                "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
-              },
-              "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj": {
-                "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj"
+              "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj"
               }
             }
           }
@@ -354,6 +283,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Autofac": {
               "target": "Package",
@@ -387,24 +317,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj": {
+    "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj",
         "projectName": "JoreNoeVideo.Store",
-        "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Store\\JoreNoeVideo.Store.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Store\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Store\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -412,15 +343,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://idleret.synology.me:32769/repository/nuget-hosted/": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/\nnuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
-                "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
+              "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
               }
             }
           }
@@ -433,6 +363,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Autofac": {
               "target": "Package",
@@ -478,7 +409,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

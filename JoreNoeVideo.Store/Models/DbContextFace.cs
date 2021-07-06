@@ -67,7 +67,7 @@ namespace JoreNoeVideo.Store
         /// <returns></returns>
         public async Task<IList<T>> AllAsync()
         {
-            var Result = await this.Db.Set<T>().Where(d =>!d.IsDelete).ToListAsync();
+            var Result = await this.Db.Set<T>().Where(d => !d.IsDelete).ToListAsync();
             return Result;
         }
         /// <summary>
@@ -175,11 +175,12 @@ namespace JoreNoeVideo.Store
         /// <returns></returns>
         public async Task<IList<T>> FindAsync(Func<T, bool> Func)
         {
-            var Result = this.Db.Set<T>().AsNoTracking().Where(Func);
             return await Task.Run(() =>
             {
+                var Result = this.Db.Set<T>().Where(Func);
                 return Result.ToList();
-            });
+            }).ConfigureAwait(false);
+
         }
         /// <summary>
         /// 自定义查询内容 同步
@@ -189,7 +190,7 @@ namespace JoreNoeVideo.Store
         public List<T> Find(Func<T, bool> Func)
         {
             return this.Db.Set<T>().Where(Func).ToList();
-            
+
         }
         /// <summary>
         /// 查询是否存在 同步
@@ -198,7 +199,7 @@ namespace JoreNoeVideo.Store
         /// <returns></returns>
         public bool Exist(Func<T, bool> Func)
         {
-            var ExistsResult =  this.Db.Set<T>().Where(Func).FirstOrDefault();
+            var ExistsResult = this.Db.Set<T>().Where(Func).FirstOrDefault();
             return ExistsResult == null ? false : true;
         }
     }
