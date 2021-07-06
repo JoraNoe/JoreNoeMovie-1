@@ -116,13 +116,17 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<IList<Movie>> GetIndexMovie()
         {
-            //筛选数据 
+            //筛选数据  frps
             var Result = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX);
             //获取过期时间 
             var ExpiryTime = this.Configuration.GetSection("RedisConfig")["MinuteExiry"];
-            //转换时间 类型  
-            var DateExpiry =  TimeSpan.FromMinutes(double.Parse(ExpiryTime.ToString()));
-            await this.RedisCache.GetDatabase().KeyExpireAsync("MovieIndexList",DateExpiry);
+            //是否存在redis值
+            if (!await this.RedisCache.GetDatabase().KeyExistsAsync("MovieIndexList"))
+            {
+                //转换时间 类型  
+                var DateExpiry = TimeSpan.FromMinutes(double.Parse(ExpiryTime.ToString()));
+                await this.RedisCache.GetDatabase().KeyExpireAsync("MovieIndexList", DateExpiry);
+            }
             return JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.GetDatabase().StringGetSetAsync("MovieIndexList", JsonConvert.SerializeObject(Result)));
         }
 
