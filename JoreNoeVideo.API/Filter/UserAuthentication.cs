@@ -22,6 +22,7 @@ namespace JoreNoeVideo.API.Filter
         /// <param name="context"></param>
         public override void OnActionExecuting(ActionExecutingContext context)
         {
+
             ////获取token
             //var CurrentUserToken = context.HttpContext.Request.Headers["token"].ToString();
             //if (string.IsNullOrEmpty(CurrentUserToken))

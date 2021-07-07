@@ -7,6 +7,7 @@ using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.DomainServices;
 using JoreNoeVideo.DomainServices.Tools;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Quartz;
@@ -16,6 +17,7 @@ namespace JoreNoeVideo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MovieController : ControllerBase
     {
         public MovieController(IMoviceDomainService MovieDomainservice)
