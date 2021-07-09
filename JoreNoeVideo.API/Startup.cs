@@ -20,6 +20,10 @@ using Microsoft.Extensions.FileProviders;
 using System.IO;
 using JoreNoeVideo.API.Filter;
 using JoreNoeVideo.Cache;
+using System.Threading.Tasks;
+using System.Text;
+using Newtonsoft.Json;
+using System.Net;
 
 namespace JoreNoeVideo
 {
@@ -35,22 +39,24 @@ namespace JoreNoeVideo
 
         public void ConfigureServices(IServiceCollection services)
         {
-           
+
             services.AddControllers();
             //允许跨域
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddCors(options => options.AddPolicy("AllowCors", builder => builder.AllowAnyOrigin().AllowAnyMethod()));
             //注册全局过滤器
-            services.AddControllersWithViews(options=> {
+            services.AddControllersWithViews(options =>
+            {
                 options.Filters.Add<UserAuthentication>();
             });
+
             //注入cache 
             services.AddSingleton<IRedisCache, RedisCache>();
             //添加Swagger
             this.AddSwagger(services);
             //定时
             this.EnableQuartz();
-            
+
         }
 
         /// <summary>
@@ -78,13 +84,14 @@ namespace JoreNoeVideo
 
             app.UseRouting();
             app.UseStaticFiles();
+            //启用授权
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-            
+
             app.UseFileServer(new FileServerOptions
             {
                 FileProvider = new PhysicalFileProvider(

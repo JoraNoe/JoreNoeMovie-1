@@ -1,6 +1,8 @@
 ﻿
 using JoreNoeVideo.DomainServices.Tools;
 using JoreNoeVideo.DomianServices;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
@@ -9,29 +11,34 @@ using System.Threading.Tasks;
 
 namespace JoreNoeVideo.API.Filter
 {
-    public class UserAuthentication : ActionFilterAttribute
+    public class UserAuthentication : ActionFilterAttribute, IAuthorizationFilter
     {
-        private readonly IUserDomainService UserDomainService;
-        public UserAuthentication(IUserDomainService UserDomainService)
+
+        public UserAuthentication()
         {
-            this.UserDomainService = UserDomainService;
+
         }
+
         /// <summary>
-        /// 获取用户信息
+        /// 授权验证
         /// </summary>
         /// <param name="context"></param>
-        public override void OnActionExecuting(ActionExecutingContext context)
+        public void OnAuthorization(AuthorizationFilterContext context)
         {
             ////获取token
-            //var CurrentUserToken = context.HttpContext.Request.Headers["token"].ToString();
-            //if (string.IsNullOrEmpty(CurrentUserToken))
-            //    throw new ArgumentNullException(nameof(CurrentUserToken));
-
-            ////使用Token  查询数据库 读取用户信息
-            //var CurrentUserInfo = UserDomainService.FindUserByUserOpenId(CurrentUserToken);
-
-            //if (CurrentUserInfo == null)
-            //    throw new ArgumentNullException("当前用户数据为空");
+            var CurrentUserToken = context.HttpContext.Request.Headers["token"].ToString();
+            if (string.IsNullOrEmpty(CurrentUserToken))
+            {
+                //定义信息
+                var ReturnResult = new
+                {
+                    Status = StatusCodes.Status401Unauthorized,
+                    Title = "401",
+                    Time = DateTime.Now,
+                    Descript = "请带有有效的Token哦！"
+                };
+                context.Result = new JsonResult(ReturnResult);
+            }
 
         }
     }

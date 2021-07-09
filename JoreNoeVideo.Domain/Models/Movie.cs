@@ -48,7 +48,12 @@ namespace JoreNoeVideo.Domain.Models
         public int DisLikes { get; set; }
 
         /// <summary>
-        /// 电影类型 
+        /// 电影类型id 
+        /// </summary>
+        public string MovieCategoryId { get; set; }
+
+        /// <summary>
+        /// 电影类型
         /// </summary>
         public string MovieCategory { get; set; }
     }

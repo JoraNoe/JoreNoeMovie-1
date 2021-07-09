@@ -1,4 +1,5 @@
 ﻿using JoreNoeVideo.Abstractions.Models;
+using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        Task<UserWatchHistory> AddUserWatchHistory(UserWatchHistory model);
+        Task<APIReturnInfo<UserWatchHistory>> AddUserWatchHistory(UserWatchHistory model);
         /// <summary>
         /// 删除
         /// </summary>
