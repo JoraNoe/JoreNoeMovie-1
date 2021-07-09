@@ -119,7 +119,7 @@ namespace JoreNoeVideo.DomainServices
             //筛选数据  frps
             var Result = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX);
             //获取过期时间 
-            var ExpiryTime = this.Configuration.GetSection("RedisConfig")["MinuteExiry"];
+            var ExpiryTime = this.Configuration.GetSection("RedisConfig")["MinuteExpiry"];
             //是否存在redis值
             if (!await this.RedisCache.GetDatabase().KeyExistsAsync("MovieIndexList"))
             {

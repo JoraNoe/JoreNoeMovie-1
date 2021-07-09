@@ -102,3 +102,5 @@ C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.DomianServic
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.csproj.CopyComplete
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.dll
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.DomianServices\obj\Debug\netcoreapp3.1\JoreNoeVideo.DomainServices.pdb
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Cache.dll
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.DomianServices\bin\Debug\netcoreapp3.1\JoreNoeVideo.Cache.pdb
