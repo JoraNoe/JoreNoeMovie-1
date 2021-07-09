@@ -49,6 +49,7 @@ namespace JoreNoeVideo
             {
                 options.Filters.Add<UserAuthentication>();
             });
+
             //注入cache 
             services.AddSingleton<IRedisCache, RedisCache>();
             //添加Swagger
@@ -85,24 +86,6 @@ namespace JoreNoeVideo
             app.UseStaticFiles();
             //启用授权
             app.UseAuthorization();
-            app.UseStatusCodePages(new StatusCodePagesOptions
-            {
-                HandleAsync = (context) =>
-                {
-                    if (context.HttpContext.Response.StatusCode == 401)
-                    {
-                        using (StreamWriter sw = new StreamWriter(context.HttpContext.Response.Body, Encoding.UTF8))
-                        {
-                            sw.Write(JsonConvert.SerializeObject(new
-                            {
-                                status = (int)HttpStatusCode.Unauthorized,
-                                message = "认证暂未通过"
-                            }));
-                        }
-                    }
-                    return Task.Delay(0);
-                }
-            });
 
             app.UseEndpoints(endpoints =>
             {

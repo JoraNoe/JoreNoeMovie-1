@@ -9,6 +9,7 @@ using System.Linq;
 using Microsoft.Extensions.Configuration;
 using JoreNoeVideo.Cache;
 using Newtonsoft.Json;
+using StackExchange.Redis;
 
 namespace JoreNoeVideo.DomainServices
 {
@@ -17,7 +18,7 @@ namespace JoreNoeVideo.DomainServices
         public MovieDomainService(IDbContextFace<Movie> Server,
             IHttpRequestDomainService HttpRequestDomainService,
             IConfiguration Configuration,
-            IRedisCache RedisCache,
+            IDatabase RedisCache,
             IUserLikeMovieDomainService UserLikeMovieService)
         {
             this.Server = Server;
@@ -45,7 +46,7 @@ namespace JoreNoeVideo.DomainServices
         /// <summary>
         /// 缓存
         /// </summary>
-        private readonly IRedisCache RedisCache;
+        private readonly IDatabase RedisCache;
 
         /// <summary>
         /// 添加数据
@@ -116,18 +117,24 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<IList<Movie>> GetIndexMovie()
         {
+            string CacheKey = "MovieIndexList";
+
+            if (await this.RedisCache.KeyExistsAsync(CacheKey))
+                return JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.StringGetAsync(CacheKey));
             //筛选数据  frps
-            var Result = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX);
+            IList<Movie> FindIndexMovies = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX); ;
+
+            //缓存数据
+            var Cache = await this.RedisCache.StringGetSetAsync(CacheKey, JsonConvert.SerializeObject(FindIndexMovies));
+
             //获取过期时间 
             var ExpiryTime = this.Configuration.GetSection("RedisConfig")["MinuteExiry"];
-            //是否存在redis值
-            if (!await this.RedisCache.GetDatabase().KeyExistsAsync("MovieIndexList"))
-            {
-                //转换时间 类型  
-                var DateExpiry = TimeSpan.FromMinutes(double.Parse(ExpiryTime.ToString()));
-                await this.RedisCache.GetDatabase().KeyExpireAsync("MovieIndexList", DateExpiry);
-            }
-            return JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.GetDatabase().StringGetSetAsync("MovieIndexList", JsonConvert.SerializeObject(Result)));
+
+            //转换时间 类型   设置过期时间
+            var DateExpiry = TimeSpan.FromMinutes(double.Parse(ExpiryTime.ToString()));
+            await this.RedisCache.KeyExpireAsync(CacheKey, DateExpiry);
+
+            return JsonConvert.DeserializeObject<IList<Movie>>(Cache);
         }
 
         /// <summary>

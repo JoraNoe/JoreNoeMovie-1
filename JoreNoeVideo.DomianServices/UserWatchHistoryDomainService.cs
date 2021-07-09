@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using JoreNoeVideo.CommonInterFaces;
 
 namespace JoreNoeVideo.DomainServices
 {
@@ -25,12 +26,12 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public async Task<UserWatchHistory> AddUserWatchHistory(UserWatchHistory model)
+        public async Task<APIReturnInfo<UserWatchHistory>> AddUserWatchHistory(UserWatchHistory model)
         {
             if (!this.server.Exist(d => d.MovieId == model.MovieId && d.UserId == model.UserId))
-                return await this.server.AddAsync(model).ConfigureAwait(false);
+                return APIReturnInfo<UserWatchHistory>.Success(await this.server.AddAsync(model).ConfigureAwait(false));
             else
-                return null;
+                return APIReturnInfo<UserWatchHistory>.Error("数据已存在");
         }
 
         /// <summary>

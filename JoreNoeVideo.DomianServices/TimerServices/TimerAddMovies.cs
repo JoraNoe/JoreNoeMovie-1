@@ -310,7 +310,6 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                     //插入数据
                     MovieService.AddRange(InsertData);
                     Message += "\n数据库数据为空，添加数据成功！";
-                    LogStreamWrite.WriteLineLog(Message);
                 }
                 else
                 {
