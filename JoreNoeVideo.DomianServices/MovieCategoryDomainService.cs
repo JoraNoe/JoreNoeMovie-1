@@ -1,7 +1,11 @@
-﻿using JoreNoeVideo.Domain.Models;
+﻿using JoreNoeVideo.Cache;
+using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.Store;
+using Newtonsoft.Json;
+using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,9 +14,11 @@ namespace JoreNoeVideo.DomainServices
     public class MovieCategoryDomainService : IMovieCategoryDomainService
     {
         private readonly IDbContextFace<MovieCategory> Server;
-        public MovieCategoryDomainService(IDbContextFace<MovieCategory> Server)
+        private readonly IDatabase RedisCache;
+        public MovieCategoryDomainService(IDbContextFace<MovieCategory> Server,IRedisCache RedisCache)
         {
             this.Server = Server;
+            this.RedisCache = RedisCache.GetDatabase();
         }
 
         /// <summary>
@@ -30,7 +36,18 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<IList<MovieCategory>> AllMovieCategory()
         {
-            return await this.Server.AllAsync().ConfigureAwait(false);
+            //缓存redis 
+            var RedisCacheKey = "MovieCategoryList";
+            if (!await RedisCache.KeyExistsAsync(RedisCacheKey))
+            {
+                //爬取数据 
+                var CategoryInfos = await this.Server.AllAsync().ConfigureAwait(false);
+                //缓存
+                this.RedisCache.StringSet(RedisCacheKey, JsonConvert.SerializeObject(CategoryInfos.ToList().OrderBy(d=>d.OrderBy)));
+                //返回
+                return JsonConvert.DeserializeObject<IList<MovieCategory>>(this.RedisCache.StringGet(RedisCacheKey));
+            }
+            return JsonConvert.DeserializeObject<IList<MovieCategory>>(this.RedisCache.StringGet(RedisCacheKey));
         }
 
         /// <summary>
@@ -73,5 +90,6 @@ namespace JoreNoeVideo.DomainServices
         {
             return await this.Server.GetSingle(Id).ConfigureAwait(false);
         }
+
     }
 }

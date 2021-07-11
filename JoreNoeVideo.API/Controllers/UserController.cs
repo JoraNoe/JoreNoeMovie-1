@@ -69,6 +69,7 @@ namespace JoreNoeVideo.Controllers
         /// </summary>
         /// <param name="Code"></param>
         /// <returns></returns>
+        [UserAuthentication(true)]
         [HttpGet("Authorization/{Code}")]
         public async Task<ActionResult<APIReturnInfo<string>>> Authorization(string Code)
         {

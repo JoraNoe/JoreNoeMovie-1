@@ -4,14 +4,16 @@ using JoreNoeVideo.Store;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JoreNoeVideo.Store.Migrations
 {
     [DbContext(typeof(JoreNoeVideoDbContext))]
-    partial class JoreNoeVideoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210710075010_AddMovieTableMovieCategoryId")]
+    partial class AddMovieTableMovieCategoryId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -295,9 +297,6 @@ namespace JoreNoeVideo.Store.Migrations
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoryUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
@@ -306,9 +305,6 @@ namespace JoreNoeVideo.Store.Migrations
 
                     b.Property<Guid?>("MovieDescId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("OrderBy")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

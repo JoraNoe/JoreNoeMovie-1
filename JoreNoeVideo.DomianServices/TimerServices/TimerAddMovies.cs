@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using JoreNoeVideo.Domain;
 using JoreNoeVideo.Store;
+using System.Threading;
 
 namespace JoreNoeVideo.DomainServices.TimerServices
 {
@@ -19,7 +20,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
     {
         public async Task Execute(IJobExecutionContext context)
         {
-            Console.WriteLine(context.ToString());
+            Console.WriteLine("开始爬取首页视频");
             await Task.Run(async () =>
             {
                 var HttpRequestDomain = RelitClass.HttpRequestDomain;
@@ -43,7 +44,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                             MovieDesc = itemSon.ChildNodes[1].ChildNodes[1].InnerText,
                             MovieImgUrl = itemSon.ChildNodes[0].ChildNodes[0].Attributes["src"].Value.ToString(),
                             MovieLink = Url + itemSon.Attributes["href"].Value.ToString(),
-                            MovieTitle = this.JudgeMovieDefinition(itemSon.ChildNodes[0].ChildNodes[2].InnerText.ToString()),
+                            MovieTitle = RelitClass.JudgeMovieDefinition(itemSon.ChildNodes[0].ChildNodes[2].InnerText.ToString()),
                         });
                     }
                 }
@@ -84,11 +85,12 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                     {
                         InsertData[i].MovieDesction.MovieCollections.Add(new MovieCollections
                         {
-                            ColletionName = this.JudgeMovieDefinition(item.Attributes["title"].Value.ToString()),
+                            ColletionName = RelitClass.JudgeMovieDefinition(item.Attributes["title"].Value.ToString()),
                             Link = Url + item.Attributes["href"].Value.ToString(),
                             MovieId = InsertData[i].Id.ToString()
                         });
                     }
+                    Thread.Sleep(600);
                 }
 
 
@@ -325,51 +327,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 LogStreamWrite.WriteLineLog(Message);
             }).ConfigureAwait(false);
         }
-        /// <summary>
-        /// 展示类型的转换
-        /// </summary>
-        /// <param name="Definition">类型</param>
-        /// <returns></returns>
-        private string JudgeMovieDefinition(string Definition)
-        {
-            if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_HD)
-            {
-                return ConstantsKey.JORENOEVIDEO_MOVIEHD;
-            }
-            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIEHD_CHINASE)
-            {
-                return ConstantsKey.JORENOEVIDEO_MOVIEHDCHINAES;
-            }
-
-            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_BLUELIGHT)
-            {
-                return ConstantsKey.JORENOEVIDEO_MOVIEBLUELIGHT;
-            }
-
-            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_TC)
-            {
-                return ConstantsKey.JORENOEVIDEO_MOVIETC;
-            }
-
-            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_TCCHINASE)
-            {
-                return ConstantsKey.JORENOEVIDEO_MOVIETCCHINASE;
-            }
-
-            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_SP)
-            {
-                return ConstantsKey.JORENOEVIDEO_MOVIESP;
-            }
-            else if (Definition == ConstantsKey.JORENOEVIDEO_MOVIE_Hc)
-            {
-                return ConstantsKey.JORENOEVIDEO_MOVIEHC;
-            }
-            else
-            {
-                return Definition;
-            }
-
-        }
+        
     }
 }
 

@@ -33,7 +33,7 @@ namespace JoreNoeVideo.API.Controllers
         {
             model.UserId = this.UserId();
 
-            return APIReturnInfo<UserWatchHistory>.Success(await this.UserWatchHistoryDomainService.AddUserWatchHistory(model));
+            return await this.UserWatchHistoryDomainService.AddUserWatchHistory(model);
         }
 
         /// <summary>

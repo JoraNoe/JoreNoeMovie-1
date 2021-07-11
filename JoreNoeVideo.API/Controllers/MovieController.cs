@@ -64,5 +64,16 @@ namespace JoreNoeVideo.API.Controllers
             return APIReturnInfo<int>.Success(await this.MovieDomainservice.AddDisLike(Guid.Parse(this.UserId()), Guid.Parse(MovieId)));
         }
 
+
+        /// <summary>
+        /// 根据影视类型查看全部影视信息
+        /// </summary>
+        /// <param name="CategoryId"></param>
+        /// <returns></returns>
+        [HttpGet("{CategoryId}/FindMovieByMovieCategoryId")]
+        public async Task<ActionResult<APIReturnInfo<IList<Movie>>>> FindMovieByMovieCategoryId(string CategoryId)
+        {
+            return APIReturnInfo<IList<Movie>>.Success(await this.MovieDomainservice.FindMovieByMovieCategoryId(CategoryId));
+        }
     }
 }

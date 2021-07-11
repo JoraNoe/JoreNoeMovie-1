@@ -63,5 +63,12 @@ namespace JoreNoeVideo.DomainServices
         /// <param name="SearchMovieName"></param>
         /// <returns></returns>
         Task<IList<Movie>> SearchMovie(string SearchMovieName);
+
+        /// <summary>
+        /// 根据影视类型 查询全部数据
+        /// </summary>
+        /// <param name="CategoryId"></param>
+        /// <returns></returns>
+        Task<IList<Movie>> FindMovieByMovieCategoryId(string CategoryId);
     }
 }

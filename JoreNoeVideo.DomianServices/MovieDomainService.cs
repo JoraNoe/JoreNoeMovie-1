@@ -9,6 +9,7 @@ using System.Linq;
 using Microsoft.Extensions.Configuration;
 using JoreNoeVideo.Cache;
 using Newtonsoft.Json;
+using StackExchange.Redis;
 
 namespace JoreNoeVideo.DomainServices
 {
@@ -24,7 +25,7 @@ namespace JoreNoeVideo.DomainServices
             this.Configuration = Configuration;
             this.UserLikeMovieService = UserLikeMovieService;
             this.HttpRequestDomainService = HttpRequestDomainService;
-            this.RedisCache = RedisCache;
+            this.RedisCache = RedisCache.GetDatabase();
         }
         /// <summary>
         /// 配置文件
@@ -45,7 +46,7 @@ namespace JoreNoeVideo.DomainServices
         /// <summary>
         /// 缓存
         /// </summary>
-        private readonly IRedisCache RedisCache;
+        private readonly IDatabase RedisCache;
 
         /// <summary>
         /// 添加数据
@@ -116,18 +117,24 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<IList<Movie>> GetIndexMovie()
         {
+            string CacheKey = "MovieIndexList";
+
+            if (await this.RedisCache.KeyExistsAsync(CacheKey))
+                return JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.StringGetAsync(CacheKey));
+
+            IList<Movie> FindIndexMovies = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX); ;
+
+            //缓存数据
+            var Cache = await this.RedisCache.StringGetSetAsync(CacheKey, JsonConvert.SerializeObject(FindIndexMovies));
+
             //筛选数据  frps
-            var Result = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX);
             //获取过期时间 
             var ExpiryTime = this.Configuration.GetSection("RedisConfig")["MinuteExpiry"];
-            //是否存在redis值
-            if (!await this.RedisCache.GetDatabase().KeyExistsAsync("MovieIndexList"))
-            {
-                //转换时间 类型  
-                var DateExpiry = TimeSpan.FromMinutes(double.Parse(ExpiryTime.ToString()));
-                await this.RedisCache.GetDatabase().KeyExpireAsync("MovieIndexList", DateExpiry);
-            }
-            return JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.GetDatabase().StringGetSetAsync("MovieIndexList", JsonConvert.SerializeObject(Result)));
+            //转换时间 类型   设置过期时间
+            var DateExpiry = TimeSpan.FromMinutes(double.Parse(ExpiryTime.ToString()));
+            await this.RedisCache.KeyExpireAsync(CacheKey, DateExpiry);
+
+            return JsonConvert.DeserializeObject<IList<Movie>>(Cache);
         }
 
         /// <summary>
@@ -191,6 +198,27 @@ namespace JoreNoeVideo.DomainServices
             {
                 return DbResult;
             }
+        }
+
+        /// <summary>
+        /// 根据影视类型查看全部影视信息
+        /// </summary>
+        /// <param name="CategoryId"></param>
+        /// <returns></returns>
+        public async Task<IList<Movie>> FindMovieByMovieCategoryId(string CategoryId)
+        {
+            if (string.IsNullOrEmpty(CategoryId))
+                throw new ArgumentNullException(nameof(CategoryId));
+            //写入缓存
+            string RedisCacheKey = string.Concat("MovieCategory_List_CategoryId_",CategoryId);
+
+            if(!await this.RedisCache.KeyExistsAsync(RedisCacheKey))
+            {
+                var FindMovieByCategoryInfos = this.Server.Find(d=>d.MovieCategoryId == CategoryId);
+                //缓存中
+                this.RedisCache.StringSet(RedisCacheKey,JsonConvert.SerializeObject(FindMovieByCategoryInfos));
+            }
+            return JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.StringGetAsync(RedisCacheKey));
         }
     }
 }
