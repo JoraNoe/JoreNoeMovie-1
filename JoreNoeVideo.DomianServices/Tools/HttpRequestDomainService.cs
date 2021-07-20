@@ -34,44 +34,109 @@ namespace JoreNoeVideo.DomainServices
             //}
             //return respContent;
 
-            WebRequest Request = null;
-            HttpWebResponse Response = null;
-            Stream _Stream = null;
-            StreamReader Reader = null;
-            string HTML = "";
+
+            //string THML = "";
+            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+            //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            //using (StreamReader readStream = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
+            //{
+            //    THML = await readStream.ReadToEndAsync();
+            //}
+
+
+            if (string.IsNullOrEmpty(Url))
+                return string.Empty;
+
+            string HttpWebRequestHTMl = "";
+            HttpWebRequest request = null;
+            HttpWebResponse response = null;
             try
             {
-                Request = WebRequest.Create(Url);
-                Request.Method = "get";
-                Request.Proxy = null;
-                Request.ContentType = "application/json";
-                Request.Timeout = 80000;
-                Response = (HttpWebResponse)Request.GetResponse();
-                _Stream = Response.GetResponseStream();
-                Reader = new StreamReader(_Stream, Encoding.UTF8);
-                HTML = await Reader.ReadToEndAsync();
-                //Request.Abort();
-                //Response.Close();
-                //_Stream.Close();
-                //Reader.Close();
+                request = WebRequest.Create(Url) as HttpWebRequest;
+                request.ContentType = "application/json";
+                request.Method = "GEt";
+                request.Timeout = 12000;
+                //request.ReadWriteTimeout = Const.HttpClientReadWriteTimeout;
+                request.ServicePoint.Expect100Continue = false;
+                request.ServicePoint.UseNagleAlgorithm = false;
+                request.ServicePoint.ConnectionLimit = 2000;
+                request.AllowWriteStreamBuffering = false;
+                request.Proxy = null;
 
+                using (response = (HttpWebResponse)request.GetResponse())
+                {
+                    string encoding = response.ContentEncoding;
+                    using (var stream = response.GetResponseStream())
+                    {
+                        if (string.IsNullOrEmpty(encoding) || encoding.Length < 1)
+                        {
+                            encoding = "UTF-8"; //默认编码
+                        }
+
+                        if (stream != null)
+                        {
+                            using (StreamReader reader = new StreamReader(stream, Encoding.GetEncoding(encoding)))
+                            {
+                                HttpWebRequestHTMl = await reader.ReadToEndAsync().ConfigureAwait(false);
+
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("响应流为null!");
+                        }
+                    }
+                }
             }
-            catch (Exception ex)
+            catch (Exception err)
             {
-                LogStreamWrite.WriteLineLog("HttpRequest请求错误：" + ex.Message);
+                LogStreamWrite.WriteLineLog("Http抛出异常+" + err.Message);
             }
             finally
             {
-                if (Request != null)
-                    Request.Abort();
-                if (Response != null)
-                    Response.Close();
-                if (_Stream != null)
-                    _Stream.Close();
-                if (Reader != null)
-                    Reader.Close();
+                response?.Close();
+                request?.Abort();
             }
-            return HTML;
+
+            return HttpWebRequestHTMl;
+
+            //WebRequest Request = null;
+            //HttpWebResponse Response = null;
+            //Stream _Stream = null;
+            //StreamReader Reader = null;
+            //string HTML = "";
+            //try
+            //{
+            //    Request = WebRequest.Create(Url);
+            //    Request.Method = "get";
+            //    Request.Proxy = null;
+            //    Request.ContentType = "application/json";
+            //    Request.Timeout = 80000;
+            //    Response = (HttpWebResponse)Request.GetResponse();
+            //    _Stream = Response.GetResponseStream();
+            //    Reader = new StreamReader(_Stream, Encoding.UTF8);
+            //    HTML = await Reader.ReadToEndAsync();
+            //    //Request.Abort();
+            //    //Response.Close();
+            //    //_Stream.Close();
+            //    //Reader.Close();
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    LogStreamWrite.WriteLineLog("HttpRequest请求错误：" + ex.Message);
+            //}
+            //finally
+            //{
+            //    if (Request != null)
+            //        Request.Abort();
+            //    if (Response != null)
+            //        Response.Close();
+            //    if (_Stream != null)
+            //        _Stream.Close();
+            //    if (Reader != null)
+            //        Reader.Close();
+            //}
         }
     }
 }

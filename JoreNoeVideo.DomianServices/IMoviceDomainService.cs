@@ -1,4 +1,5 @@
-﻿using JoreNoeVideo.Domain.Models;
+﻿using JoreNoeVideo.CommonInterFaces;
+using JoreNoeVideo.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,7 +30,7 @@ namespace JoreNoeVideo.DomainServices
 
         Task<Movie> SingleMovie(Guid Id);
         Task<IList<Movie>> AllMovie();
-        Task<IList<Movie>> Pagin(int PageNum,int PageSize);
+        Task<IList<Movie>> Pagin(int PageNum, int PageSize);
         /// <summary>
         /// 
         /// </summary>
@@ -48,7 +49,7 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        Task<int> AddLike(Guid Id,Guid MovieId);
+        Task<int> AddLike(Guid Id, Guid MovieId);
         /// <summary>
         /// 不喜欢
         /// </summary>
@@ -62,7 +63,7 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="SearchMovieName"></param>
         /// <returns></returns>
-        Task<IList<Movie>> SearchMovie(string SearchMovieName);
+        Task<APIReturnInfo<IList<Movie>>> SearchMovie(string SearchMovieName);
 
         /// <summary>
         /// 根据影视类型 查询全部数据

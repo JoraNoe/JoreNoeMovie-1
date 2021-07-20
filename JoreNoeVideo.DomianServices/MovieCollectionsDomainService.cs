@@ -96,6 +96,17 @@ namespace JoreNoeVideo.DomainServices
             new KeyValuePair<string, string>(d.Id.ToString(),
                  RelitClass.removeNotNumber(d.ColletionName, out IsJudge))).ToList();
 
+            //二重判断 
+            foreach (var item in Data)
+            {
+                RelitClass.removeNotNumber(item.Value, out IsJudge);
+                if (IsJudge == false)
+                {
+                    IsJudge = false;
+                    break;
+                }
+            }
+
             var Temp = new List<MovieCollectionValue>();
             if (IsJudge)
             {

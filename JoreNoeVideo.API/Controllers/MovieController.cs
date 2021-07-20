@@ -75,5 +75,17 @@ namespace JoreNoeVideo.API.Controllers
         {
             return APIReturnInfo<IList<Movie>>.Success(await this.MovieDomainservice.FindMovieByMovieCategoryId(CategoryId));
         }
+
+        /// <summary>
+        /// 搜索
+        /// </summary>
+        /// <param name="SearchMovieName"></param>
+        /// <returns></returns>
+        [HttpGet("{SearchMovieName}/SearchMovie")]
+        public async Task<APIReturnInfo<IList<Movie>>> SearchMovie(string SearchMovieName)
+        {
+            return await this.MovieDomainservice.SearchMovie(SearchMovieName);
+        }
+
     }
 }

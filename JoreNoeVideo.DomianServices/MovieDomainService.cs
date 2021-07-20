@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using JoreNoeVideo.Cache;
 using Newtonsoft.Json;
 using StackExchange.Redis;
+using HtmlAgilityPack;
+using JoreNoeVideo.CommonInterFaces;
 
 namespace JoreNoeVideo.DomainServices
 {
@@ -184,20 +186,30 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="SearchMovieName"></param>
         /// <returns></returns>
-        public async Task<IList<Movie>> SearchMovie(string SearchMovieName)
+        public async Task<APIReturnInfo<IList<Movie>>> SearchMovie(string SearchMovieName)
         {
-            var DbResult = await this.Server.FindAsync(d => d.MovieName.Contains(SearchMovieName));
-            if (DbResult == null || DbResult.Count == 0)
+
+            if (string.IsNullOrEmpty(SearchMovieName))
+                return APIReturnInfo<IList<Movie>>.Error("无法搜索空内容");
+
+            //请求外界  
+            var RequestHTML = await this.HttpRequestDomainService.HttpRequest(this.Configuration.GetSection("MovieUrls")["SearchUrl"].ToString()+"?wd="+SearchMovieName);
+            //拆解 HTML  获取数据 -- 未完
+            //serach-ul
+            HtmlDocument DectionDocument = new HtmlDocument();
+            DectionDocument.LoadHtml(RequestHTML);
+
+            //拆解信息
+            var DesctionNode = DectionDocument.DocumentNode.SelectSingleNode("//ul[@class='serach-ul']");
+
+            IList<Movie> MovieInfos = new List<Movie>();
+
+            foreach (var item in DesctionNode.ChildNodes)
             {
-                //请求外界  
-                var RequestHTML = await this.HttpRequestDomainService.HttpRequest(this.Configuration.GetSection("MovieUrls")["SearchUrl"].ToString());
-                //拆解 HTML  获取数据 -- 未完
-                return null;
+                MovieInfos.Add(new Movie);                
             }
-            else
-            {
-                return DbResult;
-            }
+
+            return null;
         }
 
         /// <summary>
@@ -210,13 +222,13 @@ namespace JoreNoeVideo.DomainServices
             if (string.IsNullOrEmpty(CategoryId))
                 throw new ArgumentNullException(nameof(CategoryId));
             //写入缓存
-            string RedisCacheKey = string.Concat("MovieCategory_List_CategoryId_",CategoryId);
+            string RedisCacheKey = string.Concat("MovieCategory_List_CategoryId_", CategoryId);
 
-            if(!await this.RedisCache.KeyExistsAsync(RedisCacheKey))
+            if (!await this.RedisCache.KeyExistsAsync(RedisCacheKey))
             {
-                var FindMovieByCategoryInfos = this.Server.Find(d=>d.MovieCategoryId == CategoryId);
+                var FindMovieByCategoryInfos = this.Server.Find(d => d.MovieCategoryId == CategoryId);
                 //缓存中
-                this.RedisCache.StringSet(RedisCacheKey,JsonConvert.SerializeObject(FindMovieByCategoryInfos));
+                this.RedisCache.StringSet(RedisCacheKey, JsonConvert.SerializeObject(FindMovieByCategoryInfos));
             }
             return JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.StringGetAsync(RedisCacheKey));
         }
