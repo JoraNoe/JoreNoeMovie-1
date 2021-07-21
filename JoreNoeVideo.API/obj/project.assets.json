@@ -9222,23 +9222,22 @@
   },
   "packageFolders": {
     "C:\\Users\\Administrator\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj",
+      "projectUniqueName": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj",
       "projectName": "JoreNoeVideo.API",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj",
+      "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.API\\JoreNoeVideo.API.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.API\\obj\\",
+      "outputPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9246,20 +9245,22 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "http://idleret.synology.me:32769/repository/nuget-hosted/": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://www.nuget.org/api/v2/\nnuget": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj"
+            "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj": {
+              "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Cache\\JoreNoeVideo.Cache.csproj"
             },
-            "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
+            "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj": {
+              "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.Domain\\JoreNoeVideo.Domain.csproj"
             },
-            "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj"
+            "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj": {
+              "projectPath": "C:\\Jore\\JoreNoeMovie-1\\JoreNoeVideo.DomianServices\\JoreNoeVideo.DomainServices.csproj"
             }
           }
         }
@@ -9330,6 +9331,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

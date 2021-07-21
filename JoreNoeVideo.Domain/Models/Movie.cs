@@ -12,6 +12,11 @@ namespace JoreNoeVideo.Domain.Models
         public const string MOVIE_CATEGORY_INDEX = "Index";
 
         /// <summary>
+        /// 搜索视频
+        /// </summary>
+        public const string MOVIE_CATEGORY_SEARCH = "Search";
+
+        /// <summary>
         /// 影片名称
         /// </summary>
         public string MovieName { get; set; }
@@ -56,5 +61,10 @@ namespace JoreNoeVideo.Domain.Models
         /// 电影类型
         /// </summary>
         public string MovieCategory { get; set; }
+
+        /// <summary>
+        /// 影视排序
+        /// </summary>
+        public int OrderBy { get; set; }
     }
 }

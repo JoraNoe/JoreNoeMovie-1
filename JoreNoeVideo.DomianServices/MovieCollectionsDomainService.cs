@@ -86,7 +86,7 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="MovieId"></param>
         /// <returns></returns>
-        public async Task<IList<Abstractions.Values.MovieCollectionValue>> FindCollectionByMovieId(Guid MovieId)
+        public async Task<IList<MovieCollectionValue>> FindCollectionByMovieId(Guid MovieId)
         {
             //筛选
             var CurrentMovieCollection = await this.server.FindAsync(d => d.MovieId == MovieId.ToString()).ConfigureAwait(false);

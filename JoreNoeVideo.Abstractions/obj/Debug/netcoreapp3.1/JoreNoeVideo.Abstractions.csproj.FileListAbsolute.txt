@@ -22,3 +22,15 @@ C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.Abstractions
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.csproj.CopyComplete
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.dll
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.pdb
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.deps.json
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.dll
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.pdb
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.dll
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.pdb
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.csproj.AssemblyReference.cache
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.AssemblyInfoInputs.cache
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.AssemblyInfo.cs
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.csproj.CoreCompileInputs.cache
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.csproj.CopyComplete
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.dll
+C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.pdb

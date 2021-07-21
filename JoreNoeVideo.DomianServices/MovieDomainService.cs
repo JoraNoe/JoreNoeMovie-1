@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using StackExchange.Redis;
 using HtmlAgilityPack;
 using JoreNoeVideo.CommonInterFaces;
+using JoreNoeVideo.DomainServices.Tools;
 
 namespace JoreNoeVideo.DomainServices
 {
@@ -124,10 +125,10 @@ namespace JoreNoeVideo.DomainServices
             if (await this.RedisCache.KeyExistsAsync(CacheKey))
                 return JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.StringGetAsync(CacheKey));
 
-            IList<Movie> FindIndexMovies = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX); ;
+            IList<Movie> FindIndexMovies = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX);
 
             //缓存数据
-            var Cache = await this.RedisCache.StringGetSetAsync(CacheKey, JsonConvert.SerializeObject(FindIndexMovies));
+            var Cache = await this.RedisCache.StringGetSetAsync(CacheKey, JsonConvert.SerializeObject(FindIndexMovies.OrderBy(d => d.OrderBy)));
 
             //筛选数据  frps
             //获取过期时间 
@@ -185,20 +186,25 @@ namespace JoreNoeVideo.DomainServices
         /// 搜索
         /// </summary>
         /// <param name="SearchMovieName"></param>
+        /// <param name="PageIndex">当前页面</param>
         /// <returns></returns>
-        public async Task<APIReturnInfo<IList<Movie>>> SearchMovie(string SearchMovieName)
+        public async Task<APIReturnInfo<IList<Movie>>> SearchMovie(string SearchMovieName, int PageIndex = 0)
         {
 
             if (string.IsNullOrEmpty(SearchMovieName))
                 return APIReturnInfo<IList<Movie>>.Error("无法搜索空内容");
 
+            string CacheKey = string.Concat("Movie_Search_List_Name_", SearchMovieName, "_CurrentPage_", PageIndex);
+
+
+            //获取请求网关 
+            string BaseUrl = this.Configuration.GetSection("MovieUrls")["BaseUrl"].ToString();
             //请求外界  
-            var RequestHTML = await this.HttpRequestDomainService.HttpRequest(this.Configuration.GetSection("MovieUrls")["SearchUrl"].ToString()+"?wd="+SearchMovieName);
+            var RequestHTML = await this.HttpRequestDomainService.HttpRequest(this.Configuration.GetSection("MovieUrls")["SearchUrl"].ToString() + "?wd=" + SearchMovieName);
             //拆解 HTML  获取数据 -- 未完
             //serach-ul
             HtmlDocument DectionDocument = new HtmlDocument();
             DectionDocument.LoadHtml(RequestHTML);
-
             //拆解信息
             var DesctionNode = DectionDocument.DocumentNode.SelectSingleNode("//ul[@class='serach-ul']");
 
@@ -206,8 +212,64 @@ namespace JoreNoeVideo.DomainServices
 
             foreach (var item in DesctionNode.ChildNodes)
             {
-                MovieInfos.Add(new Movie);                
+                MovieInfos.Add(new Movie
+                {
+                    DisLikes = 0,
+                    Likes = 0,
+                    MovieCategory = Movie.MOVIE_CATEGORY_SEARCH,
+                    MovieImgUrl = item.FirstChild.FirstChild.Attributes["src"].Value.ToString(),
+                    MovieLink = BaseUrl + item.FirstChild.Attributes["href"].Value.ToString(),
+                    MovieName = item.FirstChild.Attributes["title"].Value.ToString(),
+                });
             }
+
+            //爬取详情数据 
+            foreach (var item in MovieInfos)
+            {
+                var DesctionHTML = await this.HttpRequestDomainService.HttpRequest(item.MovieLink);
+                HtmlDocument ItemDectionDocument = new HtmlDocument();
+                ItemDectionDocument.LoadHtml(DesctionHTML);
+                //拆解信息
+                var ItemDesctionNode = ItemDectionDocument.DocumentNode.SelectSingleNode("//div[@class='fd-box']");
+                var Index = ItemDesctionNode.ChildNodes[4].ChildNodes[2].InnerText.IndexOf("：") + 1;
+                //读取信息
+                item.MovieDesction = new MovieDesc
+                {
+                    Director = ItemDesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.NextSibling == null
+                    ? ItemDesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.InnerText :
+                    ItemDesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.NextSibling.InnerText,
+                    Describe = ItemDesctionNode.ChildNodes[6].ChildNodes[0].FirstChild.InnerText,
+                    Address = ItemDesctionNode.ChildNodes[4].ChildNodes[0].FirstChild.NextSibling == null ? "" : ItemDesctionNode.ChildNodes[4].ChildNodes[0].FirstChild.NextSibling.InnerText,
+                    Year = ItemDesctionNode.ChildNodes[4].ChildNodes[1].FirstChild.NextSibling == null ? "" : ItemDesctionNode.ChildNodes[4].ChildNodes[1].FirstChild.NextSibling.InnerText,
+                    UpdateTime = DateTime.Parse(ItemDesctionNode.ChildNodes[4].ChildNodes[2].InnerText.Substring(
+                    Index, ItemDesctionNode.ChildNodes[4].ChildNodes[2].InnerText.Length - Index) ?? ""),
+                    MovieId = item.Id.ToString(),
+
+                };
+
+                //读取主演
+                item.MovieDesction.MainDirector = ItemDesctionNode.ChildNodes[3].FirstChild.InnerText;
+
+                //读取影片集数 
+                var Collections = ItemDectionDocument.DocumentNode.SelectNodes("//div[@class='lv-bf-list']//a");
+
+                item.MovieDesction.MovieCollections = new List<MovieCollections>();
+                foreach (var SingleCollection in Collections)
+                {
+                    item.MovieDesction.MovieCollections.Add(new MovieCollections
+                    {
+                        ColletionName = RelitClass.JudgeMovieDefinition(SingleCollection.Attributes["title"].Value.ToString()),
+                        Link = BaseUrl + SingleCollection.Attributes["href"].Value.ToString(),
+                        MovieId = item.Id.ToString()
+                    });
+                }
+            }
+
+            if (MovieInfos.Count != 0)
+                await this.Server.AddRangeAsync(MovieInfos);
+
+
+
 
             return null;
         }

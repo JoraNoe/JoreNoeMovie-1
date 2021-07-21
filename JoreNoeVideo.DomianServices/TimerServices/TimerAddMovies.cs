@@ -35,6 +35,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 //读取链接 
                 foreach (var item in DataNode)
                 {
+                    var OrderByIndex = 0;
                     foreach (var itemSon in item.ChildNodes)
                     {
                         InsertData.Add(new Movie
@@ -45,9 +46,10 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                             MovieImgUrl = itemSon.ChildNodes[0].ChildNodes[0].Attributes["src"].Value.ToString(),
                             MovieLink = Url + itemSon.Attributes["href"].Value.ToString(),
                             MovieTitle = RelitClass.JudgeMovieDefinition(itemSon.ChildNodes[0].ChildNodes[2].InnerText.ToString()),
-
+                            OrderBy = OrderByIndex
                         });
                     }
+                    OrderByIndex++;
                 }
 
                 //读取详情内容

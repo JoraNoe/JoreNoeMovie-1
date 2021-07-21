@@ -63,7 +63,7 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="SearchMovieName"></param>
         /// <returns></returns>
-        Task<APIReturnInfo<IList<Movie>>> SearchMovie(string SearchMovieName);
+        Task<APIReturnInfo<IList<Movie>>> SearchMovie(string SearchMovieName,int PageIndex);
 
         /// <summary>
         /// 根据影视类型 查询全部数据

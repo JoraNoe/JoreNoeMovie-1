@@ -80,11 +80,12 @@ namespace JoreNoeVideo.API.Controllers
         /// 搜索
         /// </summary>
         /// <param name="SearchMovieName"></param>
+        /// <param name="PageIndex">PageIndex</param>
         /// <returns></returns>
-        [HttpGet("{SearchMovieName}/SearchMovie")]
-        public async Task<APIReturnInfo<IList<Movie>>> SearchMovie(string SearchMovieName)
+        [HttpGet("{SearchMovieName}/{PageIndex}/SearchMovie")]
+        public async Task<APIReturnInfo<IList<Movie>>> SearchMovie(string SearchMovieName,int PageIndex)
         {
-            return await this.MovieDomainservice.SearchMovie(SearchMovieName);
+            return await this.MovieDomainservice.SearchMovie(SearchMovieName, PageIndex);
         }
 
     }

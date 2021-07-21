@@ -96,6 +96,12 @@ namespace JoreNoeVideo.Store
         /// </summary>
         public DbSet<UserLikeMovie> UserLikeMovies { get; set; }
 
+        /// <summary>
+        /// 用户建议
+        /// </summary>
+        public DbSet<Proposal> Proposals { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
