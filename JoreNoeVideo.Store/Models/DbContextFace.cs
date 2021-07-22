@@ -202,5 +202,15 @@ namespace JoreNoeVideo.Store
             var ExistsResult = this.Db.Set<T>().Where(Func).FirstOrDefault();
             return ExistsResult == null ? false : true;
         }
+
+        /// <summary>
+        /// 总数量
+        /// </summary>
+        /// <param name="Func"></param>
+        /// <returns></returns>
+        public async Task<int> TotalAsync(Func<T, bool> Func = null)
+        {
+            return await this.Db.Set<T>().CountAsync();
+        }
     }
 }

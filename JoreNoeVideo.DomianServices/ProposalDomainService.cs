@@ -11,6 +11,9 @@ namespace JoreNoeVideo.DomainServices
 {
     public class ProposalDomainService : IProposalDomainService
     {
+        /// <summary>
+        /// 建议服务
+        /// </summary>
         private readonly IDbContextFace<Proposal> ProposalService;
 
         public ProposalDomainService(IDbContextFace<Proposal> ProposalService)
@@ -36,8 +39,9 @@ namespace JoreNoeVideo.DomainServices
         /// <returns></returns>
         public async Task<APIReturnInfo<ReturnPaging<Proposal>>> Paging(int PageSize = 10, int PageIndex = 1)
         {
-            var s = new ReturnPaging<Proposal>(PageIndex, PageSize, Total: 100);
-            return APIReturnInfo<ReturnPaging<Proposal>>.Success(s);
+            return APIReturnInfo<ReturnPaging<Proposal>>.Success(new ReturnPaging<Proposal>(
+                await this.ProposalService.Page(PageIndex,PageSize).ConfigureAwait(false),
+                await this.ProposalService.TotalAsync().ConfigureAwait(false)));
         }
     }
 }

@@ -68,13 +68,13 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                     {
 
                         Director = DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.NextSibling == null
-                ? DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.InnerText :
-                DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.NextSibling.InnerText,
+                        ? DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.InnerText :
+                        DesctionNode.ChildNodes[2].ChildNodes[1].FirstChild.NextSibling.InnerText,
                         Describe = DesctionNode.ChildNodes[6].ChildNodes[0].FirstChild.InnerText,
                         Address = DesctionNode.ChildNodes[4].ChildNodes[0].FirstChild.NextSibling == null ? "" : DesctionNode.ChildNodes[4].ChildNodes[0].FirstChild.NextSibling.InnerText,
                         Year = DesctionNode.ChildNodes[4].ChildNodes[1].FirstChild.NextSibling == null ? "" : DesctionNode.ChildNodes[4].ChildNodes[1].FirstChild.NextSibling.InnerText,
                         UpdateTime = DateTime.Parse(DesctionNode.ChildNodes[4].ChildNodes[2].InnerText.Substring(
-                  Index, DesctionNode.ChildNodes[4].ChildNodes[2].InnerText.Length - Index) ?? ""),
+                        Index, DesctionNode.ChildNodes[4].ChildNodes[2].InnerText.Length - Index) ?? ""),
                         MovieId = InsertData[i].Id.ToString(),
 
                     };

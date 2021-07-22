@@ -65,6 +65,12 @@ namespace JoreNoeVideo.Store
         /// <returns></returns>
         Task<IList<T>> Page(int PageNum = 0, int PageSize = 10);
 
+        /// <summary>
+        /// 总数量
+        /// </summary>
+        /// <returns></returns>
+        Task<int> TotalAsync(Func<T, bool> Func = null);
+
         #endregion
         #region 同步 数据
         /// <summary>

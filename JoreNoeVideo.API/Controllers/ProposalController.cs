@@ -39,10 +39,10 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="PageSize"></param>
         /// <param name="PageIndex"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("Paging")]
         public async Task<APIReturnInfo<ReturnPaging<Proposal>>> Paging(int PageSize = 10, int PageIndex = 1)
         {
-            return await this.ProposalDomainService.Paging(10,2);
+            return await this.ProposalDomainService.Paging(PageSize,PageIndex);
         }
 
     }
