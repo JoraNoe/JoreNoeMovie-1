@@ -1,8 +1,13 @@
-﻿using JoreNoeVideo.Domain;
+﻿using JoreNoeVideo.Abstractions.Values;
+using JoreNoeVideo.Domain;
+using JoreNoeVideo.Domain.Models;
 using JoreNoeVideo.Store;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using AutoMapper;
+using AutoMapper.Configuration;
 using System.Threading.Tasks;
 
 namespace JoreNoeVideo.DomainServices
@@ -10,9 +15,15 @@ namespace JoreNoeVideo.DomainServices
     public class MovieCommentDomainService : IMovieCommentDomainService
     {
         private readonly IDbContextFace<MovieComment> server;
-        public MovieCommentDomainService(IDbContextFace<MovieComment> server)
+
+        private readonly IDbContextFace<User> UserService;
+
+        private readonly IMapper Mapper;
+        public MovieCommentDomainService(IDbContextFace<MovieComment> server, IDbContextFace<User> UserService,IMapper Mapper)
         {
             this.server = server;
+            this.Mapper = Mapper;
+            this.UserService = UserService;
         }
 
         /// <summary>
@@ -80,9 +91,28 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public async Task<IList<MovieComment>> FindMovieCommentByMovieId(Guid Id)
+        public async Task<IList<MovieCommentValue>> FindMovieCommentByMovieId(Guid Id)
         {
-            return await this.server.FindAsync(d => d.MovieId == Id).ConfigureAwait(false);
+            //查询评论
+            var MovieCommentInfos = await this.server.FindAsync(d=>d.MovieId == Id).ConfigureAwait(false);
+            //筛选出评论中用户IDS
+            var UserIds = MovieCommentInfos.Select(d=>d.UserId);
+            //查询用户信息
+            var UserInfos = await this.UserService.FindAsync(d=>UserIds.Contains(d.Id));
+
+            var UserInfoDirection = UserInfos.ToDictionary(optionKey=>optionKey.Id,optionValue=>optionValue);
+
+            IList<MovieCommentValue> ResultMovieComments = new List<MovieCommentValue>();
+
+            foreach (var item in MovieCommentInfos)
+            {
+                var ConvertValue = Mapper.Map<MovieCommentValue>(item);
+                ConvertValue.UserHeaderImg = UserInfoDirection[item.UserId].UserHeaderImg;
+                ConvertValue.UserName = UserInfoDirection[item.UserId].NickName;
+                ResultMovieComments.Add(ConvertValue);
+            }
+
+            return ResultMovieComments;
         }
     }
 }

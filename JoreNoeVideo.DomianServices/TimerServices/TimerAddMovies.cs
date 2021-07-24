@@ -33,9 +33,10 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                 var DataNode = html.DocumentNode.SelectNodes("//div[@class='box-model-cont fn-clear']");
                 var InsertData = new List<Movie>();
                 //读取链接 
+                var OrderByIndex = 0;
                 foreach (var item in DataNode)
                 {
-                    var OrderByIndex = 0;
+                   
                     foreach (var itemSon in item.ChildNodes)
                     {
                         InsertData.Add(new Movie
@@ -48,8 +49,9 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                             MovieTitle = RelitClass.JudgeMovieDefinition(itemSon.ChildNodes[0].ChildNodes[2].InnerText.ToString()),
                             OrderBy = OrderByIndex
                         });
+                        OrderByIndex++;
                     }
-                    OrderByIndex++;
+                   
                 }
 
                 //读取详情内容
@@ -96,6 +98,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
                         });
                     }
                     Console.WriteLine(i + "-" + InsertData[i].MovieLink);
+
                 }
 
 

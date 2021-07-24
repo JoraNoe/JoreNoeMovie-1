@@ -1,4 +1,5 @@
-﻿using JoreNoeVideo.API.Filter;
+﻿using JoreNoeVideo.Abstractions.Values;
+using JoreNoeVideo.API.Filter;
 using JoreNoeVideo.CommonInterFaces;
 using JoreNoeVideo.Domain;
 using JoreNoeVideo.DomainServices;
@@ -13,10 +14,10 @@ namespace JoreNoeVideo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MovieCommentServiceController : ControllerBase
+    public class MovieCommentController : ControllerBase
     {
         private readonly IMovieCommentDomainService MovieCommentDomainService;
-        public MovieCommentServiceController(IMovieCommentDomainService MovieCommentDomainService)
+        public MovieCommentController(IMovieCommentDomainService MovieCommentDomainService)
         {
             this.MovieCommentDomainService = MovieCommentDomainService;
         }
@@ -94,9 +95,9 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpGet("{Id}")]
-        public async Task<APIReturnInfo<IList<MovieComment>>> FindMovieCommentByMovieId(string Id)
+        public async Task<APIReturnInfo<IList<MovieCommentValue>>> FindMovieCommentByMovieId(string Id)
         {
-            return APIReturnInfo<IList<MovieComment>>.Success(await this.MovieCommentDomainService.FindMovieCommentByMovieId(Guid.Parse(Id)));
+            return APIReturnInfo<IList<MovieCommentValue>>.Success(await this.MovieCommentDomainService.FindMovieCommentByMovieId(Guid.Parse(Id)));
         }
 
     }

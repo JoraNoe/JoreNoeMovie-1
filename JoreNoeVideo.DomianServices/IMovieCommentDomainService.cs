@@ -1,4 +1,5 @@
-﻿using JoreNoeVideo.Domain;
+﻿using JoreNoeVideo.Abstractions.Values;
+using JoreNoeVideo.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -50,7 +51,7 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        Task<IList<MovieComment>> FindMovieCommentByMovieId(Guid Id);
+        Task<IList<MovieCommentValue>> FindMovieCommentByMovieId(Guid Id);
 
     }
 }

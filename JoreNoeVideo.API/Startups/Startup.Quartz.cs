@@ -44,7 +44,7 @@ namespace JoreNoeVideo
             //    IScheduler scheduler;
             //    ISchedulerFactory factory = new StdSchedulerFactory();
             //    scheduler = factory.GetScheduler().Result;
-            //    scheduler.Start();
+            //    //scheduler.Start();
 
             //    //创建触发器(也叫时间策略)
             //    var trigger = TriggerBuilder.Create()
@@ -79,7 +79,7 @@ namespace JoreNoeVideo
             //    //Jobs即我们需要执行的作业
             //    var jobDetail = JobBuilder.Create<TimerAddMovieCategory>()
             //                    .UsingJobData("Url", "https://www.ekmov.com/vodshow/1-----------.html")
-            //                    .UsingJobData("BaseUrl","https://www.ekmov.com/")
+            //                    .UsingJobData("BaseUrl", "https://www.ekmov.com/")
             //                    .WithIdentity("Myjob2", "group2")//我们给这个作业取了个“Myjob”的名字，并取了个组名为“group”
             //                    .Build();
             //    //将触发器和作业任务绑定到调度器中

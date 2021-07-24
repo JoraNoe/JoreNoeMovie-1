@@ -196,6 +196,9 @@ namespace JoreNoeVideo.DomainServices
 
             string CacheKey = string.Concat("Movie_Search_List_Name_", SearchMovieName, "_CurrentPage_", PageIndex);
 
+            //查询Redis 是否存在数据
+            if (await this.RedisCache.KeyExistsAsync(CacheKey))
+                return APIReturnInfo<IList<Movie>>.Success(JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.StringGetAsync(CacheKey)));
 
             //获取请求网关 
             string BaseUrl = this.Configuration.GetSection("MovieUrls")["BaseUrl"].ToString();
@@ -266,12 +269,13 @@ namespace JoreNoeVideo.DomainServices
             }
 
             if (MovieInfos.Count != 0)
-                await this.Server.AddRangeAsync(MovieInfos);
+            {
+                var SaveInfos = await this.Server.AddRangeAsync(MovieInfos);
+                //保存 Redis  
+                this.RedisCache.StringSet(CacheKey, JsonConvert.SerializeObject(SaveInfos));
+            }
 
-
-
-
-            return null;
+            return APIReturnInfo<IList<Movie>>.Success(MovieInfos);
         }
 
         /// <summary>

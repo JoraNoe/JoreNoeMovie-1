@@ -4,14 +4,16 @@ using JoreNoeVideo.Store;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JoreNoeVideo.Store.Migrations
 {
     [DbContext(typeof(JoreNoeVideoDbContext))]
-    partial class JoreNoeVideoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210721131531_Add_PropForMovie_AddTableProposal")]
+    partial class Add_PropForMovie_AddTableProposal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

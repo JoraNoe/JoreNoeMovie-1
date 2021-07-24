@@ -57,6 +57,8 @@ namespace JoreNoeVideo
             //¶¨Ê±
             this.EnableQuartz();
 
+            this.AddAutoMapper(services);
+
         }
 
         /// <summary>
@@ -108,6 +110,8 @@ namespace JoreNoeVideo
                    .AddEnvironmentVariables();
 
             this.UseSwagger(app);
+
+            this.UseAutoMapper(app);
 
         }
     }
