@@ -34,3 +34,15 @@ C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoe
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.csproj.CopyComplete
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.dll
 C:\Jore\JoreNoeMovie-1\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.pdb
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.deps.json
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.dll
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.pdb
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.dll
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\bin\Debug\netcoreapp3.1\JoreNoeVideo.Domain.pdb
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.csproj.CopyComplete
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.dll
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Abstractions\obj\Debug\netcoreapp3.1\JoreNoeVideo.Abstractions.pdb

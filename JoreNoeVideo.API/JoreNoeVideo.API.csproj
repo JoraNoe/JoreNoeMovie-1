@@ -8,14 +8,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Jore\JoreNoeMovie-1\JoreNoeVideo\JoreNoeVideo.API.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.API\JoreNoeVideo.API.xml</DocumentationFile>
     <WarningLevel>2</WarningLevel>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>D:\Documents\GitHub\JoreNoeMovie-Re\JoreNoeMovie\JoreNoeVideo\</DocumentationFile>
-    <OutputPath></OutputPath>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
 
   <PropertyGroup>
