@@ -48,7 +48,7 @@ namespace JoreNoeVideo.DomainServices.TimerServices
 
                 // 将数据全部导入 Movie
                 DbContextFace<MovieCategory> MovieService = new DbContextFace<MovieCategory>();
-                if(MovieService.All().Count == 0)
+                if(MovieService.Find(d=>true).Count == 0)
                 {
                     await MovieService.AddRangeAsync(InsertData);
                     //写入日志 

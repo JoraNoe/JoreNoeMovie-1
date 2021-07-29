@@ -125,10 +125,12 @@ namespace JoreNoeVideo.DomainServices
             if (await this.RedisCache.KeyExistsAsync(CacheKey))
                 return JsonConvert.DeserializeObject<IList<Movie>>(await this.RedisCache.StringGetAsync(CacheKey));
 
+            //获取数据
             IList<Movie> FindIndexMovies = await this.Server.FindAsync(d => d.MovieCategory == Movie.MOVIE_CATEGORY_INDEX);
 
+
             //缓存数据
-            var Cache = await this.RedisCache.StringGetSetAsync(CacheKey, JsonConvert.SerializeObject(FindIndexMovies.OrderBy(d => d.OrderBy)));
+            await this.RedisCache.StringGetSetAsync(CacheKey, JsonConvert.SerializeObject(FindIndexMovies.OrderBy(d => d.OrderBy)));
 
             //筛选数据  frps
             //获取过期时间 
@@ -137,7 +139,7 @@ namespace JoreNoeVideo.DomainServices
             var DateExpiry = TimeSpan.FromMinutes(double.Parse(ExpiryTime.ToString()));
             await this.RedisCache.KeyExpireAsync(CacheKey, DateExpiry);
 
-            return JsonConvert.DeserializeObject<IList<Movie>>(Cache);
+            return FindIndexMovies.OrderBy(d => d.OrderBy).ToList();
         }
 
         /// <summary>

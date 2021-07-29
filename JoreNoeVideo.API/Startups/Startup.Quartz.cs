@@ -44,7 +44,7 @@ namespace JoreNoeVideo
             //    IScheduler scheduler;
             //    ISchedulerFactory factory = new StdSchedulerFactory();
             //    scheduler = factory.GetScheduler().Result;
-            //    //scheduler.Start();
+            //    scheduler.Start();
 
             //    //创建触发器(也叫时间策略)
             //    var trigger = TriggerBuilder.Create()
@@ -63,7 +63,7 @@ namespace JoreNoeVideo
 
 
 
-            //爬取电影分类 全程执行一次就可以
+            ////爬取电影分类 全程执行一次就可以
             //{
             //    IScheduler scheduler;
             //    ISchedulerFactory factory = new StdSchedulerFactory();

@@ -19,7 +19,7 @@ namespace JoreNoeVideo.DomainServices
         private readonly IDbContextFace<User> UserService;
 
         private readonly IMapper Mapper;
-        public MovieCommentDomainService(IDbContextFace<MovieComment> server, IDbContextFace<User> UserService,IMapper Mapper)
+        public MovieCommentDomainService(IDbContextFace<MovieComment> server, IDbContextFace<User> UserService, IMapper Mapper)
         {
             this.server = server;
             this.Mapper = Mapper;
@@ -31,9 +31,25 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public async Task<MovieComment> AddMovieComment(MovieComment model)
+        public async Task<MovieCommentValue> AddMovieComment(MovieComment model)
         {
-            return await this.server.AddAsync(model).ConfigureAwait(false);
+            //新增数据
+            var CreateInfo = await this.server.AddAsync(model).ConfigureAwait(false);
+
+            //查询评论
+            var MovieCommentInfos = await this.server.FindAsync(d => d.MovieId == CreateInfo.MovieId).ConfigureAwait(false);
+            //筛选出评论中用户IDS
+            var UserIds = MovieCommentInfos.Select(d => d.UserId);
+            //查询用户信息
+            var UserInfos = await this.UserService.FindAsync(d => UserIds.Contains(d.Id));
+
+            var UserInfoDirection = UserInfos.ToDictionary(optionKey => optionKey.Id, optionValue => optionValue);
+
+            var ConvertValue = Mapper.Map<MovieCommentValue>(CreateInfo);
+            ConvertValue.UserHeaderImg = UserInfoDirection[CreateInfo.UserId].UserHeaderImg;
+            ConvertValue.UserName = UserInfoDirection[CreateInfo.UserId].NickName;
+
+            return ConvertValue;
         }
 
         /// <summary>
@@ -94,13 +110,13 @@ namespace JoreNoeVideo.DomainServices
         public async Task<IList<MovieCommentValue>> FindMovieCommentByMovieId(Guid Id)
         {
             //查询评论
-            var MovieCommentInfos = await this.server.FindAsync(d=>d.MovieId == Id).ConfigureAwait(false);
+            var MovieCommentInfos = await this.server.FindAsync(d => d.MovieId == Id).ConfigureAwait(false);
             //筛选出评论中用户IDS
-            var UserIds = MovieCommentInfos.Select(d=>d.UserId);
+            var UserIds = MovieCommentInfos.Select(d => d.UserId);
             //查询用户信息
-            var UserInfos = await this.UserService.FindAsync(d=>UserIds.Contains(d.Id));
+            var UserInfos = await this.UserService.FindAsync(d => UserIds.Contains(d.Id));
 
-            var UserInfoDirection = UserInfos.ToDictionary(optionKey=>optionKey.Id,optionValue=>optionValue);
+            var UserInfoDirection = UserInfos.ToDictionary(optionKey => optionKey.Id, optionValue => optionValue);
 
             IList<MovieCommentValue> ResultMovieComments = new List<MovieCommentValue>();
 
@@ -112,7 +128,7 @@ namespace JoreNoeVideo.DomainServices
                 ResultMovieComments.Add(ConvertValue);
             }
 
-            return ResultMovieComments;
+            return ResultMovieComments.OrderByDescending(d=>d.CreateTime).ToList();
         }
     }
 }

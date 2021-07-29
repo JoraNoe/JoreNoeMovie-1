@@ -28,10 +28,10 @@ namespace JoreNoeVideo.API.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost("AddMovieComment")]
-        public async Task<ActionResult<APIReturnInfo<MovieComment>>> AddMovieComment(MovieComment model)
+        public async Task<ActionResult<APIReturnInfo<MovieCommentValue>>> AddMovieComment(MovieComment model)
         {
             model.UserId = Guid.Parse(this.UserId());
-            return APIReturnInfo<MovieComment>.Success(await this.MovieCommentDomainService.AddMovieComment(model));
+            return APIReturnInfo<MovieCommentValue>.Success(await this.MovieCommentDomainService.AddMovieComment(model));
         }
 
         /// <summary>

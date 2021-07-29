@@ -14,7 +14,7 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        Task<MovieComment> AddMovieComment(MovieComment model);
+        Task<MovieCommentValue> AddMovieComment(MovieComment model);
         /// <summary>
         /// 编辑
         /// </summary>

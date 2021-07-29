@@ -113,7 +113,7 @@ namespace JoreNoeVideo.Store
             if (!string.IsNullOrEmpty(this.Configuration.GetConnectionString("connectionString")))
                 optionsBuilder.UseSqlServer(this.Configuration.GetConnectionString("connectionString"));
             else
-                optionsBuilder.UseSqlServer("Server=.;Database=JoreNoeDbContext;Uid=sa;Password=sa");
+                optionsBuilder.UseSqlServer("Server=192.168.2.104;Database=JoreNoeDbContext;Uid=sa;Password=sa");
             base.OnConfiguring(optionsBuilder);
         }
     }
