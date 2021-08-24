@@ -32,7 +32,6 @@ namespace JoreNoeVideo.API.Controllers
         public async Task<ActionResult<APIReturnInfo<UserWatchHistory>>> AddUserWatchHistory(UserWatchHistory model)
         {
             model.UserId = this.UserId();
-
             return await this.UserWatchHistoryDomainService.AddUserWatchHistory(model);
         }
 
@@ -88,9 +87,9 @@ namespace JoreNoeVideo.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("FindWathcHistory")]
-        public async Task<ActionResult<APIReturnInfo<IList<UserWatchHistoryValue>>>> FindWathcHistory()
+        public async Task<ActionResult<APIReturnInfo<IList<Movie>>>> FindWathcHistory()
         {
-            return APIReturnInfo<IList<UserWatchHistoryValue>>.Success(await this.UserWatchHistoryDomainService.FindWatchHistoryByUserId(this.UserId()));
+            return APIReturnInfo<IList<Movie>>.Success(await this.UserWatchHistoryDomainService.FindWatchHistoryByUserId(this.UserId()));
         }
 
 

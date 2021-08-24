@@ -52,6 +52,6 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="UseId"></param>
         /// <returns></returns>
-        Task<IList<UserWatchHistoryValue>> FindWatchHistoryByUserId(string UseId);
+        Task<IList<Movie>> FindWatchHistoryByUserId(string UseId);
     }
 }

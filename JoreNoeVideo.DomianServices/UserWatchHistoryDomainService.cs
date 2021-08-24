@@ -13,12 +13,12 @@ namespace JoreNoeVideo.DomainServices
     public class UserWatchHistoryDomainService : IUserWatchHistoryDomainService
     {
         private readonly IDbContextFace<UserWatchHistory> server;
-        private readonly IMoviceDomainService MoviceDomainService;
+        private readonly IDbContextFace<Movie> Movie;
         public UserWatchHistoryDomainService(IDbContextFace<UserWatchHistory> server,
-            IMoviceDomainService MoviceDomainService)
+            IDbContextFace<Movie> Movie)
         {
             this.server = server;
-            this.MoviceDomainService = MoviceDomainService;
+            this.Movie = Movie;
         }
 
         /// <summary>
@@ -57,23 +57,16 @@ namespace JoreNoeVideo.DomainServices
         /// </summary>
         /// <param name="UseId"></param>
         /// <returns></returns>
-        public async Task<IList<UserWatchHistoryValue>> FindWatchHistoryByUserId(string UseId)
+        public async Task<IList<Movie>> FindWatchHistoryByUserId(string UseId)
         {
             var Result = await this.server.FindAsync(d => d.UserId == UseId);
-            var MoviesIdsArray = Result.Select(d => d.MovieId);
-            //查询 - 电影内容
-            var MovieList = await MoviceDomainService.FindByMovieIdsMovie(MoviesIdsArray.ToArray());
 
-            var ConvertValueResult = Result.Select(d => new UserWatchHistoryValue
-            {
-                Movie = MovieList.FirstOrDefault(d => MoviesIdsArray.Contains(d.Id)),
-                MovieId = d.MovieId,
-                MovieLink = d.MovieLink,
-                MovieName = d.MovieName,
-                UserId = d.UserId
-            }).ToList();
+            var MoviesIdsArray = Result.Select(d => d.MovieId).ToArray();
 
-            return ConvertValueResult;
+            //查询视频
+            var MovieIfnos = await this.Movie.FindAsync(d => MoviesIdsArray.Contains(d.Id));
+
+            return MovieIfnos;
         }
 
         /// <summary>

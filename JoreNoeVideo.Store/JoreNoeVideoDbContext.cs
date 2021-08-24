@@ -101,6 +101,11 @@ namespace JoreNoeVideo.Store
         /// </summary>
         public DbSet<Proposal> Proposals { get; set; }
 
+        /// <summary>
+        /// 用户观看历史记录
+        /// </summary>
+        public DbSet<UserWatchHistory> UserWatchHistories { get; set; }
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

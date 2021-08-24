@@ -7,7 +7,7 @@ namespace JoreNoeVideo.Domain.Models
     /// <summary>
     /// 用户观看历史
     /// </summary>
-    public class UserWatchHistory
+    public class UserWatchHistory:BaseModel
     {
         /// <summary>
         /// 电影名称
