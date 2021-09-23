@@ -960,3 +960,4 @@ C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.API\obj\Debug\
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.API\obj\Debug\netcoreapp3.1\JoreNoeVideo.API.dll
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.API\obj\Debug\netcoreapp3.1\JoreNoeVideo.API.pdb
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.API\obj\Debug\netcoreapp3.1\JoreNoeVideo.API.genruntimeconfig.cache
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.API\obj\Debug\netcoreapp3.1\JoreNoeVideo.API.GeneratedMSBuildEditorConfig.editorconfig

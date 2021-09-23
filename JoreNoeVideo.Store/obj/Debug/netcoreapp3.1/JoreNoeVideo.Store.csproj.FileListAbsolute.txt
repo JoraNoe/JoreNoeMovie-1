@@ -148,3 +148,4 @@ C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Store\obj\Debu
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.dll
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.pdb
 C:\Users\Administrator\Documents\GitHub\JoreNoeMovie\JoreNoeVideo.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.genruntimeconfig.cache
+C:\Users\Administrator\Documents\GitHub\JoreNoeMovie-1\JoreNoeVideo.Store\obj\Debug\netcoreapp3.1\JoreNoeVideo.Store.GeneratedMSBuildEditorConfig.editorconfig

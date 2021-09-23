@@ -24,8 +24,8 @@ namespace JoreNoeVideo
 
                 //创建触发器(也叫时间策略)
                 var trigger = TriggerBuilder.Create()
-                                .WithSchedule(CronScheduleBuilder.DailyAtHourAndMinute(3, 30))
-                                //.WithSimpleSchedule(x => x.DailyAtHourAndMinute(10).RepeatForever())//每10秒执行一次
+                                //.WithSchedule(CronScheduleBuilder.DailyAtHourAndMinute(3, 30))
+                                .WithSimpleSchedule(x => x.WithIntervalInSeconds(10).RepeatForever())//每10秒执行一次
                                 .Build();
                 //创建作业实例
                 //Jobs即我们需要执行的作业
